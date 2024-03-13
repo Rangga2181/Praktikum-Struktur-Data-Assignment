@@ -146,7 +146,7 @@ Kode diatas digunakan untuk medeklarasi array nilai dengan nilai elemen bertipe 
 
 ## Unguided 
 
-### 1. [Buatlah program menggunakan tipe data primitif minimal dua fungsi dan bebas. Menampilkan program, jelaskan program tersebut dan ambil kesimpulan dari materi tipe data primitif!]
+### 1. Buatlah program menggunakan tipe data primitif minimal dua fungsi dan bebas. Menampilkan program, jelaskan program tersebut dan ambil kesimpulan dari materi tipe data primitif!
 
 ```C++
 #include <iostream>
@@ -198,7 +198,7 @@ Program ini adalah sebuah program C++ dengan tipe data primitif yang menghitung 
 
 Tipe data primitif adalah cara komputer dalam hal menyimpan data dasar seperti angka dan huruf. Tipe integer yang ditampung juga hanya tipe data tertentu yaitu tipe data integer untuk bilangan bulat, tipe data float untuk bilangan desimal, tipe data char untuk huruf, tipe data boolean untuk menentukan 2 hal yaitu true dan false. Jadi, tipe data primitif adalah tempat untuk menyimpan huruf dan angka di dalam komputer. [3]
 
-### 2. [Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya!]
+### 2. Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya!
 
 Struct adalah struktur data yang memudahkan pengguna untuk menggabungkan beberapa jenis data yang berbeda. Mirip dengan fungsi class, struct bisa untuk menyimpan data, tetapi default anggotanya bersifat publik yang artinya semua anggotanya bisa diakses dari luar struct. Dengan menggunakan struct, program dengan mudah membuat dan memgelola kumpulan data tanpa adanya kompleksitas seperti pada fungsi class. Struct mempunyai kelebihan untuk menyimpan data simpel tanpa metode yang diutamakan dan memberikan fleksibilitas dalam membuat dan menyusun program.
 
@@ -320,7 +320,7 @@ int main()
 
 Program tersebut adalah sebuahfungsi yang mendefinisikan sebuah struktur (struct) bernama Buku. Struktur Buku memiliki empat atribut: judul, penulis, tahunTerbit, dan halaman. Program ini juga memiliki sebuah method cetakInfo() yang digunakan untuk mencetak informasi buku ke layar.
 
-### 3. [Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan dari array dengan map!]
+### 3. Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan dari array dengan map!
 
 ```C++
 #include <iostream>
