@@ -36,8 +36,8 @@ public:
 int main()
 {
     // Membuat objek mahasiswa
-    Mahasiswa mhs1("John Doe", 12345, "Teknik Informatika");
-    Mahasiswa mhs2("Jane Smith", 54321, "Teknik Elektro");
+    Mahasiswa mhs1("Rangga Pradarrell", 200, "Teknik Informatika");
+    Mahasiswa mhs2("Wahyu Hidayat", 200, "Teknik Informatika");
 
     // Memanggil method untuk menampilkan informasi mahasiswa
     cout << "Informasi Mahasiswa 1:" << endl;
