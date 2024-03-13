@@ -155,34 +155,48 @@ Kode diatas digunakan untuk medeklarasi array nilai dengan nilai elemen bertipe 
 
 using namespace std;
 
-// Fungsi untuk memfaktorialkan suatu bilangan
-int factorial(int Bilangan) {
-    if (Bilangan == 0 || Bilangan == 1)
-        return 1;
-    else
-        return Bilangan * factorial(Bilangan - 1);
+// Fungsi untuk mendapatkan input dari pengguna
+void getInput(double &alas, double &tinggi)
+{
+    cout << "Masukkan panjang alas segitiga: " << endl;
+    cin >> alas;
+
+    cout << "Masukkan tinggi segitiga: ";
+    cin >> tinggi;
 }
 
-int main() {
-    int Bilangan;
+// Fungsi untuk menghitung luas segitiga
+double calculateTriangleArea(double panjangAlas, double tinggi)
+{
+    return 0.5 * panjangAlas * tinggi;
+}
 
-    cout << "Masukkan suatu bilangan: ";
-    cin >> Bilangan;
+int main()
+{
+    // Mendeklarasikan variabel
+    double panjangAlas, tinggi, luas;
 
-    // Untuk menghitung faktorial dari sebuah bilangan
-    cout << "Bilangan Faktorial dari " << Bilangan << " adalah: " << factorial(Bilangan) << endl;
+    // Memanggil fungsi untuk mendapatkan input
+    getInput(panjangAlas, tinggi);
+
+    // Memanggil fungsi untuk menghitung luas segitiga
+    luas = calculateTriangleArea(panjangAlas, tinggi);
+
+    // Menampilkan hasil
+    cout << "Luas segitiga: " << luas << endl;
 
     return 0;
 }
 
 ```
+
 #### Output:
-![Unguided 1 Output](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/7f4fb009-fc8d-43b2-b528-3fb82a579a1c)
+![Unguided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/2531bdad-e05f-40f4-8a02-6e4e942640bb)
 
 #### Full code Screenshot:
-![Unguided 1 Full](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/a70cacb9-d465-4d01-99e4-8d2cc33ad0df)
+![Unguided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/47b0813f-fd66-4067-8529-00a68f5f220e)
 
-Kode diatas digunakan untuk mencetak hasil faktorial dari bilangan yang diinputkan oleh peng-input ke layar output dengan menggunakan function cout dan factorial untuk mengeksekusi program tersebut.
+Program ini adalah sebuah program C++ dengan tipe data primitif yang menghitung luas segitiga berdasarkan panjang alas dan tingginya yang dimasukkan oleh pengguna.
 
 Tipe data primitif adalah cara komputer dalam hal menyimpan data dasar seperti angka dan huruf. Tipe integer yang ditampung juga hanya tipe data tertentu yaitu tipe data integer untuk bilangan bulat, tipe data float untuk bilangan desimal, tipe data char untuk huruf, tipe data boolean untuk menentukan 2 hal yaitu true dan false. Jadi, tipe data primitif adalah tempat untuk menyimpan huruf dan angka di dalam komputer. [3]
 
@@ -192,115 +206,121 @@ Struct adalah struktur data yang memudahkan pengguna untuk menggabungkan beberap
 
 Class berfungsi sebagai template untuk menciptakan objek. Class adalah struktur yang menggabungkan antara dara dan fungsi untuk memproses data dalam suatu pemrograman. Class dapat membuat objek yang memiliki sifat yang sama. Data dalam class menunjukan karakteristik objek, sedangkan fungsi berguna untuk berinteraksi dengan data tersebut. Dengan menggunakan fungsi class, program bisa jauh lebih dimengerti dan mudah diatur dan juga bisa untuk mengatasi kompleksitas program secara terstruktur.[2]
 
-Contoh Untuk Fungsi Dari Struct
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-// struct Mahasiswa
-struct Mahasiswa {
-    string nama;
-    int nim;
-    float ipk;
-};
-
-// memasukkan data mahasiswa
-void inputMahasiswa(Mahasiswa& mhs) {
-    cout << "Masukkan Nama Mahasiswa: ";
-    getline(cin, mhs.nama);
-
-    cout << "Masukkan NIM Mahasiswa: ";
-    cin >> mhs.nim;
-
-    cout << "Masukkan IPK Mahasiswa: ";
-    cin >> mhs.ipk;
-}
-
-// menampilkan data mahasiswa
-void tampilkanMahasiswa(const Mahasiswa& mhs) {
-    cout << "\nData Mahasiswa\n";
-    cout << "Nama: " << mhs.nama << endl;
-    cout << "NIM: " << mhs.nim << endl;
-    cout << "IPK: " << mhs.ipk << endl;
-}
-
-int main() {
-    // Mendefinisikan variabel bertipe struct Mahasiswa
-    Mahasiswa mahasiswa1;
-
-    // Memanggil fungsi inputMahasiswa untuk mengisi data mahasiswa1
-    inputMahasiswa(mahasiswa1);
-
-    // Memanggil fungsi tampilkanMahasiswa untuk menampilkan data mahasiswa1
-    tampilkanMahasiswa(mahasiswa1);
-
-    return 0;
-}
-```
-#### Output:
-![Unguided 2 (1) Output](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/5a1c7586-6515-43ce-ae54-92625a97fac3)
-
-#### Full code Screenshot:
-![Unguided 2 (1) Full](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/06b8ddc3-984e-4db4-be3f-305c49c9a24e)
-
-Kode diatas digunakan untuk membuat struktur data mahasiswa dari nama, nim, dan ipk dengan  menggunakan struct  dan kemudian ditampilkan ke layar output dengan menggunakan function cout untuk mengelola programnya.
-
 Contoh Untuk Fungsi Dari Class
 ```C++
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-class Mahasiswa {
+class Mahasiswa
+{
 private:
     string nama;
     int nim;
-    float ipk;
+    string jurusan;
 
 public:
-    void inputData() {
-        cout << "Masukkan Nama Mahasiswa: ";
-        getline(cin, nama);
-
-        cout << "Masukkan NIM Mahasiswa: ";
-        cin >> nim;
-
-        cout << "Masukkan IPK Mahasiswa: ";
-        cin >> ipk;
-
-        cin.ignore();
+    // Constructor
+    Mahasiswa(string _nama, int _nim, string _jurusan)
+    {
+        nama = _nama;
+        nim = _nim;
+        jurusan = _jurusan;
     }
 
-    void MenampilkanData() {
-        cout << "\nD Mahasiswa\n";
+    // Destructor
+    ~Mahasiswa()
+    {
+        cout << "Objek Mahasiswa " << nama << " Aktif" << endl;
+    }
+
+    // Method untuk menampilkan informasi mahasiswa
+    void tampilkanInfo()
+    {
         cout << "Nama: " << nama << endl;
         cout << "NIM: " << nim << endl;
-        cout << "IPK: " << ipk << endl;
+        cout << "Jurusan: " << jurusan << endl;
     }
 };
 
-int main() {
-    Mahasiswa mahasiswa1;
+int main()
+{
+    // Membuat objek mahasiswa
+    Mahasiswa mhs1("Rangga Pradarrell", 200, "Teknik Informatika");
+    Mahasiswa mhs2("Wahyu Hidayat", 180, "Teknik Informatika");
 
-    // Memasukkan data mahasiswa
-    mahasiswa1.inputData();
+    // Memanggil method untuk menampilkan informasi mahasiswa
+    cout << "Informasi Mahasiswa 1:" << endl;
+    mhs1.tampilkanInfo();
 
-    // Menampilkan data mahasiswa
-    mahasiswa1.MenampilkanData();
+    cout << endl;
+
+    cout << "Informasi Mahasiswa 2:" << endl;
+    mhs2.tampilkanInfo();
 
     return 0;
 }
+
 ```
+
 #### Output:
-![Unguided 2 (2) Output](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/d7f69db0-a25a-4cb8-b0a3-f1e09450300d)
+![Unguided 2 (1) Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/50d797b5-d632-4790-93ee-1bb97740f695)
 
 #### Full code Screenshot:
-![Unguided 2 (2) Full](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/97581645-8191-4dd7-9cc2-6d77cc3cf14d)
+![Unguided 2 (1) Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/68ff192e-8ec5-4db3-9a06-9d999bd75f6a)
 
-Kode diatas digunakan untuk mendefinisikan sebuah class mahasiswa yang bersifat privat seperti nama, nim, dan ipk dan bersifat publik pada input data dan user diminta untuk menginputkan datanya dan di layar output sistem langsung menunjukan data yang diinput oleh user.
+Program tersebut adalah sebuah program C++ yang mendefinisikan sebuah class Mahasiswa. Setiap objek Mahasiswa memiliki atribut nama, NIM, dan jurusan. Program ini memiliki constructor untuk menginisialisasi objek Mahasiswa dengan nilai-nilai tersebut. Program juga memiliki destructor yang mencetak pesan saat objek Mahasiswa dihapus.
+
+Contoh Untuk Fungsi Dari Struct
+```C++
+#include <iostream>
+using namespace std;
+struct Buku
+{
+    string judul;
+    string penulis;
+    int tahunTerbit;
+    int halaman;
+
+    void cetakInfo()
+    {
+        cout << "Judul: " << judul << endl;
+        cout << "Penulis: " << penulis << endl;
+        cout << "Tahun Terbit: " << tahunTerbit << endl;
+        cout << "Halaman: " << halaman << endl;
+    }
+};
+
+int main()
+{
+    // Menginisialisasi variabel bertipe Buku
+    Buku buku1;
+    buku1.judul = "Laskar Pendekar";
+    buku1.penulis = "Andreas Wibowo";
+    buku1.tahunTerbit = 2008;
+    buku1.halaman = 329;
+
+    // Menampilkan informasi buku
+    buku1.cetakInfo();
+
+    // Menginisialisasi variabel bertipe Buku dengan konstruktor
+    Buku buku2{"Sang Pemimpi", "Andreas Wibowo", 2009, 264};
+
+    // Menampilkan informasi buku
+    buku2.cetakInfo();
+
+    return 0;
+}
+
+```
+
+#### Output:
+![Unguided 2 (2) Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/484e371b-058e-4c4e-83be-56aea89e3eb8)
+
+#### Full code Screenshot:
+![Unguided 2 (2) Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/c20fc2e0-986e-4d32-b0f6-0817a7940606)
+
+Program tersebut adalah sebuahfungsi yang mendefinisikan sebuah struktur (struct) bernama Buku. Struktur Buku memiliki empat atribut: judul, penulis, tahunTerbit, dan halaman. Program ini juga memiliki sebuah method cetakInfo() yang digunakan untuk mencetak informasi buku ke layar.
 
 ### 3. [Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan dari array dengan map!]
 
@@ -308,47 +328,44 @@ Kode diatas digunakan untuk mendefinisikan sebuah class mahasiswa yang bersifat 
 #include <iostream>
 #include <map>
 #include <string>
-
 using namespace std;
 
-// Fungsi untuk menampilkan jenis motor berdasarkan plat nomor
-void tampilkanJenisMotor(const map<string, string>& dataMotor, const string& platNomor) {
-    auto it = dataMotor.find(platNomor);
-    
-    if (it != dataMotor.end()) {
-        cout << "Jenis motor untuk plat nomor " << platNomor << ": " << it->second << endl;
-    } else {
-        cout << "Plat nomor " << platNomor << " tidak ditemukan." << endl;
+int main()
+{
+    // Membuat map untuk menyimpan nama dan umur
+    map<string, int> umur;
+
+    // Menambahkan data ke dalam map
+    umur["Jawier"] = 25;
+    umur["Jandul"] = 30;
+    umur["Doel"] = 20;
+
+    // Mengakses nilai dalam map
+    cout << "Umur Jawir: " << umur["Jawier"] << " tahun" << endl;
+    cout << "Umur Jandul: " << umur["Jandul"] << " tahun" << endl;
+    cout << "Umur Doel: " << umur["Doel"] << " tahun" << endl;
+
+    // Menggunakan iterator untuk menampilkan semua pasangan kunci-nilai dalam map
+    cout << "\nDaftar Nama dan Umur:\n";
+    for (auto it = umur.begin(); it != umur.end(); ++it)
+    {
+        cout << it->first << ": " << it->second << " tahun\n";
     }
-}
-
-int main() {
-    // Membuat map untuk menyimpan data plat nomor dan jenis motor
-    map<string, string> dataMotor;
-
-    // Mengisi data plat nomor dan jenis motor
-    dataMotor["Honda"] = "R 7782 GA";
-    dataMotor["Suzuki"] = "K 7574 TY";
-    dataMotor["Yamaha"] = "H 6548 UW";
-
-    // Meminta input plat nomor dari pengguna
-    string MerkMotor;
-    cout << "Masukkan jenis motor: ";
-    cin >> MerkMotor;
-
-    // Menampilkan jenis motor berdasarkan plat nomor
-    tampilkanJenisMotor(dataMotor, MerkMotor);
 
     return 0;
 }
+
 ```
+![Screenshot (23)]()
+![Screenshot (22)]()
+
 #### Output:
-![Unguided 3 Output](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/f7f7fb3e-95fc-40ff-8654-5884c5a9fb67)
+![Unguided 3 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/0a515ff2-6f5e-4b74-ba37-170fbd0d672e)
 
 #### Full code Screenshot:
-![Unguided 3 Full](https://github.com/AndreasBesar29/STRUKTUR-DATA-ASSIGNMENT/assets/161665251/ddaab45c-79ac-40b8-b04f-51df02a7977d)
+![Unguided 3 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/22dbcde0-9ff3-44cd-8d9c-0a88c122f08a)
 
-Kode diatas digunakan untuk mencari plat nomor dengan cara menginputkan merk motor yang dicari oleh user dan di layar output memunculkan hasil dari yang diinputkan oleh user berupa plat nomor.
+Program tersebut adalah sebuah program C++ yang menggunakan fungsi map untuk menyimpan pasangan kunci-nilai, di mana kunci adalah nama dan nilai adalah umur.
 
 Array dan map memiliki beberapa perbedaan , seperti :
 1. Dari segi ukuran , ukuran array biasanya tetap dan jika ingin menyimpan banyak data ukuran array harus di ubah atau disesuaikan secara manual. Sedangkan map , ukuran map bersifat dinamis dan dapat diubah, ditambah, dan dihapus dan pada awal deklarasinya tidak perlu ditentukan untuk ukurannya.
@@ -358,9 +375,9 @@ Array dan map memiliki beberapa perbedaan , seperti :
 Singkatnya, Array cocok untuk urutan data dengan indeks numerik dan map cocok untuk penugasan data dengan kunci yang dapat berupa tipe data apapun atau tipe data yang berbeda.[2]
 
 ## Kesimpulan
-Materi tipe data ini berisi beberapa data yang dapat di olah di dalam komputer seperti integer, float, char, dan lain lain. Tipe data abstrak berisi bahasan tentang konsep yang lebih tinggi, fokusnya adalah pada presentasi data dan operasi yang dapat dijalankan tanpa memperdulikan implementasi internal. Tipe data koleksi ini berisi tentang mengeksplorasi struktur data yang menyimpan beberapa elemen, seperti array, vector, dan map ini berguna juga untuk mengakses data dengan lebih cepat.
-
-Dari materi tipe data ini, pembelajaran yang didapat adalah pemahaman tentang berbagai tipe data yang dilakukan dan dapat digunakan dalam pemrograman, dan juga kegunaan dari tipe data abstrak dan koleksi yang lebih efisien dalam penggunaannya. Menguasai beberapa tipe data bisa lebih mudah untuk membuat suatu program dan memperluas kemampuan dalam memprogram dan mendata secara cepat.
+Tipe data ini berisi beberapa data yang dapat diproses di komputer, seperti integer, float, char, dan lain-lain. Tipe data abstrak berisi pembahasan konsep yang lebih tinggi, fokus pada penyajian data, dan operasi  dapat dilakukan tanpa memperhatikan implementasi internal. Tipe data koleksi  ini menggunakan eksplorasi struktur data yang menyimpan banyak elemen, seperti array, vektor, dan map. Ini juga berguna untuk akses data yang lebih cepat.
+ 
+Dari materi tipe data ini, pembelajaran yang didapat adalah paham tentang berbagai tipe data yang dapat digunakan dalam pemrograman, dan juga kegunaan dari tipe data abstrak maupun koleksi lebih efisien dalam penggunaannya. Menguasai beberapa tipe data bisa lebih mudah untuk membuat suatu program dan memperluas kemampuan dalam memprogram dan mendata secara cepat.
 
 ## Referensi
 #### [1] Pratama, M. A. (2020, March 29). STRUKTUR DATA ARRAY DUA DIMENSI  PADA PEMROGRAMAN C++. 
