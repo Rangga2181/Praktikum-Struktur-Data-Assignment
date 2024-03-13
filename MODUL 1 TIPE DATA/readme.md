@@ -137,8 +137,6 @@ int main()
 }
 
 ```
-![Screenshot (23)]()
-![Screenshot (22)]()
 
 #### Output:
 ![Guided 3 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/2aca387b-d93c-458a-a458-16edc99ef1ed)
