@@ -20,8 +20,8 @@ int main()
 {
     // Menginisialisasi variabel bertipe Buku
     Buku buku1;
-    buku1.judul = "Laskar Pelangi";
-    buku1.penulis = "Andrea Hirata";
+    buku1.judul = "Laskar Pendekar";
+    buku1.penulis = "Andreas Wibowo";
     buku1.tahunTerbit = 2008;
     buku1.halaman = 329;
 
@@ -29,7 +29,7 @@ int main()
     buku1.cetakInfo();
 
     // Menginisialisasi variabel bertipe Buku dengan konstruktor
-    Buku buku2{"Sang Pemimpi", "Andrea Hirata", 2009, 264};
+    Buku buku2{"Sang Pemimpi", "Andreas Wibowo", 2009, 264};
 
     // Menampilkan informasi buku
     buku2.cetakInfo();
