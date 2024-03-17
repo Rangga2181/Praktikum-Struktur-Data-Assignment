@@ -117,89 +117,76 @@ int main()
 ![Guided 2 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ce677a27-351e-4095-a3f0-f7e938ca1d81)
 
 Program ini adalah sebuah program C++ yang berfungsi untuk mencari nilai maksimum dari sebuah array dan menampilkan nilai maksimum serta lokasinya di dalam array tersebut. 
-### 3. [TIPE DATA KOLEKSI]
-```C++
-#include <iostream>
-using namespace std;
-int main()
-{
-    // deklarasi dan inisialisasi array
-    int nilai[5];
-    nilai[0] = 23;
-    nilai[1] = 50;
-    nilai[2] = 34;
-    nilai[3] = 78;
-    nilai[4] = 90;
-    // mencetak array
-    cout << "Isi array pertama :" << nilai[0] << endl;
-    cout << "Isi array kedua :" << nilai[1] << endl;
-    cout << "Isi array ketiga :" << nilai[2] << endl;
-    cout << "Isi array keempat :" << nilai[3] << endl;
-    cout << "Isi array kelima :" << nilai[4] << endl;
-    return 0;
-}
-
-```
-
-#### Output:
-![Guided 3 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/2aca387b-d93c-458a-a458-16edc99ef1ed)
-![Guided 3 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/066cfd2d-bd5c-404e-8c90-5fd220a53a14)
-
-Kode diatas digunakan untuk medeklarasi array nilai dengan nilai elemen bertipe integer dan mencetak masing masing dari integer tersebut ke layar output dan menggunakan function cout untuk mengeksekusinya.
 
 ## Unguided 
 
-### 1. Buatlah program menggunakan tipe data primitif minimal dua fungsi dan bebas. Menampilkan program, jelaskan program tersebut dan ambil kesimpulan dari materi tipe data primitif!
+### 1. Buatlah program untuk menampilkan Output seperti berikut dengan data yang diinputkan oleh user!
+![Screenshot (24)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/0528111d-3e62-4915-b9c9-f6cfeaeac27e)
 
 ```C++
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-// Fungsi untuk mendapatkan input dari pengguna
-void getInput(double &alas, double &tinggi)
-{
-    cout << "Masukkan panjang alas segitiga: " << endl;
-    cin >> alas;
-
-    cout << "Masukkan tinggi segitiga: ";
-    cin >> tinggi;
-}
-
-// Fungsi untuk menghitung luas segitiga
-double calculateTriangleArea(double panjangAlas, double tinggi)
-{
-    return 0.5 * panjangAlas * tinggi;
-}
-
 int main()
 {
-    // Mendeklarasikan variabel
-    double panjangAlas, tinggi, luas;
+    int n;
+    cout << "Masukkan jumlah elemen: ";
+    cin >> n;
 
-    // Memanggil fungsi untuk mendapatkan input
-    getInput(panjangAlas, tinggi);
+    vector<int> data(n);
+    vector<int> genap, ganjil;
 
-    // Memanggil fungsi untuk menghitung luas segitiga
-    luas = calculateTriangleArea(panjangAlas, tinggi);
+    cout << "Masukkan elemennya: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> data[i];
+    }
 
-    // Menampilkan hasil
-    cout << "Luas segitiga: " << luas << endl;
+    for (int i = 0; i < n; i++)
+    {
+        if (data[i] % 2 == 0)
+        {
+            genap.push_back(data[i]);
+        }
+        else
+        {
+            ganjil.push_back(data[i]);
+        }
+    }
+
+    cout << "Data Array      : ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << data[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Nomor Genap     : ";
+    for (int i = 0; i < genap.size(); i++)
+    {
+        cout << genap[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Nomor Ganjil    : ";
+    for (int i = 0; i < ganjil.size(); i++)
+    {
+        cout << ganjil[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
-
 ```
-
 #### Output:
-![Unguided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/2531bdad-e05f-40f4-8a02-6e4e942640bb)
+![Unguided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/13df568d-4ae6-4fcb-bd87-6fd67caca36a)
 
 #### Full code Screenshot:
-![Unguided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/47b0813f-fd66-4067-8529-00a68f5f220e)
+![Unguided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/6ed3a8ad-7b53-48ff-95ee-30e5e3f22ef3)
 
-Program ini adalah sebuah program C++ dengan tipe data primitif yang menghitung luas segitiga berdasarkan panjang alas dan tingginya yang dimasukkan oleh pengguna.
-
-Tipe data primitif adalah cara komputer dalam hal menyimpan data dasar seperti angka dan huruf. Tipe integer yang ditampung juga hanya tipe data tertentu yaitu tipe data integer untuk bilangan bulat, tipe data float untuk bilangan desimal, tipe data char untuk huruf, tipe data boolean untuk menentukan 2 hal yaitu true dan false. Jadi, tipe data primitif adalah tempat untuk menyimpan huruf dan angka di dalam komputer. 
+Program ini adalah fungsi untuk memisahkan elemen-elemen dari sebuah array menjadi dua array terpisah, yaitu array untuk elemen-elemen genap dan array untuk elemen-elemen ganjil. 
 
 ### 2. Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya!
 
