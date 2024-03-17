@@ -251,55 +251,66 @@ int main()
 
 ```C++
 #include <iostream>
-#include <map>
-#include <string>
+
 using namespace std;
 
 int main()
 {
-    // Membuat map untuk menyimpan nama dan umur
-    map<string, int> umur;
+    int n;
+    cout << "Masukkan jumlah elemen dalam array: ";
+    cin >> n;
 
-    // Menambahkan data ke dalam map
-    umur["Jawier"] = 25;
-    umur["Jandul"] = 30;
-    umur["Doel"] = 20;
+    // Menginisialisasi array dengan ukuran n
+    int arr[n];
 
-    // Mengakses nilai dalam map
-    cout << "Umur Jawir: " << umur["Jawier"] << " tahun" << endl;
-    cout << "Umur Jandul: " << umur["Jandul"] << " tahun" << endl;
-    cout << "Umur Doel: " << umur["Doel"] << " tahun" << endl;
-
-    // Menggunakan iterator untuk menampilkan semua pasangan kunci-nilai dalam map
-    cout << "\nDaftar Nama dan Umur:\n";
-    for (auto it = umur.begin(); it != umur.end(); ++it)
+    // Meminta pengguna memasukkan elemen array
+    cout << "Masukkan " << n << " elemen array:\n";
+    for (int i = 0; i < n; ++i)
     {
-        cout << it->first << ": " << it->second << " tahun\n";
+        cin >> arr[i];
     }
+
+    // Menghitung nilai maksimum, minimum, dan rata-rata
+    int max = arr[0];
+    int min = arr[0];
+    int sum = arr[0];
+    for (int i = 1; i < n; ++i)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+        if (arr[i] < min)
+        {
+            min = arr[i];
+        }
+        sum += arr[i];
+    }
+
+    double average = static_cast<double>(sum) / n;
+
+    // Menampilkan hasil
+    cout << "Nilai maksimum: " << max << endl;
+    cout << "Nilai minimum: " << min << endl;
+    cout << "Nilai rata-rata: " << average << endl;
 
     return 0;
 }
 
+
 ```
+
 #### Output:
-![Unguided 3 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/0a515ff2-6f5e-4b74-ba37-170fbd0d672e)
+![Unguided 3 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/4698b5a4-7168-4367-8744-cfbf2abed996)
 
 #### Full code Screenshot:
-![Unguided 3 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/22dbcde0-9ff3-44cd-8d9c-0a88c122f08a)
+![Unguided 3 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/af6c21b3-16f6-4168-9ea2-93cda489b728)
 
-Program tersebut adalah sebuah program C++ yang menggunakan fungsi map untuk menyimpan pasangan kunci-nilai, di mana kunci adalah nama dan nilai adalah umur.
-
-Array dan map memiliki beberapa perbedaan , seperti :
-1. Dari segi ukuran , ukuran array biasanya tetap dan jika ingin menyimpan banyak data ukuran array harus di ubah atau disesuaikan secara manual. Sedangkan map , ukuran map bersifat dinamis dan dapat diubah, ditambah, dan dihapus dan pada awal deklarasinya tidak perlu ditentukan untuk ukurannya.
-2. Dari Tipe data nya, Array merupakan struktur data untuk menyimpan elemen data dengan tipe yang sama dalam satu linier. Sedangkan map adalah struktur data untuk menyimpan pasangan kunci dan nilai. Kunci dan nilaipyn bisa dari tipe data yang berbeda.
-3. Dari Indeksnya, Array menggunakan indeks berbasis angka numerik mulai dari 0. Sedangkan map menggunakan data yang tidak terurut dan data diidentifikasi melalui kunci yang memiliki tipe data yang berbeda.
-
-Singkatnya, Array cocok untuk urutan data dengan indeks numerik dan map cocok untuk penugasan data dengan kunci yang dapat berupa tipe data apapun atau tipe data yang berbeda.
+Program ini adalah sebuah program C++ yang berfungsi untuk menghitung nilai maksimum, nilai minimum, dan rata-rata dari elemen-elemen dalam sebuah array. 
 
 ## Kesimpulan
-Tipe data ini berisi beberapa data yang dapat diproses di komputer, seperti integer, float, char, dan lain-lain. Tipe data abstrak berisi pembahasan konsep yang lebih tinggi, fokus pada penyajian data, dan operasi  dapat dilakukan tanpa memperhatikan implementasi internal. Tipe data koleksi  ini menggunakan eksplorasi struktur data yang menyimpan banyak elemen, seperti array, vektor, dan map. Ini juga berguna untuk akses data yang lebih cepat.
- 
-Dari materi tipe data ini, pembelajaran yang didapat adalah paham tentang berbagai tipe data yang dapat digunakan dalam pemrograman, dan juga kegunaan dari tipe data abstrak maupun koleksi lebih efisien dalam penggunaannya. Menguasai beberapa tipe data bisa lebih mudah untuk membuat suatu program dan memperluas kemampuan dalam memprogram dan mendata secara cepat.
+Dalam pemrograman C++, array merupakan struktur data yang sangat penting dan sering digunakan untuk menyimpan sekumpulan data dengan tipe data yang sama.
+Dari materi array ini, Array sangat berguna dalam berbagai aplikasi seperti penyimpanan data, pengolahan data, dan algoritma. Pemahaman yang baik tentang array akan membantu Anda dalam menulis program yang lebih efisien dan mudah dikelola.
 
 ## Referensi
 ####  Pratama, M. A. (2020, March 29). STRUKTUR DATA ARRAY DUA DIMENSI  PADA PEMROGRAMAN C++. 
