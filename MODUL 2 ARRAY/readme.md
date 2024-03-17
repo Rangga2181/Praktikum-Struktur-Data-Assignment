@@ -181,70 +181,59 @@ int main()
 }
 ```
 #### Output:
-![Unguided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/13df568d-4ae6-4fcb-bd87-6fd67caca36a)
+![Unguided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/79c750ab-cad2-4889-9dbd-96f7fd5728a3)
 
 #### Full code Screenshot:
-![Unguided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/6ed3a8ad-7b53-48ff-95ee-30e5e3f22ef3)
+![Unguided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/f529373f-222a-498e-9882-c953c3008716)
 
 Program ini adalah fungsi untuk memisahkan elemen-elemen dari sebuah array menjadi dua array terpisah, yaitu array untuk elemen-elemen genap dan array untuk elemen-elemen ganjil. 
 
 ### 2. Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya!
 
-Struct adalah struktur data yang memudahkan pengguna untuk menggabungkan beberapa jenis data yang berbeda. Mirip dengan fungsi class, struct bisa untuk menyimpan data, tetapi default anggotanya bersifat publik yang artinya semua anggotanya bisa diakses dari luar struct. Dengan menggunakan struct, program dengan mudah membuat dan memgelola kumpulan data tanpa adanya kompleksitas seperti pada fungsi class. Struct mempunyai kelebihan untuk menyimpan data simpel tanpa metode yang diutamakan dan memberikan fleksibilitas dalam membuat dan menyusun program.
-
-Class berfungsi sebagai template untuk menciptakan objek. Class adalah struktur yang menggabungkan antara dara dan fungsi untuk memproses data dalam suatu pemrograman. Class dapat membuat objek yang memiliki sifat yang sama. Data dalam class menunjukan karakteristik objek, sedangkan fungsi berguna untuk berinteraksi dengan data tersebut. Dengan menggunakan fungsi class, program bisa jauh lebih dimengerti dan mudah diatur dan juga bisa untuk mengatasi kompleksitas program secara terstruktur.
-
-Contoh Untuk Fungsi Dari Class
 ```C++
 #include <iostream>
-#include <string>
+
 using namespace std;
-
-class Mahasiswa
-{
-private:
-    string nama;
-    int nim;
-    string jurusan;
-
-public:
-    // Constructor
-    Mahasiswa(string _nama, int _nim, string _jurusan)
-    {
-        nama = _nama;
-        nim = _nim;
-        jurusan = _jurusan;
-    }
-
-    // Destructor
-    ~Mahasiswa()
-    {
-        cout << "Objek Mahasiswa " << nama << " Aktif" << endl;
-    }
-
-    // Method untuk menampilkan informasi mahasiswa
-    void tampilkanInfo()
-    {
-        cout << "Nama: " << nama << endl;
-        cout << "NIM: " << nim << endl;
-        cout << "Jurusan: " << jurusan << endl;
-    }
-};
 
 int main()
 {
-    // Membuat objek mahasiswa
-    Mahasiswa mhs1("Rangga Pradarrell", 200, "Teknik Informatika");
-    Mahasiswa mhs2("Wahyu Hidayat", 180, "Teknik Informatika");
+    int x, y, z;
 
-    // Memanggil method untuk menampilkan informasi mahasiswa
-    cout << "Informasi Mahasiswa 1:" << endl;
-    mhs1.tampilkanInfo();
+    // Meminta pengguna memasukkan ukuran array tiga dimensi
+    cout << "Masukkan ukuran array tiga dimensi (x y z): ";
+    cin >> x >> y >> z;
 
-    cout << endl;
+    // Menginisialisasi array tiga dimensi dengan ukuran yang dimasukkan oleh pengguna
+    int arr[x][y][z];
 
-    cout << "Informasi Mahasiswa 2:" << endl;
-    mhs2.tampilkanInfo();
+    // Meminta pengguna memasukkan nilai-nilai elemen array
+    cout << "Masukkan elemen-elemen array:\n";
+    for (int i = 0; i < x; ++i)
+    {
+        for (int j = 0; j < y; ++j)
+        {
+            for (int k = 0; k < z; ++k)
+            {
+                cout << "arr[" << i << "][" << j << "][" << k << "]: ";
+                cin >> arr[i][j][k];
+            }
+        }
+    }
+
+    // Menampilkan array tiga dimensi yang telah dimasukkan oleh pengguna
+    cout << "Array tiga dimensi yang dimasukkan:\n";
+    for (int i = 0; i < x; ++i)
+    {
+        for (int j = 0; j < y; ++j)
+        {
+            for (int k = 0; k < z; ++k)
+            {
+                cout << arr[i][j][k] << " ";
+            }
+            cout << endl; // Setiap baris baru untuk setiap dimensi y
+        }
+        cout << endl; // Setiap lapisan baru untuk setiap dimensi x
+    }
 
     return 0;
 }
@@ -252,65 +241,13 @@ int main()
 ```
 
 #### Output:
-![Unguided 2 (1) Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/50d797b5-d632-4790-93ee-1bb97740f695)
+![Unguided 2 (1) Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/13df568d-4ae6-4fcb-bd87-6fd67caca36a)
 
 #### Full code Screenshot:
-![Unguided 2 (1) Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/68ff192e-8ec5-4db3-9a06-9d999bd75f6a)
+![Unguided 2 (1) Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/6ed3a8ad-7b53-48ff-95ee-30e5e3f22ef3)
 
-Program tersebut adalah sebuah program C++ yang mendefinisikan sebuah class Mahasiswa. Setiap objek Mahasiswa memiliki atribut nama, NIM, dan jurusan. Program ini memiliki constructor untuk menginisialisasi objek Mahasiswa dengan nilai-nilai tersebut. Program juga memiliki destructor yang mencetak pesan saat objek Mahasiswa dihapus.
 
-Contoh Untuk Fungsi Dari Struct
-```C++
-#include <iostream>
-using namespace std;
-struct Buku
-{
-    string judul;
-    string penulis;
-    int tahunTerbit;
-    int halaman;
-
-    void cetakInfo()
-    {
-        cout << "Judul: " << judul << endl;
-        cout << "Penulis: " << penulis << endl;
-        cout << "Tahun Terbit: " << tahunTerbit << endl;
-        cout << "Halaman: " << halaman << endl;
-    }
-};
-
-int main()
-{
-    // Menginisialisasi variabel bertipe Buku
-    Buku buku1;
-    buku1.judul = "Laskar Pendekar";
-    buku1.penulis = "Andreas Wibowo";
-    buku1.tahunTerbit = 2008;
-    buku1.halaman = 329;
-
-    // Menampilkan informasi buku
-    buku1.cetakInfo();
-
-    // Menginisialisasi variabel bertipe Buku dengan konstruktor
-    Buku buku2{"Sang Pemimpi", "Andreas Wibowo", 2009, 264};
-
-    // Menampilkan informasi buku
-    buku2.cetakInfo();
-
-    return 0;
-}
-
-```
-
-#### Output:
-![Unguided 2 (2) Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/484e371b-058e-4c4e-83be-56aea89e3eb8)
-
-#### Full code Screenshot:
-![Unguided 2 (2) Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/c20fc2e0-986e-4d32-b0f6-0817a7940606)
-
-Program tersebut adalah sebuahfungsi yang mendefinisikan sebuah struktur (struct) bernama Buku. Struktur Buku memiliki empat atribut: judul, penulis, tahunTerbit, dan halaman. Program ini juga memiliki sebuah method cetakInfo() yang digunakan untuk mencetak informasi buku ke layar.
-
-### 3. Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan dari array dengan map!
+### 3. Buatlah program menu untuk mencari nilai Maksimum, Minimum dan Nilai rata – rata dari suatu array dengan input yang dimasukan oleh user!
 
 ```C++
 #include <iostream>
