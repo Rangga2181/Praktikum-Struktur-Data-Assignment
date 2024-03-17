@@ -75,50 +75,46 @@ int main()
         cout << endl;
     }
 }
+
 ```
-
 #### Output:
-![Guided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/a3ac0031-b13f-4d56-a27a-c6f6726ae7bd)
-![Guided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/e9685914-5ac0-4bf8-88c4-ac5ed45a3d8c)
+![Guided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/40e0b9d5-09f4-41ac-80e2-3d5696fbe691)
+![Guided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/59e6b0b9-71a0-463d-b9ec-e8922a32a13d)
 
-Kode di atas, pengguna dapat memasukkan 18 elemen (2x3x3) untuk array 3 dimensi tersebut. Kemudian, program akan mencetak seluruh elemen array dalam dua format yang berbeda: format yang mudah dibaca dengan indeks yang jelas, dan format yang lebih sederhana hanya dengan menampilkan nilai elemen saja.
+Kode di atas, pengguna dapat memasukkan 18 elemen (2x3x3) untuk array 3 dimensi tersebut. Kemudian, program akan mencetak seluruh elemen array dalam dua format yang berbeda: format yang mudah dibaca dengan indeks yang jelas, dan format yang lebih sederhana hanya dengan menampilkan nilai elemen saja. 
+
 ### 2. [Program Mencari Nilai Maksimal pada Array ]
 ```C++
-#include <stdio.h>
-// Struct
-struct Mahasiswa
-{
-    const char *name;
-    const char *address;
-    int age;
-};
+#include <iostream>
+using namespace std;
+
 int main()
 {
-    // menggunakan struct
-    struct Mahasiswa mhs1, mhs2;
-    // mengisi nilai ke struct
-    mhs1.name = "Dian";
-    mhs1.address = "Mataram";
-    mhs1.age = 22;
-    mhs2.name = "Bambang";
-    mhs2.address = "Surabaya";
-    mhs2.age = 23;
-    // mencetak isi struct
-    printf("## Mahasiswa 1 ##\n");
-    printf("Nama: %s\n", mhs1.name);
-    printf("Alamat: %s\n", mhs1.address);
-    printf("Umur: %d\n", mhs1.age);
-    printf("## Mahasiswa 2 ##\n");
-    printf("Nama: %s\n", mhs2.name);
-    printf("Alamat: %s\n", mhs2.address);
-    printf("Umur: %d\n", mhs2.age);
-    return 0;
+    int maks, a, i = 1, lokasi;
+    cout << "Masukkan panjang array: ";
+    cin >> a;
+    int array[a];
+    cout << "Masukkan " << a << "angka\n";
+    for (i = 0; i < a; i++)
+    {
+        cout << "array ke-" << (i) << ": ";
+        cin >> array[i];
+    }
+    maks = array[0];
+    for (i = 0; i < a; i++)
+    {
+        if (array[i] > maks)
+        {
+            maks = array[i];
+            lokasi = i;
+        }
+    }
+    cout << "Nilai maksimum adalah " << maks << " berada di Array ke " << lokasi << endl;
 }
 ```
-
 #### Output:
-![Guided 2 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/14b77508-6be0-43ce-aa74-19d143280d32)
-![Guided 2 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/5121a567-6e99-4858-9f11-4d3bfdaeeebd)
+![Guided 2 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/3ac95a16-e44a-403f-a965-728b86f1781b)
+![Guided 2 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ce677a27-351e-4095-a3f0-f7e938ca1d81)
 
 Program ini adalah sebuah program C++ yang berfungsi untuk mencari nilai maksimum dari sebuah array dan menampilkan nilai maksimum serta lokasinya di dalam array tersebut. 
 ### 3. [TIPE DATA KOLEKSI]
