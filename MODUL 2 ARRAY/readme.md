@@ -25,46 +25,55 @@ Ukuran array mengacu pada jumlah maksimum elemen yang dapat disimpan dalam array
 
 ## Guided 
 
-### 1. [TIPE DATA PRIMITIF]
+### 1. [Program Input Array Tiga Dimensi]
 ```C++
 #include <iostream>
-
 using namespace std;
 
-// Main program
+// program input array 3 dimensi
 int main()
 {
-    char op;
-    float num1, num2;
-    // It allows user to enter operator i.e. +, -, *, /
-    cin >> op;
-    // It allow user to enter the operands
-    cin >> num1 >> num2;
-    // Switch statement begins
-    switch (op)
+    // deklarasi array
+    int arr[2][3][3];
+    // input elemen
+    for (int x = 0; x < 2; x++)
     {
-    // If user enter +
-    case '+':
-        cout << num1 + num2;
-        break;
-    // If user enter -
-    case '-':
-        cout << num1 - num2;
-        break;
-    // If user enter *
-    case '*':
-        cout << num1 * num2;
-        break;
-    // If user enter /
-    case '/':
-        cout << num1 / num2;
-        break;
-    // If the operator is other than +, -, * or /,
-    // error message will display
-    default:
-        cout << "Error! operator is not correct";
-    } // switch statement ends
-    return 0;
+
+        for (int y = 0; y < 3; y++)
+        {
+            for (int z = 0; z < 3; z++)
+            {
+                cout << "Input Array [" << x << "][" << y << "][" << z << "]=";
+                cin >> arr[x][y][z];
+            }
+        }
+        cout << endl;
+    }
+    // Output Array
+    for (int x = 0; x < 2; x++)
+    {
+        for (int y = 0; y < 3; y++)
+        {
+            for (int z = 0; z < 3; z++)
+            {
+                cout << "Data Array[" << x << "][" << y << "][" << z << "]=" << arr[x][y][z] << endl;
+            }
+        }
+    }
+    cout << endl;
+    // Tampilan Array
+    for (int x = 0; x < 2; x++)
+    {
+        for (int y = 0; y < 3; y++)
+        {
+            for (int z = 0; z < 3; z++)
+            {
+                cout << arr[x][y][z] << endl;
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
 }
 ```
 
@@ -72,9 +81,8 @@ int main()
 ![Guided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/a3ac0031-b13f-4d56-a27a-c6f6726ae7bd)
 ![Guided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/e9685914-5ac0-4bf8-88c4-ac5ed45a3d8c)
 
-Kode di atas digunakan untuk mencetak hasil dari penjumlahan, pengurangan, perkalian, dan pembagian atau bisa disebut juga kalkulator sederhana ke layar output dengan menggunakan function cout dan switch untuk menjalani atau mengeksekusi program tersebut.
-
-### 2. [TIPE DATA ABSTRAK ]
+Kode di atas, pengguna dapat memasukkan 18 elemen (2x3x3) untuk array 3 dimensi tersebut. Kemudian, program akan mencetak seluruh elemen array dalam dua format yang berbeda: format yang mudah dibaca dengan indeks yang jelas, dan format yang lebih sederhana hanya dengan menampilkan nilai elemen saja.
+### 2. [Program Mencari Nilai Maksimal pada Array ]
 ```C++
 #include <stdio.h>
 // Struct
@@ -112,8 +120,7 @@ int main()
 ![Guided 2 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/14b77508-6be0-43ce-aa74-19d143280d32)
 ![Guided 2 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/5121a567-6e99-4858-9f11-4d3bfdaeeebd)
 
-Kode diatas digunakan untuk menyimpan data mahasiswa yang terdiri dari nama, alamat, dan umur ke layar output dengan menggunakan function printf agar bisa mengeksekusi program tersebut.
-
+Program ini adalah sebuah program C++ yang berfungsi untuk mencari nilai maksimum dari sebuah array dan menampilkan nilai maksimum serta lokasinya di dalam array tersebut. 
 ### 3. [TIPE DATA KOLEKSI]
 ```C++
 #include <iostream>
