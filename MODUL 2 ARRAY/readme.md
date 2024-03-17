@@ -4,24 +4,24 @@
 <p align="center">2311102200 / IF-11-E</p>
 
 ## Dasar Teori
-Tipe data merupakan suatu cara untuk membedakan data berdasarkan tipenya. Tipe data juga diperlukan agar compiler dapat memahami data apa yang akan digunakan.
+Array dalam bahasa C++ adalah sebuah struktur data yang digunakan untuk menyimpan sekumpulan data dengan tipe data yang sama. Setiap elemen array dapat diakses menggunakan indeks yang unik. Array sangat berguna dalam banyak kasus, seperti menyimpan daftar nilai, daftar nama, atau data lainnya.
+
+Berikut adalah penjelasan singkat tentang array dalam C++:
  
 
-#### 1. TIPE DATA PRMITIF
-Tipe data primitif adalah cara komputer  menyimpan data dasar seperti angka dan huruf. Tipe data integer yang didukung hanya tipe data tertentu saja, yaitu tipe data integer untuk bilangan bulat, tipe data float untuk angka desimal, tipe data char untuk huruf, tipe data boolean untuk menentukan dua hal yang benar dan salah. Jadi, tipe data primitif memungkinkan untuk menyimpan huruf dan angka di  komputer.
+#### 1. Deklarasi Array 
+Deklarasi array  adalah proses mendefinisikan sebuah variabel sebagai array dan menentukan ukuran atau panjang array tersebut. 
 
 
-#### 2. TIPE DATA ABSTRAK
-Tipe Data Abstrak: Tipe data abstrak adalah tipe data yang tidak dapat dipakai secara langsung dan sering digunakan sebagai kelas dasar atau antarmuka. Tipe data abstrak memberikan definisi umum yang dapat diimplementasikan oleh kelas lain. Contoh  tipe data abstrak adalah kelas abstrak dan antarmuka. Dalam bahasa pemrograman Java, kelas abstrak memungkinkan Anda untuk mendefinisikan metode abstrak (metode yang tidak memerlukan implementasi) yang harus diimplementasikan oleh kelas turunannya.
+#### 2. Inisialisasi Array
+Inisialisasi array dalam C++ adalah proses memberikan nilai awal pada elemen-elemen array saat deklarasi atau setelah deklarasi.
  
 
-#### 3. TIPE DATA KOLEKSI
-Tipe data koleksi adalah tipe data untuk menyimpan beberapa nilai secara bersamaan. Tipe data koleksi juga bisa mengelola banyak data dengan terstruktur. Contoh dari tipe data koleksi yaitu :
-- Array : Array merupakan suatu struktur data statis yang menyimpan elemen-elemen dengan jenis data yang seragam. Elemen-elemen tersebut diakses melalui indeks tertentu. Ukuran array bersifat tetap dan harus ditentukan pada saat pendeklarasian.
+#### 3. Mengakses Elemen Array
+Mengakses elemen array berarti mengambil atau memodifikasi nilai dari elemen tertentu dalam array tersebut. Untuk mengakses elemen array, Anda perlu menggunakan indeks yang sesuai dengan posisi elemen dalam array. Indeks array dalam C++ dimulai dari 0.
 
-- Vector : Vector adalah Standard Template Library (STL), mirip dengan array dalam hal menyimpan data dalam bentuk elemen-elemen yang alokasi memorinya dilakukan otomatis dan bersebelahan. Vector memiliki kemampuan untuk menangani jumlah elemen yang dinamis. Vector menyediakan fleksibilitas dalam mengelola koleksi data dengan kemampuan dinamisnya, yang memungkinkan penambahan atau pengurangan elemen tanpa harus khawatir tentang alokasi memorinya secara manual.
-
-- Map : Map, mirip dengan array, memungkinkan penggunaan indeks, disebut "key", yang tidak terbatas pada tipe data integer. Pada map, indeks diberi nama "key". Bukan hanya integer, sehingga map memberikan fleksibilitas yang lebih besar dibandingkan dengan array konvensional. Implementasi map menggunakan struktur data pohon merah-hitam yang secara otomatis seimbang, memberikan efisiensi dalam operasi pencarian dan penyisipan data.
+#### 4. Ukuran Array
+Ukuran array mengacu pada jumlah maksimum elemen yang dapat disimpan dalam array tersebut. Ukuran array harus ditentukan saat deklarasi dan tidak dapat diubah selama runtime (waktu program berjalan).
 
 ## Guided 
 
@@ -376,5 +376,5 @@ Dari materi tipe data ini, pembelajaran yang didapat adalah paham tentang berbag
 
 ## Referensi
 ####  Pratama, M. A. (2020, March 29). STRUKTUR DATA ARRAY DUA DIMENSI  PADA PEMROGRAMAN C++. 
-####  Putra, M. T. D., Munawir, M., & Yuniarti, A. R. (2023). BELAJAR PEMROGRAMAN LANJUT DENGAN C++.
+####  "The C++ Programming Language" oleh Bjarne Stroustrup (pencipta C++).
 ####  Wahyuni, Z. (2023, February 27). Makalah Dasar-dasar pemograman Komputer.
