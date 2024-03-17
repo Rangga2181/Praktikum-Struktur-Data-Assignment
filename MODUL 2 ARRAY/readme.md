@@ -188,7 +188,7 @@ int main()
 
 Program ini adalah fungsi untuk memisahkan elemen-elemen dari sebuah array menjadi dua array terpisah, yaitu array untuk elemen-elemen genap dan array untuk elemen-elemen ganjil. 
 
-### 2. Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya!
+### 2. Buatlah program Input array tiga dimensi (seperti pada guided) tetapi jumlah atau ukuran elemennya diinputkan oleh user!
 
 ```C++
 #include <iostream>
