@@ -4,24 +4,14 @@
 <p align="center">2311102200 / IF-11-E</p>
 
 ## Dasar Teori
-Array dalam bahasa C++ adalah sebuah struktur data yang digunakan untuk menyimpan sekumpulan data dengan tipe data yang sama. Setiap elemen array dapat diakses menggunakan indeks yang unik. Array sangat berguna dalam banyak kasus, seperti menyimpan daftar nilai, daftar nama, atau data lainnya.
+Linked list adalah struktur data dinamis yang terdiri dari serangkaian node, masing-masing berisi bidang data dan referensi (atau tautan) ke node berikutnya dalam urutan tersebut.[1]
 
-Berikut adalah penjelasan singkat tentang array dalam C++:
+Berikut adalah penjelasan singkat tentang Linked list dalam C++:
  
 
-#### 1. Deklarasi Array 
-Deklarasi array  adalah proses mendefinisikan sebuah variabel sebagai array dan menentukan ukuran atau panjang array tersebut. 
+#### 1. Single Linked List
 
 
-#### 2. Inisialisasi Array
-Inisialisasi array dalam C++ adalah proses memberikan nilai awal pada elemen-elemen array saat deklarasi atau setelah deklarasi.
- 
-
-#### 3. Mengakses Elemen Array
-Mengakses elemen array berarti mengambil atau memodifikasi nilai dari elemen tertentu dalam array tersebut. Untuk mengakses elemen array, Anda perlu menggunakan indeks yang sesuai dengan posisi elemen dalam array. Indeks array dalam C++ dimulai dari 0.
-
-#### 4. Ukuran Array
-Ukuran array mengacu pada jumlah maksimum elemen yang dapat disimpan dalam array tersebut. Ukuran array harus ditentukan saat deklarasi dan tidak dapat diubah selama runtime (waktu program berjalan).
 
 ## Guided 
 
