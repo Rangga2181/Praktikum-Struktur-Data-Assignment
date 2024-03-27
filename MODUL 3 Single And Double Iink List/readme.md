@@ -7,15 +7,16 @@
 Linked list adalah struktur data dinamis yang terdiri dari serangkaian node, masing-masing berisi bidang data dan referensi (atau tautan) ke node berikutnya dalam urutan tersebut.[1]
 
 Berikut adalah penjelasan singkat tentang Linked list dalam C++:
+####  Single Linked List
+"Single Linked List adalah daftar tertaut yang setiap simpulnya berisi satu bidang tautan yang menunjuk ke simpul berikutnya dalam daftar tertaut." [2] Dalam single linked list, setiap node hanya memiliki satu pointer yang menunjuk ke node berikutnya dalam daftar. Dengan kata lain, setiap node hanya menyimpan data dan alamat dari node berikutnya.
+
+#### Double linked List
+"Double linked list adalah daftar tertaut di mana setiap node berisi dua bidang tautan, satu menunjuk ke node berikutnya dan satu lagi menunjuk ke node sebelumnya." [2] Dalam double linked list, setiap node memiliki dua pointer: satu pointer menunjuk ke node berikutnya, dan satu pointer lagi menunjuk ke node sebelumnya. Dengan demikian, setiap node menyimpan data, alamat node berikutnya, dan alamat node sebelumnya. 
  
-
-#### 1. Single Linked List
-
-
 
 ## Guided 
 
-### 1. [Program Input Array Tiga Dimensi]
+### 1. [Latihan Single Linked List]
 ```C++
 #include <iostream>
 using namespace std;
@@ -323,10 +324,12 @@ int main()
 
 ```
 #### Output:
-![Guided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/40e0b9d5-09f4-41ac-80e2-3d5696fbe691)
-![Guided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/59e6b0b9-71a0-463d-b9ec-e8922a32a13d)
+![Guided 1 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/9105e70c-bb2c-4f06-b29a-3fa50a6afd4c)
+![Guided 1 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/6ab18de8-fe46-42ee-82b7-265326923514)
 
-Kode di atas, pengguna dapat memasukkan 18 elemen (2x3x3) untuk array 3 dimensi tersebut. Kemudian, program akan mencetak seluruh elemen array dalam dua format yang berbeda: format yang mudah dibaca dengan indeks yang jelas, dan format yang lebih sederhana hanya dengan menampilkan nilai elemen saja. 
+Kode di atas,merupakan program yang memberikan contoh implementasi dasar dari operasi-operasi utama pada Single Linked List Non-Circular, seperti menambahkan node, menghapus node, mengubah data node, dan menampilkan data dalam Linked List.
+
+
 
 ### 2. [Program Double Linked List ]
 ```C++
@@ -461,10 +464,10 @@ int main() {
 }
 ```
 #### Output:
-![Guided 2 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/3ac95a16-e44a-403f-a965-728b86f1781b)
-![Guided 2 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ce677a27-351e-4095-a3f0-f7e938ca1d81)
+![Guided 2 Output](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/8da875ac-b920-40a4-b51c-dda2b68f8783)
+![Guided 2 Full](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/2fb212f9-ec98-46ad-ba5e-b50f1b0df01d)
 
-Program ini adalah sebuah program C++ yang berfungsi untuk mencari nilai maksimum dari sebuah array dan menampilkan nilai maksimum serta lokasinya di dalam array tersebut. 
+Secara keseluruhan, program ini merupakan implementasi sederhana dari struktur data Double Linked List dalam C++ dengan berbagai operasi dasar seperti menambah, menghapus, mengubah, dan menampilkan data. Program ini juga menyediakan antarmuka teks sederhana untuk berinteraksi dengan Double Linked List.
 
 ## Unguided 
 
