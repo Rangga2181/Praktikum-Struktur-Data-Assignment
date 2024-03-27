@@ -472,9 +472,7 @@ Secara keseluruhan, program ini merupakan implementasi sederhana dari struktur d
 ## Unguided 
 
 ### 1. Soal mengenai Single Linked List
-Buatlah program menu Single Linked List Non-Circular untuk
-menyimpan Nama dan usia mahasiswa, dengan menggunakan inputan
-dari user. Lakukan operasi berikut:
+Buatlah program menu Single Linked List Non-Circular untuk menyimpan Nama dan usia mahasiswa, dengan menggunakan inputan dari user. Lakukan operasi berikut:
 ![Screenshot (48)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/63fe8797-1373-4826-bc3c-159946732ec8)
 
 
