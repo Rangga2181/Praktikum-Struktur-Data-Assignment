@@ -473,9 +473,9 @@ Secara keseluruhan, program ini merupakan implementasi sederhana dari struktur d
 
 ### 1. Soal mengenai Single Linked List
 Buatlah program menu Single Linked List Non-Circular untuk menyimpan Nama dan usia mahasiswa, dengan menggunakan inputan dari user. Lakukan operasi berikut:
+
+
 ![Screenshot (48)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/63fe8797-1373-4826-bc3c-159946732ec8)
-
-
 
 ```C++
 // RANGGA PRADARRELL FATHI
@@ -989,9 +989,9 @@ int main()
 ![Screenshot (58)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/d281171d-1883-4fbf-ac74-303e71bc52d9)
 ![Screenshot (57)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/051e9fdd-3488-44d5-b7c4-428008553bb2)
 ![Screenshot (56)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/0806f857-bfa5-461f-a072-24546533b062)
-
-#### Full code Screenshot:
 ![Screenshot (55)1](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/85329a40-f4b9-405e-aa18-b949324faa30)
+#### Full code Screenshot:
+![Screenshot (55)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/f5e29e8d-8bae-4236-9189-1fd492207f15)
 
 Program ini memberikan contoh implementasi struktur data Double Linked List dalam C++ untuk mengelola daftar produk pada sebuah toko skincare. Double Linked List memungkinkan operasi-operasi seperti menambah, menghapus, dan mengupdate data dilakukan dengan efisien karena setiap node memiliki pointer ke node sebelumnya dan node berikutnya.
 
