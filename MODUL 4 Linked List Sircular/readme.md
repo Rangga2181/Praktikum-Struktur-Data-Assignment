@@ -371,10 +371,10 @@ int main()
 ```
 
 #### Output :
-![Screenshot (2903)](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/d16f58bc-a710-4d26-bfa5-a421dfcbe01f)
+![318433553-d16f58bc-a710-4d26-bfa5-a421dfcbe01f](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/07631e6a-c6f3-4cbd-946f-cb49bdbba3b4)
 
-Program diatas memungkinkan penambahan, penghapusan, dan perubahan elemen di depan, di belakang, dan di tengah linked list. Pada awalnya, program mendefinisikan struktur Node yang berisi data dan pointer ke node selanjutnya. Kemudian, program menyediakan fungsi-fungsi untuk operasi dasar linked list, seperti penambahan, penghapusan, dan perubahan elemen. 
-Di dalam main(), serangkaian operasi tersebut dijalankan untuk menguji fungsi-fungsi tersebut, seperti menambahkan dan menghapus elemen di berbagai posisi, serta mengubah nilai elemen. Hasilnya ditampilkan setiap kali ada perubahan pada linked list.
+
+Program ini adalah implementasi struktur data Linked List Linier (tidak circular) dalam bahasa pemrograman C++. Linked List adalah struktur data linear yang terdiri dari serangkaian node, di mana setiap node berisi data dan referensi (pointer) ke node berikutnya dalam urutan. Secara keseluruhan, program ini memberikan contoh implementasi dasar dari Linked List Linier dalam C++, termasuk berbagai operasi yang dapat dilakukan pada struktur data tersebut.
 
 
 ### 2. Linked List Circular
@@ -682,10 +682,9 @@ int main()
 ```
 
 #### Output :
-![Screenshot (2904)](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/dc415993-d384-437b-b68b-052d38ee4c75)
+![318434701-dc415993-d384-437b-b68b-052d38ee4c75](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/d5526383-24e0-4d0d-a85e-af6cae8d6a11)
 
-Program ini mendefinisikan struktur Node yang memiliki dua atribut: data dan pointer ke node berikutnya. Kemudian, program menyediakan fungsi-fungsi untuk operasi dasar pada linked list, seperti penambahan dan penghapusan elemen di depan, di belakang, dan di tengah linked list. 
-Di dalam fungsi main(), serangkaian operasi tersebut dijalankan untuk menguji fungsi-fungsi tersebut. Misalnya, menambahkan elemen di depan dan di belakang, menghapus elemen di depan dan di belakang, serta menambahkan dan menghapus elemen di tengah. Setiap kali ada perubahan pada linked list, isi linked list ditampilkan.
+Program ini adalah implementasi struktur data Linked List Circular (melingkar) dalam bahasa pemrograman C++. Linked List Circular mirip dengan Linked List Linier, namun elemen terakhir (tail) menunjuk kembali ke elemen pertama (head), sehingga membentuk struktur melingkar. Secara keseluruhan, program ini memberikan contoh implementasi dasar dari Linked List Circular dalam C++, termasuk berbagai operasi yang dapat dilakukan pada struktur data tersebut.
 
 
 ## Unguided 
@@ -1111,7 +1110,8 @@ int main()
 #### Output:
 
 #### Tampilan Awal
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/6d3b92b9-bb7b-4fde-8322-e17139096249)
+ ![Screenshot (77)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/5b95d1d5-3c5d-414f-998f-011a9dab0059)
+
 
 #### Tampilan Operasi Tambah
 ![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/dfe4b3ab-dd19-408e-afbc-b9a58bc0ac2c)
@@ -1165,8 +1165,7 @@ int main()
 #### j) Tampilkan seluruh data
 ![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/da02a681-fc94-4846-bdbf-ca2a3ca1fc3d)
 
-Program di atas merupakan implementasi dari linked list circular. Kelas *LinkedListCircular* memiliki beberapa fungsi untuk operasi-operasi dasar pada linked list, seperti menambah, mengubah, dan menghapus data mahasiswa, serta menampilkan seluruh data mahasiswa. Setiap operasi tersebut dapat dilakukan di depan, di belakang, atau di tengah linked list.
-Di dalam *main()*, program menyediakan menu untuk pengguna agar dapat memilih operasi yang ingin dilakukan, seperti menambah, mengubah, atau menghapus data mahasiswa, serta menampilkan seluruh data mahasiswa. Pengguna dapat memilih menu sesuai kebutuhan, dan program akan menjalankan operasi yang dipilih. Selama program berjalan, data mahasiswa disimpan dalam linked list circular, yang artinya elemen terakhir terhubung kembali ke elemen pertama, membentuk lingkaran. Hal ini memungkinkan untuk melakukan traversing dari awal ke akhir linked list secara terus menerus.
+Program ini adalah implementasi struktur data Linked List Non-Circular (tidak melingkar) dalam bahasa pemrograman C++. Linked List ini digunakan untuk menyimpan data mahasiswa yang terdiri dari nama dan NIM (Nomor Induk Mahasiswa). Program menyediakan berbagai fungsi untuk melakukan operasi pada Linked List, seperti menambah data di depan, belakang, atau tengah, mengubah data di depan, belakang, atau tengah, menghapus data di depan, belakang, atau tengah, serta menghapus seluruh data dalam Linked List. Secara keseluruhan, program ini memberikan contoh implementasi dasar dari Linked List Non-Circular dalam C++ untuk mengelola data mahasiswa (nama dan NIM). Pengguna dapat melakukan berbagai operasi seperti menambah, mengubah, menghapus, dan menampilkan data dalam Linked List melalui menu yang disediakan.
 
 ## Kesimpulan
 Linked list circular merupakan varian dari struktur data linked list biasa. Perbedaannya adalah pada linked list circular, elemen terakhir terhubung kembali ke elemen pertama, sehingga membentuk lingkaran. Sementara pada linked list biasa, elemen terakhir menunjuk ke NULL.
