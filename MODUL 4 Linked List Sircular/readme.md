@@ -1109,61 +1109,79 @@ int main()
 
 #### Output:
 
-#### Tampilan Awal
+#### Tampilan Menu
  ![Screenshot (77)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/5b95d1d5-3c5d-414f-998f-011a9dab0059)
 
 
 #### Tampilan Operasi Tambah
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/dfe4b3ab-dd19-408e-afbc-b9a58bc0ac2c)
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/a4f479de-873a-4ab5-a542-d6c3cb70ee74)
+![Screenshot (78)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/04032ba3-abbc-4890-83b2-7e552ad63c54)
+![Screenshot (80)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/10bb7b26-dba2-4591-b9f9-e752dc8636b5)
+![Screenshot (83)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ac048583-030e-4668-9488-7b81af533d3c)
+
+
 
 #### Tampilan Operasi Hapus
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/5d40645e-e289-4775-b2ef-bf376bc4551d)
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/f0ab0956-3108-444e-926d-893633a7af85)
+![Screenshot (81)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/a90640d3-5616-4644-b3ac-68f4c51e3c19)
+![Screenshot (86)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/6efd6bac-1252-4cae-9176-fba9f4f05aa0)
+![Screenshot (88)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ebb76ee7-3d7f-481f-b1d9-113ad47c0d65)
+
 
 
 #### Tampilan Operasi Ubah
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/1d2b3cfe-58d2-488a-b9db-56f57bfdf89e)
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/6ef5c896-d475-4977-887c-02732c443ae2)
+![Screenshot (84)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/2baa9c4f-34c5-45bd-900d-917d8ad6938d)
+![Screenshot (85)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/10e1b9ff-416b-49ce-95f8-82cac55193bf)
+![Screenshot (87)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/b4dc2225-4b25-46fe-a65b-04774744ccf0)
+
 
 #### Tampilan Operasi Tampil Data
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/fa1d5a11-ab37-419c-8702-9264b42c07f8)
+![Screenshot (79)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/dbb93b3f-ee73-4b20-8533-835dd627a7e0)
+
 
 
 ### 2. Setelah membuat menu tersebut, masukkan data sesuai urutan berikut, lalu tampilkan data yang telah dimasukkan. (Gunakan insert depan, belakang atau tengah)
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/f41344b7-715a-48ea-9fce-2154944b2f32)
+![Screenshot (79)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/6f0ebcec-aeab-45fd-9095-a3fbaad04a95)
+
 
 ### 3. Lakukan perintah berikut:
 
 #### a) Tambah data Wati 2330004 diantara Farrel dan Denis
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/e1ba13bd-807c-48a2-8c67-2d04d2e89b60)
+![Screenshot (80)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ce540b93-012c-45ff-85f2-ccdd7e1e51b6)
+
 
 #### b) Hapus data Denis
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/fc7c07e9-672b-43b3-87d4-f0029cf80fc2)
+
+![Screenshot (81)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/78f49242-1bae-4546-b1fe-d530f23b495b)
 
 #### c) Tambahkan data berikut di awal: Owi 2330000
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/9113b6b0-d9b6-4f86-b803-022039c2ba21)
+![Screenshot (82)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ef65e080-c526-4b3d-af5e-db0f9aa3d71e)
 
 #### d) Tambahkan data berikut di akhir: David 2330010
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/927de6a2-58d2-4256-9470-5d21aed00375)
+![Screenshot (83)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/f6252f5e-d895-496a-92dd-8a9d4802574a)
+
 
 #### e) Ubah data Udin menjadi data berikut: Idin 23300045
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/d69f6314-6ac1-4171-82c4-04ca1e22fc18)
+![Screenshot (84)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/3ea8d958-4c45-4828-bf8b-b04bf1db09e0)
+
 
 #### f) Ubah data terkahir menjadi berikut: Lucy 23300101
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/4addcf01-8776-4d26-9cbb-703a5e45c8af)
+![Screenshot (85)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/989eb147-3290-4e1e-b36f-cdfaffb2664a)
+
 
 #### g) Hapus data awal
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/0f96b024-2afc-4ea3-a1d7-05bc102ca49d)
+![Screenshot (86)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/531dfde6-5bdf-4c02-839a-72039f4da21c)
+
 
 #### h) Ubah data awal menjadi berikut: Bagas 2330002
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/d909d038-07ff-4685-8682-b2cd6bee1076)
+![Screenshot (87)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/f2ba1392-b682-4206-87f8-31793500ea4c)
+
 
 #### i) Hapus data akhir
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/2f9bdb8c-b8c5-43c5-a42d-18a782bf4d16)
+![Screenshot (88)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/609913b9-087a-4ed5-8ffa-3652bace6f2c)
+
 
 #### j) Tampilkan seluruh data
-![image](https://github.com/andikaneviantoro/Struktur-Data-Assigment/assets/98001415/da02a681-fc94-4846-bdbf-ca2a3ca1fc3d)
+![Screenshot (89)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/4c112cad-8f39-4768-bd21-3c6e8d688e9c)
+
 
 Program ini adalah implementasi struktur data Linked List Non-Circular (tidak melingkar) dalam bahasa pemrograman C++. Linked List ini digunakan untuk menyimpan data mahasiswa yang terdiri dari nama dan NIM (Nomor Induk Mahasiswa). Program menyediakan berbagai fungsi untuk melakukan operasi pada Linked List, seperti menambah data di depan, belakang, atau tengah, mengubah data di depan, belakang, atau tengah, menghapus data di depan, belakang, atau tengah, serta menghapus seluruh data dalam Linked List. Secara keseluruhan, program ini memberikan contoh implementasi dasar dari Linked List Non-Circular dalam C++ untuk mengelola data mahasiswa (nama dan NIM). Pengguna dapat melakukan berbagai operasi seperti menambah, mengubah, menghapus, dan menampilkan data dalam Linked List melalui menu yang disediakan.
 
