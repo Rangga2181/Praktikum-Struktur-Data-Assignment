@@ -1,16 +1,17 @@
 # <h1 align="center">Laporan Praktikum Modul 4 - Linked list Circular</h1>
-<p align="center">Rangga Pradarrell Fathi - 2311102200</p>
+<p align="center">Rangga Pradarrell Fathi</p>
+  <P align="center">2311102200</p>
 <p align="center">IF - 11 - E</p>
 
 ## Dasar Teori
 
 ### Linked List Circular
 
-Linked List Circular adalah daftar tertaut yang semua nodenya terhubung membentuk lingkaran. Dalam daftar tertaut melingkar, simpul pertama dan simpul terakhir dihubungkan satu sama lain sehingga membentuk lingkaran. Tidak ada NULL di akhir. Umumnya ada dua jenis daftar tertaut melingkar:[1]
+linked list circular adalah variasi dari linked list di mana penunjuk berikutnya dari node terakhir menunjuk kembali ke node head. Hal ini menciptakan struktur circular, di mana list tersebut tidak memiliki awal atau akhir yang pasti. Dalam linked list non-circular, penunjuk berikutnya dari node terakhir disetel ke nol, yang menunjukkan akhir list.[1]
 
-*Daftar tertaut tunggal melingkar*: Dalam daftar tertaut tunggal melingkar, simpul terakhir dari daftar berisi penunjuk ke simpul pertama dari daftar. Kami melintasi daftar tertaut tunggal melingkar hingga kami mencapai simpul yang sama tempat kami memulai. Daftar tertaut tunggal melingkar tidak memiliki awal atau akhir. Tidak ada nilai null di bagian selanjutnya dari node mana pun.[1]
+*Single linked list sircular*: Dalam Single linked list sircular, node terakhir dari list berisi penunjuk ke node pertama dari list.[2] Melintasi Single linked list sircular hingga kita mencapai node yang sama tempat kami memulai. Single linked list sircular tidak memiliki awal atau akhir. Tidak ada nilai null di bagian selanjutnya dari node mana pun.
 
-*Daftar Tertaut Ganda Melingkar*: Daftar Tertaut Ganda Melingkar memiliki properti daftar tertaut ganda dan daftar tertaut melingkar di mana dua elemen berurutan dihubungkan atau dihubungkan oleh penunjuk sebelumnya dan berikutnya dan simpul terakhir menunjuk ke simpul pertama dengan penunjuk berikutnya dan juga simpul pertama menunjuk ke simpul terakhir dengan penunjuk sebelumnya.[1]
+*Double linked list sircular*:Double linked list sircular memiliki properti Double linked list dan  linked list sircular di mana dua elemen berurutan dihubungkan atau dihubungkan oleh penunjuk sebelumnya dan berikutnya dan node terakhir menunjuk ke node pertama dengan penunjuk berikutnya dan juga node pertama menunjuk ke node terakhir dengan penunjuk sebelumnya.[2]
 
 ### Linked List Non Circular
 
@@ -379,9 +380,6 @@ Di dalam main(), serangkaian operasi tersebut dijalankan untuk menguji fungsi-fu
 ### 2. Linked List Circular
 
 ```C++
-// Andika Neviantoro
-// 2311102167
-
 #include <iostream>
 
 using namespace std;
@@ -695,355 +693,416 @@ Di dalam fungsi main(), serangkaian operasi tersebut dijalankan untuk menguji fu
 ### 1. Buatlah menu untuk menambahkan, mengubah, menghapus, dan melihat Nama dan NIM mahasiswa, berikut contoh tampilan output dari nomor 1:
 
 ```C++
-//ANDIKA NEVIANTORO
-//2311102167
-
 #include <iostream>
-#include <string>
+#include <cstring>
 using namespace std;
 
-struct Mahasiswa {
-    string nama;
-    string nim;
-    Mahasiswa* next;
+// Struktur untuk node linked list
+struct Node
+{
+    string nama, nim;
+    Node *next;
 };
 
-class LinkedListCircular {
-private:
-    Mahasiswa* head;
+Node *head = NULL; // Pointer untuk head linked list
 
-public:
-    LinkedListCircular() {
-        head = nullptr;
+// Fungsi untuk menambahkan node baru di awal linked list
+void tambahDepan()
+{
+    cout << "\n ||Tambah Depan||" << endl;
+    cout << "" << endl;
+    string nama, nim;
+    cout << "Masukkan Nama: ";
+    getline(cin >> ws, nama);
+    cout << "Masukkan NIM: ";
+    getline(cin, nim);
+
+    Node *newNode = new Node;
+    newNode->nama = nama;
+    newNode->nim = nim;
+    newNode->next = head;
+    head = newNode;
+    cout << "" << endl;
+    cout << "Data telah ditambahkan" << endl;
+}
+
+// Fungsi untuk menambahkan node baru di akhir linked list
+void tambahBelakang()
+{
+    cout << "\n ||Tambah Belakang||" << endl;
+    cout << "" << endl;
+    string nama, nim;
+    cout << "Masukkan Nama: ";
+    getline(cin >> ws, nama);
+    cout << "Masukkan NIM: ";
+    getline(cin, nim);
+
+    Node *newNode = new Node;
+    newNode->nama = nama;
+    newNode->nim = nim;
+    newNode->next = NULL;
+
+    if (head == NULL)
+    {
+        head = newNode;
     }
-
-    // Menambahkan mahasiswa di depan
-    void tambahDepan(string nama, string nim) {
-        Mahasiswa* newMahasiswa = new Mahasiswa;
-        newMahasiswa->nama = nama;
-        newMahasiswa->nim = nim;
-
-        if (head == nullptr) {
-            head = newMahasiswa;
-            newMahasiswa->next = head;
-        } else {
-            Mahasiswa* last = head;
-            while (last->next != head) {
-                last = last->next;
-            }
-            newMahasiswa->next = head;
-            last->next = newMahasiswa;
-            head = newMahasiswa;
-        }
-        cout << "Mahasiswa berhasil ditambahkan di depan." << endl;
-    }
-
-    // Menambahkan mahasiswa di belakang
-    void tambahBelakang(string nama, string nim) {
-        Mahasiswa* newMahasiswa = new Mahasiswa;
-        newMahasiswa->nama = nama;
-        newMahasiswa->nim = nim;
-
-        if (head == nullptr) {
-            head = newMahasiswa;
-            newMahasiswa->next = head;
-        } else {
-            Mahasiswa* last = head;
-            while (last->next != head) {
-                last = last->next;
-            }
-            last->next = newMahasiswa;
-            newMahasiswa->next = head;
-        }
-        cout << "Mahasiswa berhasil ditambahkan di belakang." << endl;
-    }
-
-    // Menambahkan mahasiswa di tengah
-    void tambahTengah(string nama, string nim, int posisi) {
-        if (posisi <= 0) {
-            cout << "Posisi harus lebih dari 0." << endl;
-            return;
-        }
-        Mahasiswa* newMahasiswa = new Mahasiswa;
-        newMahasiswa->nama = nama;
-        newMahasiswa->nim = nim;
-
-        if (head == nullptr) {
-            head = newMahasiswa;
-            newMahasiswa->next = head;
-            cout << "Mahasiswa berhasil ditambahkan di tengah." << endl;
-            return;
-        }
-
-        Mahasiswa* temp = head;
-        int count = 1;
-        while (count < posisi - 1 && temp->next != head) {
-            temp = temp->next;
-            count++;
-        }
-
-        if (count < posisi - 1) {
-            cout << "Posisi terlalu besar." << endl;
-            return;
-        }
-
-        newMahasiswa->next = temp->next;
-        temp->next = newMahasiswa;
-        cout << "Mahasiswa berhasil ditambahkan di tengah." << endl;
-    }
-
-    // Ubah data mahasiswa di depan
-    void ubahDepan(string nama, string nim) {
-        if (head == nullptr) {
-            cout << "Linked List Kosong." << endl;
-            return;
-        }
-        head->nama = nama;
-        head->nim = nim;
-        cout << "Data mahasiswa di depan berhasil diubah." << endl;
-    }
-
-    // Ubah data mahasiswa di belakang
-    void ubahBelakang(string nama, string nim) {
-        if (head == nullptr) {
-            cout << "Linked List Kosong." << endl;
-            return;
-        }
-        Mahasiswa* temp = head;
-        while (temp->next != head) {
+    else
+    {
+        Node *temp = head;
+        while (temp->next != NULL)
+        {
             temp = temp->next;
         }
-        temp->nama = nama;
-        temp->nim = nim;
-        cout << "Data mahasiswa di belakang berhasil diubah." << endl;
+        temp->next = newNode;
     }
+    cout << "" << endl;
+    cout << "Data telah ditambahkan" << endl;
+}
 
-    // Ubah data mahasiswa di tengah
-    void ubahTengah(string nama, string nim, int posisi) {
-        if (head == nullptr) {
-            cout << "Linked List Kosong." << endl;
-            return;
-        }
-        Mahasiswa* temp = head;
-        int count = 1;
-        while (count < posisi && temp->next != head) {
-            temp = temp->next;
-            count++;
-        }
-        if (count != posisi) {
-            cout << "Posisi terlalu besar." << endl;
-            return;
-        }
-        temp->nama = nama;
-        temp->nim = nim;
-        cout << "Data mahasiswa di posisi " << posisi << " berhasil diubah." << endl;
-    }
-
-    // Hapus data mahasiswa di depan
-    void hapusDepan() {
-        if (head == nullptr) {
-            cout << "Linked List Kosong." << endl;
-            return;
-        }
-        if (head->next == head) {
-            delete head;
-            head = nullptr;
-        } else {
-            Mahasiswa* temp = head;
-            while (temp->next != head) {
-                temp = temp->next;
-            }
-            Mahasiswa* del = head;
-            head = head->next;
-            temp->next = head;
-            delete del;
-        }
-        cout << "Data mahasiswa di depan berhasil dihapus." << endl;
-    }
-
-    // Hapus data mahasiswa di belakang
-    void hapusBelakang() {
-        if (head == nullptr) {
-            cout << "Linked List Kosong." << endl;
-            return;
-        }
-        if (head->next == head) {
-            delete head;
-            head = nullptr;
-        } else {
-            Mahasiswa* temp = head;
-            Mahasiswa* prev = nullptr;
-            while (temp->next != head) {
-                prev = temp;
-                temp = temp->next;
-            }
-            prev->next = head;
-            delete temp;
-        }
-        cout << "Data mahasiswa di belakang berhasil dihapus." << endl;
-    }
-
-    // Hapus data mahasiswa di tengah
-    void hapusTengah(int posisi) {
-        if (head == nullptr) {
-            cout << "Linked List Kosong." << endl;
-            return;
-        }
-        if (posisi <= 0) {
-            cout << "Posisi harus lebih dari 0." << endl;
-            return;
-        }
-        Mahasiswa* temp = head;
-        Mahasiswa* prev = nullptr;
-        int count = 1;
-        while (count < posisi && temp->next != head) {
-            prev = temp;
-            temp = temp->next;
-            count++;
-        }
-        if (count != posisi) {
-            cout << "Posisi terlalu besar." << endl;
-            return;
-        }
-        if (temp == head) {
-            hapusDepan();
-            return;
-        }
-        prev->next = temp->next;
-        delete temp;
-        cout << "Data mahasiswa di posisi " << posisi << " berhasil dihapus." << endl;
-    }
-
-    // Hapus semua data mahasiswa
-    void hapusList() {
-        if (head == nullptr) {
-            cout << "Linked List Kosong" << endl;
-            return;
-        }
-        Mahasiswa* current = head;
-        Mahasiswa* next = nullptr;
-        while (current->next != head) {
-            next = current->next;
-            delete current;
-            current = next;
-        }
-        delete current;
-        head = nullptr;
-        cout << "Semua data mahasiswa berhasil dihapus." << endl;
-    }
-
-    // Menampilkan daftar mahasiswa
-    void tampilkan() {
-        if (head == nullptr) {
-            cout << "Linked List Kosong." << endl;
-            return;
-        }
-        Mahasiswa* temp = head;
-        do {
-            cout << "Nama: " << temp->nama << ", NIM: " << temp->nim << endl;
-            temp = temp->next;
-        } while (temp != head);
-    }
-};
-
-int main() {
-    LinkedListCircular list;
-    int choice;
+// Fungsi untuk menambahkan node baru di tengah linked list
+void tambahTengah()
+{
+    cout << "\n ||Tambah Tengah||" << endl;
+    cout << "" << endl;
     string nama, nim;
     int posisi;
+    cout << "Masukkan Nama: ";
+    getline(cin >> ws, nama);
+    cout << "Masukkan NIM: ";
+    getline(cin, nim);
+    cout << "Masukkan Posisi: ";
+    cin >> posisi;
 
-    do {
-        cout << "------------------------------";
-        cout << "\nLIST DATA DAN NIM MAHASISWA\n";
-        cout << "------------------------------\n";
-        cout << "Menu :\n";
-        cout << "1. Tambah Depan\n";
-        cout << "2. Tambah Belakang\n";
-        cout << "3. Tambah Tengah\n";
-        cout << "4. Ubah Depan\n";
-        cout << "5. Ubah Belakang\n";
-        cout << "6. Ubah Tengah\n";
-        cout << "7. Hapus Depan\n";
-        cout << "8. Hapus Belakang\n";
-        cout << "9. Hapus Tengah\n";
-        cout << "10. Hapus List\n";
-        cout << "11. Tampilkan Data\n";
-        cout << "0. Keluar\n";
-        cout << "Pilih Operasi: ";
-        cin >> choice;
+    Node *newNode = new Node;
+    newNode->nama = nama;
+    newNode->nim = nim;
 
-        switch (choice) {
-            case 1:
-                cout << "Masukkan Nama: ";
-                cin >> nama;
-                cout << "Masukkan NIM: ";
-                cin >> nim;
-                list.tambahDepan(nama, nim);
-                break;
-            case 2:
-                cout << "Masukkan Nama: ";
-                cin >> nama;
-                cout << "Masukkan NIM: ";
-                cin >> nim;
-                list.tambahBelakang(nama, nim);
-                break;
-            case 3:
-                cout << "Masukkan Nama: ";
-                cin >> nama;
-                cout << "Masukkan NIM: ";
-                cin >> nim;
-                cout << "Masukkan Posisi: ";
-                cin >> posisi;
-                list.tambahTengah(nama, nim, posisi);
-                break;
-            case 4:
-                cout << "Masukkan Nama: ";
-                cin >> nama;
-                cout << "Masukkan NIM: ";
-                cin >> nim;
-                list.ubahDepan(nama, nim);
-                break;
-            case 5:
-                cout << "Masukkan Nama: ";
-                cin >> nama;
-                cout << "Masukkan NIM: ";
-                cin >> nim;
-                list.ubahBelakang(nama, nim);
-                break;
-            case 6:
-                cout << "Masukkan Nama: ";
-                cin >> nama;
-                cout << "Masukkan NIM: ";
-                cin >> nim;
-                cout << "Masukkan Posisi: ";
-                cin >> posisi;
-                list.ubahTengah(nama, nim, posisi);
-                break;
-            case 7:
-                list.hapusDepan();
-                break;
-            case 8:
-                list.hapusBelakang();
-                break;
-            case 9:
-                cout << "Masukkan Posisi: ";
-                cin >> posisi;
-                list.hapusTengah(posisi);
-                break;
-            case 10:
-                list.hapusList();
-                break;
-            case 11:
-                list.tampilkan();
-                break;
-            case 0:
-                cout << "Terima kasih:)" << endl;
-                break;
-            default:
-                cout << "Maaf, pilihan tidak valid." << endl;
-                break;
+    if (posisi == 1)
+    {
+        newNode->next = head;
+        head = newNode;
+    }
+    else
+    {
+        Node *temp = head;
+        for (int i = 1; i < posisi - 1; i++)
+        {
+            if (temp == NULL)
+            {
+                cout << "Posisi tidak valid" << endl;
+                return;
+            }
+            temp = temp->next;
         }
-    } while (choice != 0);
+        if (temp == NULL)
+        {
+            cout << "Posisi tidak valid" << endl;
+            return;
+        }
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+    cout << "" << endl;
+    cout << "Data telah ditambahkan" << endl;
+}
+
+// Fungsi untuk mengubah data node di awal linked list
+void ubahDepan()
+{
+    cout << "\n ||Ubah Depan||" << endl;
+    cout << "" << endl;
+    if (head == NULL)
+    {
+        cout << "Linked list kosong" << endl;
+        return;
+    }
+
+    string nama, nim;
+    cout << "Masukkan nama baru: ";
+    getline(cin >> ws, nama);
+    cout << "Masukkan NIM baru: ";
+    getline(cin, nim);
+
+    head->nama = nama;
+    head->nim = nim;
+
+    cout << "" << endl;
+    cout << "Data " << nama << " telah diubah" << endl;
+}
+
+// Fungsi untuk mengubah data node di akhir linked list
+void ubahBelakang()
+{
+    cout << "" << endl;
+    cout << "\n ||Ubah Belakang||" << endl;
+    if (head == NULL)
+    {
+        cout << "Linked list kosong" << endl;
+        return;
+    }
+
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    string nama, nim;
+    cout << "Masukkan nama baru: ";
+    getline(cin >> ws, nama);
+    cout << "Masukkan NIM baru: ";
+    getline(cin, nim);
+
+    temp->nama = nama;
+    temp->nim = nim;
+
+    cout << "" << endl;
+    cout << "Data " << nama << " telah diubah" << endl;
+}
+
+// Fungsi untuk mengubah data node di tengah linked list
+void ubahTengah()
+{
+    cout << "\n ||Ubah Tengah||" << endl;
+    cout << "" << endl;
+    if (head == NULL)
+    {
+        cout << "Linked list kosong" << endl;
+        return;
+    }
+
+    int posisi;
+    cout << "Masukkan posisi: ";
+    cin >> posisi;
+
+    Node *temp = head;
+    for (int i = 1; i < posisi; i++)
+    {
+        if (temp == NULL)
+        {
+            cout << "Posisi tidak valid" << endl;
+            return;
+        }
+        temp = temp->next;
+    }
+
+    if (temp == NULL)
+    {
+        cout << "Posisi tidak valid" << endl;
+        return;
+    }
+
+    string nama, nim;
+    cout << "Masukkan nama baru: ";
+    getline(cin >> ws, nama);
+    cout << "Masukkan NIM baru: ";
+    getline(cin, nim);
+
+    temp->nama = nama;
+    temp->nim = nim;
+
+    cout << "" << endl;
+    cout << "Data " << nama << " telah diubah" << endl;
+}
+
+// Fungsi untuk menghapus node di awal linked list
+void hapusDepan()
+{
+    cout << "\n ||Hapus Depan||" << endl;
+    cout << "" << endl;
+    if (head == NULL)
+    {
+        cout << "Linked list kosong" << endl;
+        return;
+    }
+    Node *temp = head;
+    head = head->next;
+    delete temp;
+
+    cout << "" << endl;
+    cout << "Data depan telah dihapus" << endl;
+}
+
+// Fungsi untuk menghapus node di akhir linked list
+void hapusBelakang()
+{
+    cout << "\n ||Hapus Belakang||" << endl;
+    cout << "" << endl;
+    if (head == NULL)
+    {
+        cout << "Linked list kosong" << endl;
+        return;
+    }
+
+    if (head->next == NULL)
+    {
+        delete head;
+        head = NULL;
+        cout << "Data telah dihapus" << endl;
+        return;
+    }
+
+    Node *temp = head;
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    Node *deleteNode = temp->next;
+    temp->next = NULL;
+    delete deleteNode;
+
+    cout << "" << endl;
+    cout << "Data akhir telah dihapus" << endl;
+}
+
+// Fungsi untuk menghapus node di tengah linked list
+void hapusTengah()
+{
+    cout << "\n ||Hapus Tengah||" << endl;
+    cout << "" << endl;
+    if (head == NULL)
+    {
+        cout << "Linked list kosong" << endl;
+        return;
+    }
+
+    int posisi;
+    cout << "Masukkan posisi: ";
+    cin >> posisi;
+
+    if (posisi == 1)
+    {
+        Node *temp = head;
+        head = head->next;
+        delete temp;
+        cout << "Data telah dihapus" << endl;
+        return;
+    }
+
+    Node *temp = head;
+    for (int i = 1; i < posisi - 1; i++)
+    {
+        if (temp == NULL)
+        {
+            cout << "Posisi tidak valid" << endl;
+            return;
+        }
+        temp = temp->next;
+    }
+
+    if (temp == NULL || temp->next == NULL)
+    {
+        cout << "Posisi tidak valid" << endl;
+        return;
+    }
+
+    Node *deleteNode = temp->next;
+    temp->next = temp->next->next;
+    delete deleteNode;
+
+    cout << "" << endl;
+    cout << "Data ke-" << posisi << " telah dihapus" << endl;
+}
+
+// Fungsi untuk menghapus seluruh data dalam linked list
+void hapusSeluruhData()
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        Node *deleteNode = temp;
+        temp = temp->next;
+        delete deleteNode;
+    }
+    head = NULL;
+    cout << "Seluruh data telah dihapus" << endl;
+}
+
+// Fungsi untuk menampilkan seluruh data dalam linked list
+void tampilkanData()
+{
+    Node *temp = head;
+    cout << "DATA MAHASISWA" << endl;
+    cout << "|| NAMA "
+         << "  |  "
+         << "NIM"
+         << "\t ||"
+         << "\n"
+         << endl;
+    while (temp != NULL)
+    {
+        cout << temp->nama << "\t  |" << temp->nim << endl;
+        temp = temp->next;
+    }
+}
+
+int main()
+{
+    int pilihan;
+    do
+    {
+        cout << "\n||PROGAM SINGLE LINKED LIST NON-CIRCULAR||"
+             << "\n"
+             << endl;
+        cout << "Tampilan Menu:" << endl;
+        cout << "1. Tambah Depan" << endl;
+        cout << "2. Tambah Belakang" << endl;
+        cout << "3. Tambah Tengah" << endl;
+        cout << "4. Ubah Depan" << endl;
+        cout << "5. Ubah Belakang" << endl;
+        cout << "6. Ubah Tengah" << endl;
+        cout << "7. Hapus Depan" << endl;
+        cout << "8. Hapus Belakang" << endl;
+        cout << "9. Hapus Tengah" << endl;
+        cout << "10. Hapus List" << endl;
+        cout << "11. TAMPILKAN" << endl;
+        cout << "0. KELUAR" << endl;
+        cout << "Pilih Operasi: ";
+        cin >> pilihan;
+
+        switch (pilihan)
+        {
+        case 1:
+            tambahDepan();
+            break;
+        case 2:
+            tambahBelakang();
+            break;
+        case 3:
+            tambahTengah();
+            break;
+        case 4:
+            ubahDepan();
+            break;
+        case 5:
+            ubahBelakang();
+            break;
+        case 6:
+            ubahTengah();
+            break;
+        case 7:
+            hapusDepan();
+            break;
+        case 8:
+            hapusBelakang();
+            break;
+        case 9:
+            hapusTengah();
+            break;
+        case 10:
+            hapusSeluruhData();
+            break;
+        case 11:
+            tampilkanData();
+            break;
+        case 0:
+            cout << "Terima kasih!" << endl;
+            break;
+        default:
+            cout << "Pilihan tidak valid" << endl;
+        }
+    } while (pilihan != 0);
 
     return 0;
 }
@@ -1113,8 +1172,7 @@ Di dalam *main()*, program menyediakan menu untuk pengguna agar dapat memilih op
 Linked list circular melingkar adalah varian dari struktur data linked list yang memiliki sifat khusus di mana elemen terakhir terhubung kembali ke elemen pertama, membentuk sebuah lingkaran. Hal ini berbeda dengan linked list biasa yang memiliki elemen terakhir yang menunjuk ke NULL. Linked list circular memiliki keunggulan utama yaitu kemampuannya untuk melakukan traversing dari awal ke akhir linked list secara terus menerus tanpa harus kembali ke elemen pertama. Hal ini memungkinkan pengolahan data yang lebih efisien dalam beberapa kasus penggunaan, terutama ketika diperlukan akses berulang terhadap seluruh elemen dalam linked list. Linked list circular juga memiliki kemiripan dengan linked list ganda (double linked list) dalam hal sifat melingkar. Namun, linked list circular hanya memiliki satu pointer next untuk setiap elemen, sementara linked list ganda memiliki dua pointer (next dan prev) yang menghubungkan setiap elemen dengan elemen sebelum dan sesudahnya. Meskipun demikian, linked list circular juga memiliki kelemahan, seperti kompleksitas dalam penanganan kasus khusus, seperti menemukan elemen terakhir atau melakukan operasi pada elemen terakhir. Selain itu, kesalahan dalam implementasi operasi tambah dan hapus elemen dapat mengakibatkan terjadinya looping tak terbatas. Dengan demikian, penggunaan linked list circular melingkar harus dipertimbangkan dengan cermat sesuai dengan kebutuhan aplikasi dan karakteristik data yang diolah. Kelebihan dan kelemahan dari struktur data ini perlu dipahami dengan baik agar dapat memanfaatkannya secara efektif dalam pengembangan perangkat lunak.
 
 ## Referensi
-[1] "Pengantar Daftar Tertaut Melingkar" GeeksforGeeks, 2023.
-https://www.geeksforgeeks.org/circular-linked-list/
+[1] Malik, D. S. (2010). Struktur Data penggunaan C++. 
 
-[2] "Struktur Data Linked List: Pengertian, Karakteristik, dan Jenis-jenisnya" Trivusi. 2022
-https://www.trivusi.web.id/2022/07/struktur-data-linked-list.html
+[2] Drozdek, A. (2005). Struktur data dan algoritma dalam C++.
+
