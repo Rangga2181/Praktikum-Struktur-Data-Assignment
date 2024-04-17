@@ -21,38 +21,33 @@ Selanjutnya, Hash table adalah struktur data yang efisien untuk menyimpan dan me
 -unordered_map menyediakan operasi-operasi hash table seperti penyisipan, pencarian, dan penghapusan elemen.
 
 ### Operasi Hash Table
-1.
-Insertion:
+1. Insertion:
 
 Memasukkan data baru ke dalam hash table dengan memanggil fungsi
 hash untuk menentukan posisi bucket yang tepat, dan kemudian
 menambahkan data ke bucket tersebut.
 
-2.
-Deletion:
+2. Deletion:
 
 Menghapus data dari hash table dengan mencari data menggunakan
 fungsi hash, dan kemudian menghapusnya dari bucket yang sesuai.
 
-3.
-Searching:
+3. Searching:
 
 Mencari data dalam hash table dengan memasukkan input kunci ke
 fungsi hash untuk menentukan posisi bucket, dan kemudia n mencari
 data di dalam bucket yang sesuai.
 
-4.
-Update:
+4. Update:
 
 Memperbarui data dalam hash table dengan mencari data
 menggunakan fungsi hash, dan kemudian memperbarui data yang
 ditemukan.
 
-5.
-Traversal:
+5. Traversal:
 
 Melalui seluruh hash table untuk memproses semua data yang ada
-dalam tabel
+dalam tabel.
    
 ## Guided 
 
