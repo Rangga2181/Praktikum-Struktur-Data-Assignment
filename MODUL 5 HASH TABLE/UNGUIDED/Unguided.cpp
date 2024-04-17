@@ -1,81 +1,220 @@
+// Rangga Pradarrell Fathi
+// 2311102200
+
 #include <iostream>
-#include <unordered_map>
-#include <string>
+#include <vector>
 
 using namespace std;
-int main()
+
+// Ukuran Hash table
+const int TABLE_SIZE = 100;
+
+// Struktur data untuk Mahasiswa
+struct Mahasiswa
 {
-    // Buat hash table untuk menyimpan data mahasiswa
-    unordered_map<string, double> student_records;
-
-    // a. Setiap mahasiswa memiliki NIM dan nilai
+    string nama;
     string nim;
-    double score;
+    int nilai;
+};
 
-    // b. Program memiliki tampilan pilihan menu berisi poin C
-    char choice;
-    do
+class HashTable
+{
+private:
+    vector<Mahasiswa> *table;
+
+    // Fungsi hash sederhana untuk menghasilkan indeks dari NIM
+    int hashFunction(const string &nim)
     {
-        cout << "Menu:\n";
-        cout << "a. Tambah data mahasiswa\n";
-        cout << "b. Tampilkan data mahasiswa\n";
-        cout << "c. Ubah data mahasiswa\n";
-        cout << "d. Keluar\n";
-        cout << "Pilihan: ";
-        cin >> choice;
-
-        switch (choice)
+        int sum = 0;
+        for (char c : nim)
         {
-        case 'a':
-            // c. Implementasikan fungsi untuk menambahkan data baru, menghapus data,
-            // mencari data berdasarkan NIM, dan mencari data berdasarkan rentang nilai
-            cout << "Masukkan NIM: ";
-            cin >> nim;
-            cout << "Masukkan nilai: ";
-            cin >> score;
-            student_records[nim] = score;
-            cout << "Data mahasiswa berhasil ditambahkan.\n";
-            break;
-        case 'b':
-            // Tampilkan semua data mahasiswa
-            if (student_records.empty())
+            sum += c;
+        }
+        return sum % TABLE_SIZE;
+    }
+
+public:
+    // Konstruktor
+    HashTable()
+    {
+        table = new vector<Mahasiswa>[TABLE_SIZE];
+    }
+
+    // Destruktor
+    ~HashTable()
+    {
+        delete[] table;
+    }
+
+    // Fungsi untuk menambahkan data mahasiswa baru
+    void tambahMahasiswa(string nama, string nim, int nilai)
+    {
+        Mahasiswa mhs;
+        mhs.nama = nama;
+        mhs.nim = nim;
+        mhs.nilai = nilai;
+
+        int index = hashFunction(nim);
+        table[index].push_back(mhs);
+    }
+
+    // Fungsi untuk menampilkan seluruh data mahasiswa
+    void tampilkanSeluruhData()
+    {
+        cout << ">>>> DATA MAHASISWA <<<<" << endl;
+        cout << "No\tNAMA\t\tNIM\t\tNILAI" << endl;
+        int nomor = 1;
+        for (int i = 0; i < TABLE_SIZE; ++i)
+        {
+            for (const Mahasiswa &mhs : table[i])
             {
-                cout << "Belum ada data mahasiswa.\n";
+                cout << nomor++ << "\t" << mhs.nama << "\t" << mhs.nim << "\t" << mhs.nilai << endl;
             }
-            else
+        }
+    }
+
+    // Fungsi untuk mencari data mahasiswa berdasarkan NIM
+    Mahasiswa *cariMahasiswaNIM(const string &nim)
+    {
+        int index = hashFunction(nim);
+        for (int i = 0; i < table[index].size(); ++i)
+        {
+            if (table[index][i].nim == nim)
             {
-                cout << "Data mahasiswa:\n";
-                for (const auto &[nim, score] : student_records)
+                return &table[index][i];
+            }
+        }
+        return nullptr;
+    }
+
+    // Fungsi untuk mencari data mahasiswa berdasarkan rentang nilai (80 - 90)
+    vector<Mahasiswa *> cariMahasiswaNilai()
+    {
+        vector<Mahasiswa *> hasil;
+        for (int i = 0; i < TABLE_SIZE; ++i)
+        {
+            for (int j = 0; j < table[i].size(); ++j)
+            {
+                if (table[i][j].nilai >= 80 && table[i][j].nilai <= 90)
                 {
-                    cout << "NIM: " << nim << ", Nilai: " << score << "\n";
+                    hasil.push_back(&table[i][j]);
                 }
             }
-            break;
+        }
+        return hasil;
+    }
 
-        case 'c':
-            // Ubah data mahasiswa berdasarkan NIM
-            cout << "Masukkan NIM: ";
-            cin >> nim;
-            if (student_records.count(nim) > 0)
+    void tampilkanMahasiswaNilai()
+    {
+        vector<Mahasiswa *> mahasiswas = cariMahasiswaNilai();
+        cout << ">>>>> DATA MAHASISWA DENGAN NILAI 80-90 <<<<<" << endl;
+        cout << "No\tNAMA\t\tNIM\t\tNilai" << endl;
+        int nomor = 1;
+        for (Mahasiswa *mhs : mahasiswas)
+        {
+            cout << nomor++ << "\t" << mhs->nama << "\t" << mhs->nim << "\t" << mhs->nilai << endl;
+        }
+    }
+
+    // Fungsi untuk menghapus data mahasiswa berdasarkan NIM
+    void hapusMahasiswa(const string &nim)
+    {
+        int index = hashFunction(nim);
+        for (int i = 0; i < table[index].size(); ++i)
+        {
+            if (table[index][i].nim == nim)
             {
-                cout << "Masukkan nilai baru: ";
-                cin >> score;
-                student_records[nim] = score;
-                cout << "Data mahasiswa berhasil diubah.\n";
+                table[index].erase(table[index].begin() + i);
+                return;
+            }
+        }
+    }
+};
+
+// Fungsi untuk menampilkan menu dan meminta input dari pengguna
+void tampilkanMenu()
+{
+    cout << "===== ||M E N U|| =====" << endl;
+    cout << "|1| Tambah Data Mahasiswa" << endl;
+    cout << "|2| Tampilkan Seluruh Data Mahasiswa" << endl;
+    cout << "|3| Cari Data Mahasiswa berdasarkan NIM" << endl;
+    cout << "|4| Cari Data Mahasiswa berdasarkan Rentang Nilai (80 - 90)" << endl;
+    cout << "|5| Hapus Data Mahasiswa" << endl;
+    cout << "|6| Keluar" << endl;
+    cout << "Pilih opsi: ";
+}
+
+int main()
+{
+    HashTable hashTable;
+
+    int opsi;
+    do
+    {
+        tampilkanMenu();
+        cin >> opsi;
+
+        switch (opsi)
+        {
+        case 1:
+        {
+            string nama, nim;
+            int nilai;
+            cout << "Masukkan nama mahasiswa: ";
+            cin.ignore();
+            getline(cin, nama);
+            cout << "Masukkan NIM mahasiswa: ";
+            cin >> nim;
+            cout << "Masukkan nilai mahasiswa: ";
+            cin >> nilai;
+            hashTable.tambahMahasiswa(nama, nim, nilai);
+            cout << "Mahasiswa berhasil ditambahkan." << endl;
+            break;
+        }
+        case 2:
+        {
+            hashTable.tampilkanSeluruhData();
+            break;
+        }
+        case 3:
+        {
+            string nim;
+            cout << "Masukkan NIM mahasiswa yang ingin dicari: ";
+            cin >> nim;
+            Mahasiswa *mhs = hashTable.cariMahasiswaNIM(nim);
+            if (mhs != nullptr)
+            {
+                cout << "Data Mahasiswa ditemukan dengan \nNama: " << mhs->nama << "\nNIM: " << mhs->nim << "\nNilai: " << mhs->nilai << endl;
             }
             else
             {
-                cout << "Data mahasiswa dengan NIM " << nim << " tidak ditemukan.\n";
+                cout << "Data Mahasiswa tidak ditemukan." << endl;
             }
             break;
-        case 'd':
-            cout << "Terima kasih, program selesai.\n";
-            break;
-        default:
-            cout << "Pilihan tidak valid, silakan coba lagi.\n";
+        }
+        case 4:
+        {
+            hashTable.tampilkanMahasiswaNilai();
             break;
         }
-    } while (choice != 'd');
+        case 5:
+        {
+            string nim;
+            cout << "Masukkan NIM Mahasiswa yang akan dihapus: ";
+            cin >> nim;
+            hashTable.hapusMahasiswa(nim);
+            cout << "Data Mahasiswa berhasil dihapus." << endl;
+            break;
+        }
+        case 6:
+            cout << "Keluar dari program." << endl;
+            break;
+        default:
+            cout << "Opsi tidak valid. Silakan pilih lagi." << endl;
+        }
+
+        cout << endl;
+    } while (opsi != 6);
 
     return 0;
 }
