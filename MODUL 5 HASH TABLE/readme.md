@@ -169,319 +169,131 @@ int main()
 Kode di atas menggunakan array dinamis “table” untuk menyimpan bucket dalam hash table. Setiap bucket diwakili oleh sebuah linked list dengan setiap node merepresentasikan satu item data. Fungsi hash sederhana hanya menggunakan modulus untuk memetakan setiap input kunci ke nilai indeks array.
 
 
-### 2. Linked List Circular
+### 2.
 
 ```C++
 #include <iostream>
-
+#include <string>
+#include <vector>
 using namespace std;
-
-
-// program single linked list circular
-
-// deklarasi struct node
-struct Node
+const int TABLE_SIZE = 11;
+string name;
+string phone_number;
+class HashNode
 {
-    string data;
-    Node *next;
+public:
+    string name;
+    string phone_number;
+    HashNode(string name, string phone_number)
+    {
+        this->name = name;
+        this->phone_number = phone_number;
+    }
 };
-
-Node *head, *tail, *baru, *bantu, *hapus;
-
-void init()
+class HashMap
 {
-    head = NULL;
-    tail = head;
-}
+private:
+    vector<HashNode *> table[TABLE_SIZE];
 
-// pengecekan
-bool isEmpty()
-{
-    if (head == NULL)
+public:
+    int hashFunc(string key)
     {
-        return 1; // true
-    }
-    else
-    {
-        return 0; // false
-    }
-}
-
-// buat node baru
-void buatNode(string data)
-{
-    baru = new Node;
-    baru->data = data;
-    baru->next = NULL;
-}
-
-// hitung list
-int hitungList()
-{
-    bantu = head;
-    int jumlah = 0;
-
-    while (bantu != NULL)
-    {
-        jumlah++;
-        bantu = bantu->next;
-    }
-
-    return jumlah;
-}
-
-// tambah depan
-void insertDepan(string data)
-{
-    // buat node baru
-    buatNode(data);
-
-    if (isEmpty())
-    {
-        head = baru;
-        tail = head;
-        baru->next = head;
-    }
-    else
-    {
-        while (tail->next != head)
+        int hash_val = 0;
+        for (char c : key)
         {
-            tail = tail->next;
+            hash_val += c;
         }
-
-        baru->next = head;
-        head = baru;
-        tail->next = head;
+        return hash_val % TABLE_SIZE;
     }
-}
-
-// tambah belakan
-void insertBelakang(string data)
-{
-    // buat node baru
-    buatNode(data);
-
-    if (isEmpty())
+    void insert(string name, string phone_number)
     {
-        head = baru;
-        tail = head;
-        tail->next = head;
-    }
-    else
-    {
-        while (tail->next != head)
+        int hash_val = hashFunc(name);
+        for (auto node : table[hash_val])
         {
-            tail = tail->next;
-        }
-
-        tail->next = baru;
-        baru->next = head;
-        tail = baru;
-    }
-}
-
-// tambah tengah
-void insertTengah(string data, int posisi)
-{
-    if (isEmpty())
-    {
-        head = baru;
-        tail = head;
-        baru->next = head;
-    }
-    else
-    {
-        baru->data = data;
-
-        // transversing
-        int nomor = 1;
-        bantu = head;
-
-        while (nomor < posisi - 1)
-        {
-            bantu = bantu->next;
-            nomor++;
-        }
-
-        baru->next = bantu->next;
-        bantu->next = baru;
-    }
-}
-
-// hapus depan
-void hapusDepan()
-{
-    if (!isEmpty())
-    {
-        hapus = head;
-        tail = head;
-
-        if (hapus->next == head)
-        {
-            head = NULL;
-            tail = NULL;
-
-            delete hapus;
-        }
-        else
-        {
-            while (tail->next != hapus)
+            if (node->name == name)
             {
-                tail = tail->next;
+                node->phone_number = phone_number;
+                return;
             }
-
-            head = head->next;
-            tail->next = head;
-            hapus->next = NULL;
-
-            delete hapus;
         }
+        table[hash_val].push_back(new HashNode(name,
+                                               phone_number));
     }
-    else
+    void remove(string name)
     {
-        cout << "List masih kosong!" << endl;
-    }
-}
-
-// hapus belakang
-void hapusBelakang()
-{
-    if (!isEmpty())
-    {
-        hapus = head;
-        tail = head;
-
-        if (hapus->next == head)
+        int hash_val = hashFunc(name);
+        for (auto it = table[hash_val].begin(); it !=
+                                                table[hash_val].end();
+             it++)
         {
-            head = NULL;
-            tail = NULL;
-
-            delete hapus;
-        }
-        else
-        {
-            while (hapus->next != head)
+            if ((*it)->name == name)
             {
-                hapus = hapus->next;
+                table[hash_val].erase(it);
+                return;
             }
-
-            while (tail->next != hapus)
+        }
+    }
+    string searchByName(string name)
+    {
+        int hash_val = hashFunc(name);
+        for (auto node : table[hash_val])
+        {
+            if (node->name == name)
             {
-                tail = tail->next;
+                return node->phone_number;
             }
-
-            tail->next = head;
-            hapus->next = NULL;
-
-            delete hapus;
+        }
+        return "";
+    }
+    void print()
+    {
+        for (int i = 0; i < TABLE_SIZE; i++)
+        {
+            cout << i << ": ";
+            for (auto pair : table[i])
+            {
+                if (pair != nullptr)
+                {
+                    cout << "[" << pair->name << ", " << pair->phone_number << "]";
+                }
+            }
+            cout << endl;
         }
     }
-    else
-    {
-        cout << "List masih kosong!" << endl;
-    }
-}
-
-// hapus tengah
-void hapusTengah(int posisi)
-{
-    if (!isEmpty())
-    {
-        // transversing
-        int nomor = 1;
-        bantu = head;
-
-        while (nomor < posisi - 1)
-        {
-            bantu = bantu->next;
-            nomor++;
-        }
-
-        hapus = bantu->next;
-        bantu->next = hapus->next;
-
-        delete hapus;
-    }
-    else
-    {
-        cout << "List masih kosong!" << endl;
-    }
-}
-
-// hapus list
-void clearList()
-{
-    if (head != NULL)
-    {
-        hapus = head->next;
-
-        while (hapus != head)
-        {
-            bantu = hapus->next;
-            delete hapus;
-            hapus = bantu;
-        }
-
-        delete head;
-        head = NULL;
-    }
-
-    cout << "List berhasil terhapus!" << endl;
-}
-
-// tampilkan list
-void tampil()
-{
-    if (!isEmpty())
-    {
-        tail = head;
-        do
-        {
-            cout << tail->data << ends;
-            tail = tail->next;
-        } while (tail != head);
-
-        cout << endl;
-    }
-    else
-    {
-        cout << "List masih kosong!" << endl;
-    }
-}
+};
 
 int main()
 {
-    init();
-    insertDepan("Ayam");
-    tampil();
-    insertDepan("Bebek");
-    tampil();
-    insertBelakang("Cicak");
-    tampil();
-    insertBelakang("Domba");
-    tampil();
-    hapusBelakang();
-    tampil();
-    hapusDepan();
-    tampil();
-    insertTengah("Sapi", 2);
-    tampil();
-    hapusTengah(2);
-    tampil();
-
+    HashMap employee_map;
+    employee_map.insert("Mistah", "1234");
+    employee_map.insert("Pastah", "5678");
+    employee_map.insert("Ghana", "91011");
+    cout << "Nomer Hp Mistah : "
+         << employee_map.searchByName("Mistah") << endl;
+    cout << "Phone Hp Pastah : "
+         << employee_map.searchByName("Pastah") << endl;
+    employee_map.remove("Mistah");
+    cout << "Nomer Hp Mistah setelah dihapus : "
+         << employee_map.searchByName("Mistah") << endl
+         << endl;
+    cout << "Hash Table : " << endl;
+    employee_map.print();
     return 0;
 }
 ```
 
 #### Output :
-![318434701-dc415993-d384-437b-b68b-052d38ee4c75](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/d5526383-24e0-4d0d-a85e-af6cae8d6a11)
+![Screenshot (111)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/63ccedc5-ab4c-4154-87f4-90859333824a)
 
-Program ini adalah implementasi struktur data Linked List Circular (melingkar) dalam bahasa pemrograman C++. Linked List Circular mirip dengan Linked List Linier, namun elemen terakhir (tail) menunjuk kembali ke elemen pertama (head), sehingga membentuk struktur melingkar. Secara keseluruhan, program ini memberikan contoh implementasi dasar dari Linked List Circular dalam C++, termasuk berbagai operasi yang dapat dilakukan pada struktur data tersebut.
+Dalam program di atas, kelas HashNode mewakili setiap node dalam tabel hash , termasuk nama karyawan dan nomor telepon. Kelas HashMap digunakan untuk mengimplementasikan struktur tabel hash  menggunakan vektor yang berisi pointer ke HashNodes. Fungsi hash digunakan untuk menghitung nilai hash dari nama karyawan yang diberikan dan fungsi penyisipan  digunakan untuk menambahkan data baru ke tabel hash. Fungsi remove digunakan untuk menghapus data dari tabel hash, dan fungsi searchByName digunakan untuk menemukan nomor telepon  karyawan bernama .
+
+
 
 
 ## Unguided 
 
-### 1. Buatlah menu untuk menambahkan, mengubah, menghapus, dan melihat Nama dan NIM mahasiswa, berikut contoh tampilan output dari nomor 1:
+### ![Screenshot (109)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/9278f928-d5ff-406d-b867-0db05741bbca)
+
 
 ```C++
 //RANGGA PRADARRELL FATHI
