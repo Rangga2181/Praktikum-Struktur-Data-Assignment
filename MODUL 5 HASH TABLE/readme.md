@@ -586,6 +586,6 @@ Hash Table adalah struktur data yang digunakan untuk menyimpan dan mengakses dat
 Operasi utama pada hash table meliputi penambahan data, penghapusan data, dan pencarian data berdasarkan kunci. Hash table memiliki berbagai aplikasi, seperti pengindeksan, pencarian cepa t, penyimpanan data, dan implementasi struktur data seperti set dan kamus. Penting untuk merancang atau memilih fungsi hash yang baik agar meminimalkan kolisi dan memastikan distribusi yang merata. Memahami prinsip dan implementasi hash table akan membantu Anda dalam pengelolaan data dan pencarian efisien dalam pemrograman.
 
 ## Referensi
-[1] Cormen et al. (2009) dalam buku "Introduction to Algorithms".
+[1] Sahni, S. (2020). Data Structures, Algorithms, and Applications in C++ (2nd ed.). Universities Press.
 
-[2] Goodrich dan Tamassia (2015) dalam buku "Data Structures and Algorithms in C++".
+[2] Reddy, P. K. (2019). Data Structures and Algorithms: Concepts, Techniques and Applications (1st ed.). Prentice Hall
