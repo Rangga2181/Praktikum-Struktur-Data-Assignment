@@ -591,11 +591,11 @@ Dalam program diatas, Hash Table digunakan untuk menyimpan data mahasiswa secara
 
 
 ## Kesimpulan
-Hash Table adalah struktur data yang digunakan untuk menyimpan dan mengakses data dengan cepat menggunakan fungsi hash. Dalam hash table, data disimpan dalam array berindeks dengan menggunakan fungsi hash untuk mengonversi kunci menjadi indeks array. Ini memungkinkan akses langsung ke data dengan kompleksitas waktu rata rata O(1). Ketika dua kunci menghasilkan indeks yang sama (kolisi), teknik seperti cha ining atau linear probing digunakan untuk menangani kolisi tersebut. 
+Stack dapat diimplementasikan dalam C++ menggunakan array maupun linked list. Implementasi dengan array melibatkan penggunaan sebuah array untuk menyimpan elemen-elemen Stack dan variabel top untuk melacak indeks elemen teratas. Sementara implementasi dengan linked list melibatkan penggunaan struktur Node yang berisi data dan pointer ke node berikutnya, serta pointer top yang menunjuk ke node teratas.
 
-Operasi utama pada hash table meliputi penambahan data, penghapusan data, dan pencarian data berdasarkan kunci. Hash table memiliki berbagai aplikasi, seperti pengindeksan, pencarian cepa t, penyimpanan data, dan implementasi struktur data seperti set dan kamus. Penting untuk merancang atau memilih fungsi hash yang baik agar meminimalkan kolisi dan memastikan distribusi yang merata. Memahami prinsip dan implementasi hash table akan membantu Anda dalam pengelolaan data dan pencarian efisien dalam pemrograman.
+
+Stack memiliki banyak aplikasi dalam pemrograman, seperti pembalik string atau angka, evaluasi ekspresi dengan notasi reverse polish, penerapan rekursi, dan algoritma traversal pada graph dan tree. Kompleksitas waktu rata-rata untuk operasi push dan pop pada Stack adalah O(1), yang membuatnya efisien untuk operasi penambahan dan penghapusan elemen.
 
 ## Referensi
-[1] Cormen et al. (2009) dalam buku "Introduction to Algorithms".
-
-[2] Goodrich dan Tamassia (2015) dalam buku "Data Structures and Algorithms in C++".
+[1] Reddy, P. K. (2019). Data Structures and Algorithms: Concepts, Techniques and Applications (1st ed.). Prentice Hall.
+[2] Sahni, S. (2020). Data Structures, Algorithms, and Applications in C++ (2nd ed.). Universities Press.
