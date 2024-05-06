@@ -14,8 +14,8 @@ Stack adalah struktur data linear yang mengikuti prinsip Last In First Out (LIFO
 1. Operasi Dasar:
 
 
--push(x): Menambahkan elemen x ke bagian atas Stack
-.
+-push(x): Menambahkan elemen x ke bagian atas Stack.
+
 -pop(): Menghapus dan mengembalikan elemen dari bagian atas Stack.
 
 -top(): Mengembalikan elemen yang berada di bagian atas Stack tanpa menghapusnya.
