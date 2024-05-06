@@ -1001,6 +1001,6 @@ Dalam pemrograman C++, linked List adalah salah satu struktur data fundamental d
 Dari materi linked list, linked list sangat berguna dalam berbagai aplikasi seperti Penyisipan dan penghapusan node lebih efisien dibandingkan Array dan tidak perlu menyediakan ruang memori yang berlebihan seperti pada Array.
 
 ## Referensi
-####  [2]Charles E. Leiserson, Ronald L. Rivest, dan Clifford Stein, MIT Press, 2009.
-####  [1]	"Introduction to Algorithms, Third Edition" oleh Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, dan Clifford Stein, MIT Press, 2009.
+####  [2]Reddy, P. K. (2019). Data Structures and Algorithms: Concepts, Techniques and Applications (1st ed.). Prentice Hall.
+####  [1]	Sahni, S. (2020). Data Structures, Algorithms, and Applications in C++ (2nd ed.). Universities Press.
 ####  [3]Wahyuni, Z. (2023, February 27). Makalah Dasar-dasar pemograman Komputer.
