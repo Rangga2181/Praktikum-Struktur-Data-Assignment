@@ -1,53 +1,63 @@
-# <h1 align="center">Laporan Praktikum Modul 5 - HASH TABLE</h1>
+# <h1 align="center">Laporan Praktikum Modul 5 - STACK</h1>
 <p align="center">Rangga Pradarrell Fathi</p>
   <P align="center">2311102200</p>
 <p align="center">IF - 11 - E</p>
 
 ## Dasar Teori
 
-### HASH TABLE
+### STACK
 
-Hash Table adalah struktur data yang menggunakan fungsi hash untuk memetakan nilai kunci ke dalam indeks di dalam array. Ini memungkinkan pencarian, penyisipan, dan penghapusan elemen dalam waktu yang konstan rata-rata.
+Stack adalah struktur data linear yang mengikuti prinsip Last In First Out (LIFO), yang berarti elemen terakhir yang dimasukkan akan menjadi elemen pertama yang dikeluarkan. Dalam pemrograman C++, Stack dapat diimplementasikan dengan menggunakan array atau linked list.
 
-Hash table memiliki kelebihan yaitu "mampu menyediakan operasi pencarian, penyisipan, dan penghapusan dalam waktu yang konstan rata-rata, asalkan fungsi hash yang digunakan menyebar masukan secara merata".[1]
+### Berikut adalah penjelasan singkat tentang Stack dalam pemrograman C++:
 
-Selanjutnya, Hash table adalah struktur data yang efisien untuk menyimpan dan mengambil data dalam waktu yang konstan rata-rata, dan membuatnya menjadi pilihan yang sangat baik untuk banyak aplikasi praktis".[2]
+1. Operasi Dasar:
 
 
-### Implementasi Hash Table
+-push(x): Menambahkan elemen x ke bagian atas Stack
+.
+-pop(): Menghapus dan mengembalikan elemen dari bagian atas Stack.
 
--Dapat menggunakan library bawaan unordered_map dari C++.
+-top(): Mengembalikan elemen yang berada di bagian atas Stack tanpa menghapusnya.
 
--unordered_map menyediakan operasi-operasi hash table seperti penyisipan, pencarian, dan penghapusan elemen.
+-isEmpty(): Memeriksa apakah Stack kosong atau tidak.
 
-### Operasi Hash Table
-1. Insertion:
 
-Memasukkan data baru ke dalam hash table dengan memanggil fungsi
-hash untuk menentukan posisi bucket yang tepat, dan kemudian
-menambahkan data ke bucket tersebut.
+2. Implementasi dengan Array:
+   
 
-2. Deletion:
+-Gunakan sebuah array untuk menyimpan elemen-elemen Stack.
 
-Menghapus data dari hash table dengan mencari data menggunakan
-fungsi hash, dan kemudian menghapusnya dari bucket yang sesuai.
+-Gunakan variabel top untuk melacak indeks elemen teratas.
 
-3. Searching:
+-Operasi push menambahkan elemen baru di indeks top dan menaikkan nilai top.
 
-Mencari data dalam hash table dengan memasukkan input kunci ke
-fungsi hash untuk menentukan posisi bucket, dan kemudia n mencari
-data di dalam bucket yang sesuai.
+-Operasi pop mengembalikan elemen di indeks top dan menurunkan nilai top.
 
-4. Update:
 
-Memperbarui data dalam hash table dengan mencari data
-menggunakan fungsi hash, dan kemudian memperbarui data yang
-ditemukan.
+3. Implementasi dengan Linked List:
 
-5. Traversal:
 
-Melalui seluruh hash table untuk memproses semua data yang ada
-dalam tabel.
+-Gunakan struktur Node yang berisi data dan pointer ke node berikutnya.
+
+-Pointer top menunjuk ke node teratas pada Stack.
+
+-Operasi push membuat node baru dan mengubah top untuk menunjuk ke node tersebut.
+
+-Operasi pop mengembalikan data dari node yang ditunjuk top dan mengubah top untuk menunjuk ke node sebelumnya.
+
+
+4. Aplikasi Stack:
+
+
+-Pembalik string atau angka.
+
+-Evaluasi ekspresi dengan notasi reverse polish.
+
+-Penerapan rekursi dalam program.
+
+-Penerapan algoritma traversal pada graph dan tree.
+
    
 ## Guided 
 
