@@ -1199,7 +1199,7 @@ Meskipun demikian, linked list circular juga memiliki kelemahan, seperti komplek
 Oleh karena itu, penggunaan linked list circular harus dipertimbangkan dengan cermat sesuai dengan kebutuhan aplikasi dan karakteristik data yang diolah. Kelebihan dan kelemahan dari struktur data ini perlu dipahami dengan baik agar dapat memanfaatkannya secara efektif dalam pengembangan perangkat lunak.
 
 ## Referensi
-[1] Malik, D. S. (2010). Struktur Data penggunaan C++. 
+[1] Sahni, S. (2020). Data Structures, Algorithms, and Applications in C++ (2nd ed.). Universities Press.
 
-[2] Drozdek, A. (2005). Struktur data dan algoritma dalam C++.
+[2] Duffy, J. (2019). Data Structures and Algorithms with Object-Oriented Design Patterns in C++ (1st ed.). Packt Publishing.
 
