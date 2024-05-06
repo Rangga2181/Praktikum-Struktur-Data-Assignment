@@ -9,7 +9,7 @@
 
 Stack adalah struktur data linear yang mengikuti prinsip Last In First Out (LIFO), yang berarti elemen terakhir yang dimasukkan akan menjadi elemen pertama yang dikeluarkan. Dalam pemrograman C++, Stack dapat diimplementasikan dengan menggunakan array atau linked list.
 
-### Berikut adalah penjelasan singkat tentang Stack dalam pemrograman C++:
+### Berikut adalah penjelasan singkat tentang Stack:
 
 1. Operasi Dasar:
 
