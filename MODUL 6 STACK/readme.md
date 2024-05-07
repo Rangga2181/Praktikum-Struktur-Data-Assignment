@@ -368,10 +368,9 @@ int main()
 ```
 
 #### Hasil Output
-![Screenshot (166)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/66566ed4-7030-49d8-8cab-9948dff86d51)
-![Screenshot (165)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/63302c04-5cbd-465c-9bdb-d11b784a82fc)
+![Screenshot (167)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/156ea1fb-2bf0-4edf-8fbc-d69dbaea59e9)
 
-Dalam program ini menggunakan struktur data stack untuk memeriksa apakah sebuah kata atau kalimat merupakan palindrom atau bukan dengan cara membandingkan setengah huruf di awal dengan setengah huruf di akhir secara terbalik.
+Program diatas ini menggunakan struktur data stack untuk membalik urutan karakter dalam sebuah string dengan cara mendorong setiap karakter ke dalam stack, kemudian mengeluarkan karakter-karakter tersebut dari stack dalam urutan terbalik untuk membentuk string hasil pembalikan.
 
 
 ## Kesimpulan
@@ -382,4 +381,5 @@ Stack memiliki banyak aplikasi dalam pemrograman, seperti pembalik string atau a
 
 ## Referensi
 [1] Reddy, P. K. (2019). Data Structures and Algorithms: Concepts, Techniques and Applications (1st ed.). Prentice Hall.
+
 [2] Sahni, S. (2020). Data Structures, Algorithms, and Applications in C++ (2nd ed.). Universities Press.
