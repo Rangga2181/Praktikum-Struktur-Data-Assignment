@@ -7,7 +7,7 @@
 
 ### STACK
 
-Stack adalah struktur data linear yang mengikuti prinsip Last In First Out (LIFO), yang berarti elemen terakhir yang dimasukkan akan menjadi elemen pertama yang dikeluarkan. [1] Dalam pemrograman C++, Stack dapat diimplementasikan dengan menggunakan array atau linked list. [2]
+Stack adalah struktur data linear yang mengikuti prinsip Last In First Out (LIFO), yang berarti elemen terakhir yang dimasukkan akan menjadi elemen pertama yang dikeluarkan.[1] Dalam pemrograman C++, Stack dapat diimplementasikan dengan menggunakan array atau linked list.[2]
 
 ### Berikut adalah penjelasan singkat tentang Stack:
 
@@ -370,7 +370,7 @@ int main()
 #### Hasil Output
 ![Screenshot (167)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/156ea1fb-2bf0-4edf-8fbc-d69dbaea59e9)
 
-Program diatas ini menggunakan struktur data stack untuk membalik urutan karakter dalam sebuah string dengan cara mendorong setiap karakter ke dalam stack, kemudian mengeluarkan karakter-karakter tersebut dari stack dalam urutan terbalik untuk membentuk string hasil pembalikan.
+Program diatas ini menggunakan struktur data stack untuk membalik urutan karakter dalam sebuah string dengan cara mendorong setiap karakter kedalam stack, kemudian mengeluarkan karakter-karakter tersebut dari stack dalam urutan terbalik untuk membentuk string hasil pembalikan.
 
 
 ## Kesimpulan
