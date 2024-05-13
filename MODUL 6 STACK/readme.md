@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 5 - STACK</h1>
+# <h1 align="center">Laporan Praktikum Modul 6 - STACK</h1>
 <p align="center">Rangga Pradarrell Fathi</p>
   <P align="center">2311102200</p>
 <p align="center">IF - 11 - E</p>
