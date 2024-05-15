@@ -46,7 +46,7 @@ Queue atau antrian adalah struktur data linier yang mengikuti prinsip First-In-F
 
 -size(): Mendapatkan jumlah elemen dalam antrian.
 
-## Implementasi Queue dengan prioritas dapat menggunakan struktur data seperti heap atau binary search tree. Queue memiliki berbagai aplikasi dalam pemrograman, seperti:
+### Implementasi Queue dengan prioritas dapat menggunakan struktur data seperti heap atau binary search tree. Queue memiliki berbagai aplikasi dalam pemrograman, seperti:
 
 -Memodelkan antrian dalam sistem nyata (antrian di bank, kasir, printer, dll).
 
@@ -59,7 +59,7 @@ Queue atau antrian adalah struktur data linier yang mengikuti prinsip First-In-F
 -Pemrosesan batch dalam sistem komputer.
 
    
-#### Guided 
+## Guided 
 
 ### 1.
 
