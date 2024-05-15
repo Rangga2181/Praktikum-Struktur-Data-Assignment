@@ -7,59 +7,45 @@
 
 ### QUEUE
 
-Stack adalah struktur data linear yang mengikuti prinsip Last In First Out (LIFO), yang berarti elemen terakhir yang dimasukkan akan menjadi elemen pertama yang dikeluarkan.[1] Dalam pemrograman C++, Stack dapat diimplementasikan dengan menggunakan array atau linked list.[2]
+Queue atau antrian adalah struktur data linier yang mengikuti prinsip First-In-First-Out (FIFO). Elemen baru ditambahkan di bagian belakang antrian (enqueue) dan elemen lama diambil dari bagian depan (dequeue). Queue sering digunakan dalam aplikasi seperti simulasi antrian, penjadwalan proses, dan manajemen buffer jaringan. Queue dapat diimplementasikan menggunakan array atau linked list. Contoh pada perpustakaan menyediakan kelas queue yang dapat digunakan secara langsung. 
 
-### Berikut adalah penjelasan singkat tentang Stack:
+### Operasi utama pada queue meliputi:
 
-1. Operasi Dasar:
+-Enqueue: Menambahkan elemen baru ke bagian belakang antrian. Operasi ini biasanya disebut juga "push" atau "insert".
 
+-Dequeue: Menghapus elemen yang berada di bagian depan antrian. Operasi ini biasanya disebut juga "pop" atau "remove".
 
--push(x): Menambahkan elemen x ke bagian atas Stack.
+-Front: Mengakses atau melihat elemen yang berada di bagian depan antrian tanpa menghapusnya.
 
--pop(): Menghapus dan mengembalikan elemen dari bagian atas Stack.
+-Rear/Back: Mengakses atau melihat elemen yang berada di bagian belakang antrian.
 
--top(): Mengembalikan elemen yang berada di bagian atas Stack tanpa menghapusnya.
+-isEmpty: Memeriksa apakah queue dalam keadaan kosong atau tidak.
 
--isEmpty(): Memeriksa apakah Stack kosong atau tidak.
+-isFull: Memeriksa apakah queue dalam keadaan penuh atau tidak (jika menggunakan implementasi array dengan ukuran tetap).
 
+### Queue dapat diimplementasikan dengan beberapa cara, antara lain:
 
-2. Implementasi dengan Array:
+## Menggunakan Array:
+# -Array statis: Queue diimplementasikan menggunakan array dengan ukuran tetap. Memiliki keterbatasan kapasitas dan dapat terjadi kondisi overflow jika antrian penuh.
+# -Array dinamis (circular array): Untuk mengatasi keterbatasan array statis, digunakan circular array yang melakukan wrap-around saat mencapai ujung array.
+
+## Menggunakan Linked List:
+# Queue diimplementasikan dengan linked list, di mana setiap node menyimpan data dan pointer ke node berikutnya. Tidak memiliki batasan kapasitas seperti array statis dan dapat tumbuh secara dinamis.
+
+### Beberapa operasi utama pada kelas Queue meliputi:
+-push(const T& val): Menambahkan elemen baru ke bagian belakang antrian.
+
+-pop(): Menghapus elemen dari bagian depan antrian.
+
+-front(): Mengakses elemen di bagian depan antrian tanpa menghapusnya.
+
+-back(): Mengakses elemen di bagian belakang antrian.
+
+-empty(): Memeriksa apakah antrian kosong atau tidak.
+
+-size(): Mendapatkan jumlah elemen dalam antrian.
    
-
--Gunakan sebuah array untuk menyimpan elemen-elemen Stack.
-
--Gunakan variabel top untuk melacak indeks elemen teratas.
-
--Operasi push menambahkan elemen baru di indeks top dan menaikkan nilai top.
-
--Operasi pop mengembalikan elemen di indeks top dan menurunkan nilai top.
-
-
-3. Implementasi dengan Linked List:
-
-
--Gunakan struktur Node yang berisi data dan pointer ke node berikutnya.
-
--Pointer top menunjuk ke node teratas pada Stack.
-
--Operasi push membuat node baru dan mengubah top untuk menunjuk ke node tersebut.
-
--Operasi pop mengembalikan data dari node yang ditunjuk top dan mengubah top untuk menunjuk ke node sebelumnya.
-
-
-4. Aplikasi Stack:
-
-
--Pembalik string atau angka.
-
--Evaluasi ekspresi dengan notasi reverse polish.
-
--Penerapan rekursi dalam program.
-
--Penerapan algoritma traversal pada graph dan tree.
-
-   
-## Guided 
+#### Guided 
 
 ### 1.
 
