@@ -26,13 +26,14 @@ Queue atau antrian adalah struktur data linier yang mengikuti prinsip First-In-F
 ### Queue dapat diimplementasikan dengan beberapa cara, antara lain:
 
 ## Menggunakan Array:
-# -Array statis: Queue diimplementasikan menggunakan array dengan ukuran tetap. Memiliki keterbatasan kapasitas dan dapat terjadi kondisi overflow jika antrian penuh.
-# -Array dinamis (circular array): Untuk mengatasi keterbatasan array statis, digunakan circular array yang melakukan wrap-around saat mencapai ujung array.
+ -Array statis: Queue diimplementasikan menggunakan array dengan ukuran tetap. Memiliki keterbatasan kapasitas dan dapat terjadi kondisi overflow jika antrian penuh.
+ 
+ -Array dinamis (circular array): Untuk mengatasi keterbatasan array statis, digunakan circular array yang melakukan wrap-around saat mencapai ujung array.
 
 ## Menggunakan Linked List:
-# Queue diimplementasikan dengan linked list, di mana setiap node menyimpan data dan pointer ke node berikutnya. Tidak memiliki batasan kapasitas seperti array statis dan dapat tumbuh secara dinamis.
+ Queue diimplementasikan dengan linked list, di mana setiap node menyimpan data dan pointer ke node berikutnya. Tidak memiliki batasan kapasitas seperti array statis dan dapat tumbuh secara dinamis.
 
-### Beberapa operasi utama pada kelas Queue meliputi:
+## Beberapa operasi utama pada kelas Queue meliputi:
 -push(const T& val): Menambahkan elemen baru ke bagian belakang antrian.
 
 -pop(): Menghapus elemen dari bagian depan antrian.
@@ -44,6 +45,19 @@ Queue atau antrian adalah struktur data linier yang mengikuti prinsip First-In-F
 -empty(): Memeriksa apakah antrian kosong atau tidak.
 
 -size(): Mendapatkan jumlah elemen dalam antrian.
+
+## Implementasi Queue dengan prioritas dapat menggunakan struktur data seperti heap atau binary search tree. Queue memiliki berbagai aplikasi dalam pemrograman, seperti:
+
+-Memodelkan antrian dalam sistem nyata (antrian di bank, kasir, printer, dll).
+
+-Algoritma Breadth-First Search (BFS) pada graf.
+
+-Manajemen buffer jaringan.
+
+-Penjadwalan proses dalam sistem operasi.
+
+-Pemrosesan batch dalam sistem komputer.
+
    
 #### Guided 
 
