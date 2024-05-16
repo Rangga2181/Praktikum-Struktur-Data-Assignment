@@ -61,256 +61,252 @@ Queue atau antrian adalah struktur data linier yang mengikuti prinsip First-In-F
    
 ## Guided 
 
-### 1.
+### Latihan
 
 ```C++
+// Rangga Pradarrell Fathi
+// 2311102200
 #include <iostream>
 using namespace std;
-
-string arrayBuku[5];
-int maksimal = 5, top = 0;
-
+const int maksimalQueue = 5; // Maksimal antrian
+int front = 0;               // Penanda antrian
+int back = 0;                // Penanda
+string queueTeller[5];       // Fungsi pengecekan
 bool isFull()
-{
-    return (top == maksimal);
+{ // Pengecekan antrian penuh atau tidak
+    if (back == maksimalQueue)
+    {
+        return true; // =1
+    }
+    else
+    {
+        return false;
+    }
 }
-
-bool isEmpety()
-{
-    return (top == 0);
+bool isEmpty()
+{ // Antriannya kosong atau tidak
+    if (back == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
-
-void pushArrayBuku(string data)
-{
+void enqueueAntrian(string data)
+{ // Fungsi menambahkan antrian
     if (isFull())
     {
-        cout << "Data telah penuh" << endl;
+        cout << "Antrian penuh" << endl;
     }
     else
     {
-        arrayBuku[top] = data;
-        top++;
-    }
-}
-
-void popArrayBuku()
-{
-    if (isEmpety())
-    {
-        cout << " Tidak ada data yang dihapus" << endl;
-    }
-    else
-    {
-        arrayBuku[top - 1] = "";
-        top--;
-    }
-}
-
-void peekArrayBuku(int posisi)
-{
-    if (isEmpety())
-    {
-        cout << "Tidak ada data yang bisa dilihat" << endl;
-    }
-    else
-    {
-        int index = top;
-        for (int i = 1; i <= posisi; i++)
-        {
-            index--;
+        if (isEmpty())
+        { // Kondisi ketika queue kosong
+            queueTeller[0] = data;
+            front++;
+            back++;
         }
-        cout << "Posisi ke " << posisi << " adalah " << arrayBuku[index] << endl;
-    }
-}
-
-int countStack()
-{
-    return top;
-}
-
-void changeArrayBuku(int posisi, string data)
-{
-    if (posisi > top)
-    {
-        cout << "Posisi melebihi data yang ada" << endl;
-    }
-    else
-    {
-        int index = top;
-        for (int i = 1; i <= posisi; i++)
-        {
-            index--;
+        else
+        { // Antrianya ada isi
+            queueTeller[back] = data;
+            back++;
         }
-        arrayBuku[index] = data;
     }
 }
 
-void destroyArraybuku()
-{
-    for (int i = top; i >= 0; i--)
+void dequeueAntrian()
+{ // Fungsi mengurangi antrian
+    if (isEmpty())
     {
-        arrayBuku[i] = "";
-    }
-    top = 0;
-}
-
-void cetakArrayBuku()
-{
-    if (isEmpety())
-    {
-        cout << "Tidak ada data yang dicetak" << endl;
+        cout << "Antrian kosong" << endl;
     }
     else
     {
-        for (int i = top - 1; i >= 0; i--)
+        for (int i = 0; i < back; i++)
         {
-            cout << arrayBuku[i] << endl;
+            queueTeller[i] = queueTeller[i + 1];
+        }
+        back--;
+    }
+}
+
+int countQueue()
+{ // Fungsi menghitung banyak antrian
+    return back;
+}
+
+void clearQueue()
+{ // Fungsi menghapus semua antrian
+    if (isEmpty())
+    {
+        cout << "Antrian kosong" << endl;
+    }
+    else
+    {
+        for (int i = 0; i < back; i++)
+        {
+            queueTeller[i] = "";
+        }
+        back = 0;
+        front = 0;
+    }
+}
+void viewQueue()
+{ // Fungsi melihat antrian
+    cout << "Data antrian teller:" << endl;
+    for (int i = 0; i < maksimalQueue; i++)
+    {
+        if (queueTeller[i] != "")
+        {
+            cout << i + 1 << ". " << queueTeller[i] <<
+
+                endl;
+        }
+        else
+        {
+            cout << i + 1 << ". (kosong)" << endl;
         }
     }
 }
 
 int main()
 {
-    pushArrayBuku("Kalkulus");
-    pushArrayBuku("Struktur Data");
-    pushArrayBuku("Matematika Diskrit");
-    pushArrayBuku("Dasar Multimedia");
-    pushArrayBuku("Inggris");
-
-    cetakArrayBuku();
-    cout << "\n";
-
-    cout << "Apakah data stack penuh? " << isFull() << endl;
-    cout << "Apakah data stack kosong? " << isEmpety() << endl;
-
-    peekArrayBuku(2);
-    popArrayBuku();
-    cout << "Banyaknya data = " << countStack() << endl;
-
-    changeArrayBuku(2, "Bahasa Jerman");
-    cetakArrayBuku();
-
-    cout << "\n";
-    destroyArraybuku();
-    cout << "Jumlah data setelah dihapus: " << top << endl;
-
-    cetakArrayBuku();
-
+    enqueueAntrian("Andi");
+    enqueueAntrian("Maya");
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
+    dequeueAntrian();
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
+    clearQueue();
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
     return 0;
 }
 ```
 
 #### Output :
-![Screenshot (162)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/7f5bba49-c8fa-41a1-a346-098b8df777e6)
-![Screenshot (161)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/7fcb98ae-62ee-4903-80a5-15af659229a0)
+![Screenshot (180)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/cf7656b1-b60d-44ab-b3cd-779e9009c65b)
 
-Progam diatas menjalankan implementasi struktur data stack menggunakan array, dengan menyediakan operasi-operasi dasar seperti push, pop, peek, dan lainnya.
+Program ini merupakan implementasi struktur data Queue (Antrian) menggunakan array statis. Program ini digunakan untuk mengelola antrian pada sebuah teller dengan kapasitas maksimal 5 orang.
 
 
 ## Unguided 
 
 
-### ![Screenshot (164)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/ea84ff25-9ac8-4b6d-8771-d9294fd6a632)
+### 1) Ubahlah penerapan konsep queue pada bagian guided dari array menjadilinked list
 
 
 
 ```C++
-//Rangga Pradarrell Fathi
-//2311102200
+// Rangga Pradarrell Fathi
+// 2311102200
 #include <iostream>
-#include <string>
 using namespace std;
 
-const int MAX_SIZE = 100; // Ukuran maksimal stack
-
-class Stack
+// Struktur Node untuk linked list
+struct Node
 {
-private:
-    char arr[MAX_SIZE]; // Array untuk menyimpan elemen stack
-    int top;            // Indeks elemen atas
-    int count;          // Jumlah elemen dalam stack
-
-public:
-    Stack()
-    {
-        top = -1; // Mengecek stack kosong
-        count = 0;
-    }
-
-    bool isEmpty()
-    {
-        return count == 0;
-    }
-
-    bool isFull()
-    {
-        return count == MAX_SIZE;
-    }
-
-    void push(char x)
-    {
-        if (isFull())
-        {
-            cout << "Error: Stack penuh" << endl;
-            return;
-        }
-        arr[++top] = x;
-        count++;
-    }
-
-    char pop()
-    {
-        if (isEmpty())
-        {
-            cout << "Error: Stack kosong" << endl;
-            return '\0';
-        }
-        count--;
-        return arr[top--];
-    }
+    string data;
+    Node *next;
 };
 
-bool isPalindrome(string str)
+Node *front = NULL; // Penanda antrian depan
+Node *back = NULL;  // Penanda antrian belakang
+
+bool isEmpty()
 {
-    Stack s;
-    int len = str.length();
+    return front == NULL;
+}
 
-    // Mendorong huruf ke dalam stack
-    for (int i = 0; i < len / 2; i++)
+void enqueueAntrian(string data)
+{
+    Node *newNode = new Node;
+    newNode->data = data;
+    newNode->next = NULL;
+
+    if (isEmpty())
     {
-        s.push(str[i]);
+        front = back = newNode;
     }
-
-    // Memeriksa panjang ganjil dan lewati huruf tengah
-    int start = len % 2 == 0 ? len / 2 : (len / 2) + 1;
-
-    // Keluarkan huruf dari stack dan bandingkan dengan sisa huruf
-    for (int i = start; i < len; i++)
+    else
     {
-        if (s.pop() != str[i])
+        back->next = newNode;
+        back = newNode;
+    }
+}
+
+void dequeueAntrian()
+{
+    if (isEmpty())
+    {
+        cout << "Antrian kosong" << endl;
+    }
+    else
+    {
+        Node *temp = front;
+        string data = front->data;
+        front = front->next;
+        if (front == NULL)
         {
-            return false;
+            back = NULL;
         }
+        delete temp;
+        cout << "Mengeluarkan data: " << data << endl;
     }
+}
 
-    return true;
+int countQueue()
+{
+    int count = 0;
+    Node *temp = front;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+
+void clearQueue()
+{
+    Node *temp = front;
+    while (temp != NULL)
+    {
+        Node *next = temp->next;
+        delete temp;
+        temp = next;
+    }
+    front = back = NULL;
+}
+
+void viewQueue()
+{
+    cout << "Data antrian teller:" << endl;
+    Node *temp = front;
+    int i = 1;
+    while (temp != NULL)
+    {
+        cout << i << ". " << temp->data << endl;
+        temp = temp->next;
+        i++;
+    }
 }
 
 int main()
 {
-    string input;
-    cout << "Masukkan sebuah kata: ";
-    getline(cin, input);
-
-    if (isPalindrome(input))
-    {
-        cout << "Kata yang dimasukkan adalah palindrom." << endl;
-    }
-    else
-    {
-        cout << "Kata yang dimasukkan bukan palindrom." << endl;
-    }
-
+    enqueueAntrian("AJI");
+    enqueueAntrian("MUNTUNG");
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
+    dequeueAntrian();
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
+    clearQueue();
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
     return 0;
 }
 ```
