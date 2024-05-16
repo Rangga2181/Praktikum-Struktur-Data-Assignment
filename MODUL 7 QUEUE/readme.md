@@ -312,68 +312,139 @@ int main()
 ```
 
 #### Hasil Output
-![Screenshot (166)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/66566ed4-7030-49d8-8cab-9948dff86d51)
-![Screenshot (165)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/63302c04-5cbd-465c-9bdb-d11b784a82fc)
-
-Dalam program ini menggunakan struktur data stack untuk memeriksa apakah sebuah kata atau kalimat merupakan palindrom atau bukan dengan cara membandingkan setengah huruf di awal dengan setengah huruf di akhir secara terbalik.
 
 
-### ![Screenshot (163)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/935fe0f9-21b1-4a05-90ce-5d8f4003d053)
+
+### 2) Dari nomor 1 buatlah konsep antri dengan atribut Nama mahasiswa dan NIM Mahasiswa
 
 
 ```C++
-//Rangga Pradarrell Fathi
-//2311102200
+// Rangga Pradarrell Fathi
+// 2311102200
 #include <iostream>
-#include <string>
-#include <stack>
 using namespace std;
 
-string reverseString(string str)
+// Struktur Mahasiswa
+struct Mahasiswa
 {
-    stack<char> charStack;
-    string reversed = "";
+    string nama;
+    int nim;
+};
 
-    // Mendorong setiap huruf ke dalam stack
-    for (char c : str)
+// Struktur Node untuk linked list
+struct Node
+{
+    Mahasiswa data;
+    Node *next;
+};
+
+Node *front = NULL; // Tanda antrian depan
+Node *back = NULL;  // Tanda antrian belakang
+
+bool isEmpty()
+{
+    return front == NULL;
+}
+
+void enqueueAntrian(string nama, int nim)
+{
+    Node *newNode = new Node;
+    newNode->data.nama = nama;
+    newNode->data.nim = nim;
+    newNode->next = NULL;
+
+    if (isEmpty())
     {
-        charStack.push(c);
+        front = back = newNode;
     }
-
-    // Mengeluarkan huruf dari stack untuk membentuk string terbalik
-    while (!charStack.empty())
+    else
     {
-        reversed += charStack.top();
-        charStack.pop();
+        back->next = newNode;
+        back = newNode;
     }
+}
 
-    return reversed;
+void dequeueAntrian()
+{
+    if (isEmpty())
+    {
+        cout << "Antrian kosong" << endl;
+    }
+    else
+    {
+        Node *temp = front;
+        Mahasiswa data = front->data;
+        front = front->next;
+        if (front == NULL)
+        {
+            back = NULL;
+        }
+        delete temp;
+        cout << "Mengeluarkan data: " << data.nama << " (" << data.nim << ")" << endl;
+    }
+}
+
+int countQueue()
+{
+    int count = 0;
+    Node *temp = front;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+
+void clearQueue()
+{
+    Node *temp = front;
+    while (temp != NULL)
+    {
+        Node *next = temp->next;
+        delete temp;
+        temp = next;
+    }
+    front = back = NULL;
+}
+
+void viewQueue()
+{
+    cout << "Data antrian mahasiswa:" << endl;
+    Node *temp = front;
+    int i = 1;
+    while (temp != NULL)
+    {
+        cout << i << ". " << temp->data.nama << " (" << temp->data.nim << ")" << endl;
+        temp = temp->next;
+        i++;
+    }
 }
 
 int main()
 {
-    string input;
-    cout << "Masukkan Kata: ";
-    getline(cin, input);
-
-    string reversed = reverseString(input);
-    cout << "Data: " << reversed << endl;
-
+    enqueueAntrian("Rangga", 2311102200);
+    enqueueAntrian("Irsyad", 2311102199);
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
+    dequeueAntrian();
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
+    clearQueue();
+    viewQueue();
+    cout << "Jumlah antrian = " << countQueue() << endl;
     return 0;
 }
 ```
 
 #### Hasil Output
-![Screenshot (167)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/156ea1fb-2bf0-4edf-8fbc-d69dbaea59e9)
 
-Program diatas ini menggunakan struktur data stack untuk membalik urutan karakter dalam sebuah string dengan cara mendorong setiap karakter kedalam stack, kemudian mengeluarkan karakter-karakter tersebut dari stack dalam urutan terbalik untuk membentuk string hasil pembalikan.
+
+
 
 
 ## Kesimpulan
-Stack dapat diimplementasikan dalam C++ menggunakan array maupun linked list. Implementasi dengan array melibatkan penggunaan sebuah array untuk menyimpan elemen-elemen Stack dan variabel top untuk melacak indeks elemen teratas. Sementara implementasi dengan linked list melibatkan penggunaan struktur Node yang berisi data dan pointer ke node berikutnya, serta pointer top yang menunjuk ke node teratas.
 
-
-Stack memiliki banyak aplikasi dalam pemrograman, seperti pembalik string atau angka, evaluasi ekspresi dengan notasi reverse polish, penerapan rekursi, dan algoritma traversal pada graph dan tree. Kompleksitas waktu rata-rata untuk operasi push dan pop pada Stack adalah O(1), yang membuatnya efisien untuk operasi penambahan dan penghapusan elemen.
 
 ## Referensi
 [1] Reddy, P. K. (2019). Data Structures and Algorithms: Concepts, Techniques and Applications (1st ed.). Prentice Hall.
