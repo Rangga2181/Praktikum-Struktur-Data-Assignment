@@ -447,6 +447,6 @@ int main()
 
 
 ## Referensi
-[1] Reddy, P. K. (2019). Data Structures and Algorithms: Concepts, Techniques and Applications (1st ed.). Prentice Hall.
+[1] Adlaimi, N. (2019, March 30). STRUKTUR DATA MAJEMUK  (QUEUE).
 
-[2] Sahni, S. (2020). Data Structures, Algorithms, and Applications in C++ (2nd ed.). Universities Press.
+[2] SArraffi, A. (2019, March 30). PENGERTIAN LINIER DALAM STRUKTUR DATA MAJEMUK. 
