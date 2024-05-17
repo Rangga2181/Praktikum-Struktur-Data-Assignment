@@ -313,6 +313,7 @@ int main()
 
 #### Hasil Output
 ![Screenshot (181)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/3d81a857-dab5-4395-b900-10872c1af421)
+
  program ini mendemonstrasikan operasi-operasi dasar pada struktur data Antrian (Queue) menggunakan Linked List, seperti enqueue (menambahkan data ke antrian), dequeue (mengeluarkan data dari depan antrian), menghitung jumlah data dalam antrian, dan mengosongkan antrian.
 
 
@@ -440,6 +441,7 @@ int main()
 
 #### Hasil Output
 ![Screenshot (183)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/fd2090bc-c550-48a5-ab3f-b9662458b42c)
+
  program ini mendemonstrasikan operasi-operasi dasar pada struktur data Antrian (Queue) menggunakan Linked List, seperti enqueue (menambahkan data ke antrian), dequeue (mengeluarkan data dari depan antrian), menghitung jumlah data dalam antrian, dan mengosongkan antrian. Dan menambahkan unsur dari nama mahasiswa dan NIM sebagai inputannya.
 
 
@@ -447,7 +449,7 @@ int main()
 
 
 ## Kesimpulan
-
+pada materi ini dapat di simpulkan bahwa queue memungkinkan pengelolaan aliran data atau objek secara terurut dan efisien, serta memfasilitasi berbagai aplikasi dan algoritma yang melibatkan antrian atau pemrosesan data berurutan.
 
 ## Referensi
 [1] Adlaimi, N. (2019). STRUKTUR DATA MAJEMUK  (QUEUE).
