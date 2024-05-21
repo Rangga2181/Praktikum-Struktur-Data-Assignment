@@ -340,7 +340,7 @@ Program ini menunjukkan bagaimana menggunakan algoritma sequential search dalam 
 
 
 ## Kesimpulan
-operasi pencarian (Searching) sering digunakan dalam berbagai aplikasi, seperti pencarian data dalam basis data, pencarian kata dalam teks, atau pencarian nilai dalam struktur data lainnya. Pemahaman yang baik tentang algoritma pencarian dan kompleksitas waktu mereka sangat penting untuk mengoptimalkan kinerja dan efisiensi program.
+Operasi pencarian (Searching) sering digunakan dalam berbagai aplikasi, seperti pencarian data dalam basis data, pencarian kata dalam teks, atau pencarian nilai dalam struktur data lainnya. Pemahaman yang baik tentang algoritma pencarian dan kompleksitas waktu mereka sangat penting untuk mengoptimalkan kinerja dan efisiensi program.
 
 
 ## Referensi
