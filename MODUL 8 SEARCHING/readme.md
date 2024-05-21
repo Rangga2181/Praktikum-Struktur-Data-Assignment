@@ -1,29 +1,14 @@
  # <h1 align="center">Laporan Praktikum Modul 8 - SEARCHING</h1>
 <p align="center">Rangga Pradarrell Fathi</p>
-  <P align="center">2311102200</p>
+<P align="center">2311102200</p>
 <p align="center">IF - 11 - E</p>
 
 ## Dasar Teori
 
+
 ### SEARCHING
 Searching atau pencarian data adalah salah satu operasi fundamental dalam pemrograman yang melibatkan pencarian elemen atau nilai tertentu di dalam struktur data seperti array, vektor, atau daftar tertaut (linked list). 
 
- 
-
-
-Binary search hanya dapat diterapkan pada struktur data yang sudah terurut (sorted), seperti array atau linked list yang terurut. Prinsip kerjanya adalah membagi struktur data menjadi dua bagian dan mencari elemen yang dicari di dalam salah satu bagian tersebut. Proses ini diulangi secara rekursif hingga elemen ditemukan atau seluruh elemen sudah diperiksa.
-Langkah-langkah binary search:
-
-Tentukan batas bawah (low) dan batas atas (high) dari struktur data yang akan diperiksa.
-Hitung nilai tengah (mid) dari batas bawah dan batas atas.
-Bandingkan elemen pada posisi tengah dengan elemen yang dicari.
-Jika elemen pada posisi tengah sama dengan elemen yang dicari, kembalikan posisi tengah.
-Jika elemen pada posisi tengah lebih kecil dari elemen yang dicari, ubah batas bawah menjadi posisi tengah + 1.
-Jika elemen pada posisi tengah lebih besar dari elemen yang dicari, ubah batas atas menjadi posisi tengah - 1.
-Ulangi langkah 2-6 hingga elemen yang dicari ditemukan atau batas bawah melebihi batas atas (elemen tidak ditemukan).
-Jika elemen tidak ditemukan, kembalikan nilai yang menunjukkan bahwa elemen tidak ada dalam struktur data.
-
-Kompleksitas waktu binary search dalam kasus rata-rata dan terbaik adalah O(log n), di mana n adalah jumlah elemen dalam struktur data terurut. Ini jauh lebih efisien dibandingkan sequential search, terutama untuk struktur data besar.
 
 ###  Sequential Search (Pencarian Sekuensial)
 Sequential search atau pencarian linear adalah algoritma pencarian paling sederhana. Prinsip kerjanya adalah memeriksa setiap elemen dalam struktur data (seperti array atau linked list) satu per satu secara berurutan hingga elemen yang dicari ditemukan atau seluruh elemen sudah diperiksa.
@@ -49,6 +34,7 @@ Kompleksitas waktu sequential search dalam kasus terburuk adalah O(n), di mana n
 
 ### Binary Search (Pencarian Biner)
 Binary search hanya dapat diterapkan pada struktur data yang sudah terurut (sorted), seperti array atau linked list yang terurut. Prinsip kerjanya adalah membagi struktur data menjadi dua bagian dan mencari elemen yang dicari di dalam salah satu bagian tersebut. Proses ini diulangi secara rekursif hingga elemen ditemukan atau seluruh elemen sudah diperiksa.
+
 
 Langkah-langkah binary search:
 
@@ -104,6 +90,9 @@ int main()
 ```
 
 #### Output :
+![Screenshot (188)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/73b112c0-b7b9-48dc-9dfe-9a9139261c32)
+
+Program ini mengimplementasikan algoritma sequential search untuk mencari nilai 15 dalam array integer dan menampilkan indeks di mana nilai tersebut ditemukan, atau menyatakan bahwa nilai tidak ditemukan jika tidak ada dalam array.
 
 
 ### Latihan 2
@@ -187,7 +176,9 @@ int main()
 ```
 
 #### Output :
+![Screenshot (189)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/cdc0cdfa-d733-4b81-96d2-f7b415ff6e35)
 
+program ini mengimplementasikan algoritma sequential search untuk mencari nilai 15 dalam array integer dan menampilkan indeks di mana nilai tersebut ditemukan, atau menyatakan bahwa nilai tidak ditemukan jika tidak ada dalam array.
 
 
 
@@ -261,6 +252,9 @@ int main()
 ```
 
 #### Hasil Output
+![Screenshot (190)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/9f362840-65f3-4edd-bd08-fa982dd1db20)
+
+Dalam program ini, algoritma binary search digunakan karena kalimat diurutkan terlebih dahulu sebelum dilakukan pencarian. Ini membuat binary search menjadi pilihan yang efisien untuk mencari posisi sebuah karakter dalam kalimat.
 
 
 ### 2) Buatlah sebuah program yang dapat menghitung banyaknya huruf vocal dalam sebuah kalimat!
@@ -300,8 +294,11 @@ int main()
 }
 ```
 
-#### Hasil Output
 
+#### Hasil Output
+![Screenshot (191)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/be064c13-f48f-4976-8ab7-8e9e82813198)
+
+Dalam program ini, algoritma sequential search digunakan karena array vokal relatif kecil dan tidak terurut. Sequential search dapat diimplementasikan dengan mudah dan cukup efisien untuk kasus seperti ini. Namun, jika jumlah huruf vokal yang dicari lebih banyak atau pada kasus yang lebih kompleks, algoritma binary search atau struktur data lain seperti hash table mungkin lebih efisien.
 
 
 
@@ -335,12 +332,15 @@ int main()
 ```
 
 #### Hasil Output
+![Screenshot (193)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/1da2e9d0-cdce-4b04-9043-2ae027de3183)
 
+Program ini menunjukkan bagaimana menggunakan algoritma sequential search dalam C++ untuk menghitung jumlah kemunculan suatu nilai tertentu dalam sebuah array. Sequential search dipilih karena array tidak terurut, sehingga algoritma binary search tidak dapat digunakan secara efisien dalam kasus ini.
 
 
 
 
 ## Kesimpulan
+operasi pencarian (Searching) sering digunakan dalam berbagai aplikasi, seperti pencarian data dalam basis data, pencarian kata dalam teks, atau pencarian nilai dalam struktur data lainnya. Pemahaman yang baik tentang algoritma pencarian dan kompleksitas waktu mereka sangat penting untuk mengoptimalkan kinerja dan efisiensi program.
 
 
 ## Referensi
