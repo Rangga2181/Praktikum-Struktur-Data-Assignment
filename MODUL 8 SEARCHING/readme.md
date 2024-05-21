@@ -6,28 +6,73 @@
 ## Dasar Teori
 
 ### SEARCHING
+Searching atau pencarian data adalah salah satu operasi fundamental dalam pemrograman yang melibatkan pencarian elemen atau nilai tertentu di dalam struktur data seperti array, vektor, atau daftar tertaut (linked list). 
+
+ 
+
+
+Binary search hanya dapat diterapkan pada struktur data yang sudah terurut (sorted), seperti array atau linked list yang terurut. Prinsip kerjanya adalah membagi struktur data menjadi dua bagian dan mencari elemen yang dicari di dalam salah satu bagian tersebut. Proses ini diulangi secara rekursif hingga elemen ditemukan atau seluruh elemen sudah diperiksa.
+Langkah-langkah binary search:
+
+Tentukan batas bawah (low) dan batas atas (high) dari struktur data yang akan diperiksa.
+Hitung nilai tengah (mid) dari batas bawah dan batas atas.
+Bandingkan elemen pada posisi tengah dengan elemen yang dicari.
+Jika elemen pada posisi tengah sama dengan elemen yang dicari, kembalikan posisi tengah.
+Jika elemen pada posisi tengah lebih kecil dari elemen yang dicari, ubah batas bawah menjadi posisi tengah + 1.
+Jika elemen pada posisi tengah lebih besar dari elemen yang dicari, ubah batas atas menjadi posisi tengah - 1.
+Ulangi langkah 2-6 hingga elemen yang dicari ditemukan atau batas bawah melebihi batas atas (elemen tidak ditemukan).
+Jika elemen tidak ditemukan, kembalikan nilai yang menunjukkan bahwa elemen tidak ada dalam struktur data.
+
+Kompleksitas waktu binary search dalam kasus rata-rata dan terbaik adalah O(log n), di mana n adalah jumlah elemen dalam struktur data terurut. Ini jauh lebih efisien dibandingkan sequential search, terutama untuk struktur data besar.
+
+###  Sequential Search (Pencarian Sekuensial)
+Sequential search atau pencarian linear adalah algoritma pencarian paling sederhana. Prinsip kerjanya adalah memeriksa setiap elemen dalam struktur data (seperti array atau linked list) satu per satu secara berurutan hingga elemen yang dicari ditemukan atau seluruh elemen sudah diperiksa.
+
+
+Langkah-langkah sequential search:
+
+-Mulai dari elemen pertama dalam struktur data.
+
+-Bandingkan elemen saat ini dengan elemen yang dicari.
+
+-Jika elemen saat ini sama dengan elemen yang dicari, kembalikan indeks atau posisi elemen tersebut.
+
+-Jika elemen saat ini tidak sama dengan elemen yang dicari, pindah ke elemen berikutnya dalam struktur data.
+
+-Ulangi langkah 2-4 hingga elemen yang dicari ditemukan atau seluruh elemen sudah diperiksa.
+
+-Jika elemen tidak ditemukan, kembalikan nilai yang menunjukkan bahwa elemen tidak ada dalam struktur data.
+
+
+Kompleksitas waktu sequential search dalam kasus terburuk adalah O(n), di mana n adalah jumlah elemen dalam struktur data. Ini berarti dalam kasus terburuk, algoritma harus memeriksa setiap elemen dalam struktur data.
+
+
+### Binary Search (Pencarian Biner)
+Binary search hanya dapat diterapkan pada struktur data yang sudah terurut (sorted), seperti array atau linked list yang terurut. Prinsip kerjanya adalah membagi struktur data menjadi dua bagian dan mencari elemen yang dicari di dalam salah satu bagian tersebut. Proses ini diulangi secara rekursif hingga elemen ditemukan atau seluruh elemen sudah diperiksa.
+
+Langkah-langkah binary search:
+
+-Tentukan batas bawah (low) dan batas atas (high) dari struktur data yang akan diperiksa.
+
+-Hitung nilai tengah (mid) dari batas bawah dan batas atas.
+
+-Bandingkan elemen pada posisi tengah dengan elemen yang dicari.
+
+-Jika elemen pada posisi tengah sama dengan elemen yang dicari, kembalikan posisi tengah.
+
+-Jika elemen pada posisi tengah lebih kecil dari elemen yang dicari, ubah batas bawah menjadi posisi tengah + 1.
+
+-Jika elemen pada posisi tengah lebih besar dari elemen yang dicari, ubah batas atas menjadi posisi tengah - 1.
+
+-Ulangi langkah 2-6 hingga elemen yang dicari ditemukan atau batas bawah melebihi batas atas (elemen tidak ditemukan).
+
+-Jika elemen tidak ditemukan, kembalikan nilai yang menunjukkan bahwa elemen tidak ada dalam struktur data.
+
+
+Kompleksitas waktu binary search dalam kasus rata-rata dan terbaik adalah O(log n), di mana n adalah jumlah elemen dalam struktur data terurut. Ini jauh lebih efisien dibandingkan sequential search, terutama untuk struktur data besar.
 
 
 
-### Operasi utama pada queue meliputi:
-
-
-
-### Queue dapat diimplementasikan dengan beberapa cara, antara lain:
-
-## Menggunakan Array:
-
-
-## Menggunakan Linked List:
-
-
-## Beberapa operasi utama pada kelas Queue meliputi:
-
-
-### Implementasi Queue dengan prioritas dapat menggunakan struktur data seperti heap atau binary search tree. Queue memiliki berbagai aplikasi dalam pemrograman, seperti:
-
-
-   
 ## Guided 
 
 ### Latihan 1
