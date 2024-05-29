@@ -59,11 +59,7 @@ Operasi umum pada tree meliputi traversal (preorder, inorder, postorder), pencar
 ### Latihan 1
 
 ```C++
-// Graph Code
-/*
-Rangga Pradarrell Fathi_2311102200
-*/
-
+//Rangga Pradarrell Fathi_2311102200
 #include <iostream>
 #include <iomanip>
 
@@ -116,11 +112,7 @@ Progam diatas akan menampilkan representasi graph yang terdiri dari 7 simpul (Ci
 ### Latihan 2
 
 ```C++
-// Tree Code
-/*
-Rangga Pradarrell Fathi - 2311102200
-*/
-
+//Rangga Pradarrell Fathi - 2311102200
 #include <iostream>
 using namespace std;
 
