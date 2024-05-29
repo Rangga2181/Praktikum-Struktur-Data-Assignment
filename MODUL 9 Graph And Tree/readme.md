@@ -10,18 +10,17 @@
 Graph adalah struktur data non-linear yang terdiri dari kumpulan node (vertex/simpul) yang dihubungkan oleh edge (sisi/busur). Graph dapat direpresentasikan dengan beberapa cara:
 
 -Adjacency Matrix (Menggunakan matriks dua dimensi untuk menyimpan informasi keberadaan edge antara setiap pasangan node.)
-
 -Adjacency List (Menggunakan daftar berkait (linked list) untuk menyimpan daftar node tetangga dari setiap node.)
 
 Setelah merepresentasikan graph, kita dapat melakukan berbagai operasi dan algoritma pada graph, seperti:
 
-Traversal Graph
+##### Traversal Graph
 
 -Breadth-First Search (BFS)
 -Depth-First Search (DFS)
 
 
-Algoritma pada Graph
+##### Algoritma pada Graph
 
 -Shortest Path (Dijkstra, Bellman-Ford, Floyd-Warshall)
 -Minimum Spanning Tree (Prim, Kruskal)
