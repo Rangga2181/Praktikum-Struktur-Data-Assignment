@@ -7,10 +7,12 @@
 
 
 ### Graph
-Graph adalah struktur data non-linear yang terdiri dari kumpulan node (vertex/simpul) yang dihubungkan oleh edge (sisi/busur). Graph dapat direpresentasikan dengan beberapa cara:
+Graph adalah struktur data non-linear yang terdiri dari kumpulan node (vertex/simpul) yang dihubungkan oleh edge (sisi/busur).[1] Graph dapat direpresentasikan dengan beberapa cara:
 
 -Adjacency Matrix (Menggunakan matriks dua dimensi untuk menyimpan informasi keberadaan edge antara setiap pasangan node.)
+
 -Adjacency List (Menggunakan daftar berkait (linked list) untuk menyimpan daftar node tetangga dari setiap node.)
+
 
 Setelah merepresentasikan graph, kita dapat melakukan berbagai operasi dan algoritma pada graph, seperti:
 
@@ -28,51 +30,27 @@ Setelah merepresentasikan graph, kita dapat melakukan berbagai operasi dan algor
 -Strongly Connected Components
 
 ###  Tree
-Sequential search atau pencarian linear adalah algoritma pencarian paling sederhana. Prinsip kerjanya adalah memeriksa setiap elemen dalam struktur data (seperti array atau linked list) satu per satu secara berurutan hingga elemen yang dicari ditemukan atau seluruh elemen sudah diperiksa.
+Tree adalah struktur data hierarkis yang merupakan jenis khusus dari graph yang tidak mengandung siklus (cycle). Setiap node dalam tree, kecuali root, memiliki tepat satu induk (parent).[1] Implementasi tree sering menggunakan pointer dan kelas/struct.
 
 
-Langkah-langkah sequential search:
+ jenis-jenis tree lain yang sering digunakan, seperti:
 
--Mulai dari elemen pertama dalam struktur data.
+##### Binary Search Tree (BST)
 
--Bandingkan elemen saat ini dengan elemen yang dicari.
-
--Jika elemen saat ini sama dengan elemen yang dicari, kembalikan indeks atau posisi elemen tersebut.
-
--Jika elemen saat ini tidak sama dengan elemen yang dicari, pindah ke elemen berikutnya dalam struktur data.
-
--Ulangi langkah 2-4 hingga elemen yang dicari ditemukan atau seluruh elemen sudah diperiksa.
-
--Jika elemen tidak ditemukan, kembalikan nilai yang menunjukkan bahwa elemen tidak ada dalam struktur data.
+Setiap node memiliki nilai yang lebih besar dari semua node di subtree kirinya, dan lebih kecil dari semua node di subtree kanannya.
 
 
-Kompleksitas waktu sequential search dalam kasus terburuk adalah O(n), di mana n adalah jumlah elemen dalam struktur data. Ini berarti dalam kasus terburuk, algoritma harus memeriksa setiap elemen dalam struktur data.
+##### AVL Tree dan Red-Black Tree
+
+Jenis BST yang dioptimalkan untuk menjaga keseimbangan dan kinerja operasi pencarian, penyisipan, dan penghapusan.
 
 
-### Binary Search (Pencarian Biner)
-Binary search hanya dapat diterapkan pada struktur data yang sudah terurut (sorted), seperti array atau linked list yang terurut. Prinsip kerjanya adalah membagi struktur data menjadi dua bagian dan mencari elemen yang dicari di dalam salah satu bagian tersebut. Proses ini diulangi secara rekursif hingga elemen ditemukan atau seluruh elemen sudah diperiksa.
+##### Trie
+
+Struktur data berbentuk seperti tree yang dioptimalkan untuk pencarian string.
 
 
-Langkah-langkah binary search:
-
--Tentukan batas bawah (low) dan batas atas (high) dari struktur data yang akan diperiksa.
-
--Hitung nilai tengah (mid) dari batas bawah dan batas atas.
-
--Bandingkan elemen pada posisi tengah dengan elemen yang dicari.
-
--Jika elemen pada posisi tengah sama dengan elemen yang dicari, kembalikan posisi tengah.
-
--Jika elemen pada posisi tengah lebih kecil dari elemen yang dicari, ubah batas bawah menjadi posisi tengah + 1.
-
--Jika elemen pada posisi tengah lebih besar dari elemen yang dicari, ubah batas atas menjadi posisi tengah - 1.
-
--Ulangi langkah 2-6 hingga elemen yang dicari ditemukan atau batas bawah melebihi batas atas (elemen tidak ditemukan).
-
--Jika elemen tidak ditemukan, kembalikan nilai yang menunjukkan bahwa elemen tidak ada dalam struktur data.
-
-
-Kompleksitas waktu binary search dalam kasus rata-rata dan terbaik adalah O(log n), di mana n adalah jumlah elemen dalam struktur data terurut. Ini jauh lebih efisien dibandingkan sequential search, terutama untuk struktur data besar.
+Operasi umum pada tree meliputi traversal (preorder, inorder, postorder), pencarian, penyisipan, dan penghapusan node. Tree sering digunakan dalam implementasi struktur data seperti heap, BST, dan trie, serta dalam algoritma pemrosesan data dan pembuatan parse tree dalam kompilasi bahasa pemrograman.[2]
 
 
 
@@ -464,110 +442,696 @@ program ini menunjukkan bagaimana mengimplementasikan struktur data Binary Tree 
 ## Unguided 
 
 
-### 1) Buatlah sebuah program untuk mencari sebuah huruf pada sebuah kalimat yang sudah di input dengan menggunakan Binary Search!
+### 1) Buatlah program graph dengan menggunakan inputan user untuk menghitung jarak dari sebuah kota ke kota lainnya.
 
 
+
+```C++
+//Rangga Pradarrell Fathi
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+const int maksimaldat = 10; // Maksimal banyak data yang dapat ditampung pada variabel maksimaldat untuk struct Graph
+
+struct Graph
+{
+    string rangga_2311102200[maksimaldat];       // Banyaknya data string yang dapat disimpan dalam string sesuai dengan kapasitas maksimaldat
+    int adjacencyMatrix[maksimaldat][maksimaldat]; // Menggunakan array 2 dimensi, dengan ukuran maksimal sesuai maksimaldat
+    int no_kota;                               // Variabel yang digunakan untuk menyimpan jumlah kota dalam graph
+};
+
+void printMatrix(const Graph &graph)
+{
+    cout << setw(10) << " ";
+    for (int i = 0; i < graph.no_kota; i++)
+    {
+        cout << setw(10) << graph.rangga_2311102200[i];
+    }
+    cout << endl;
+
+    for (int i = 0; i < graph.no_kota; i++)
+    {
+        cout << setw(10) << graph.rangga_2311102200[i];
+        for (int j = 0; j < graph.no_kota; j++)
+        {
+            cout << setw(10) << graph.adjacencyMatrix[i][j];
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    Graph graph;
+    cout << "\n---++ (Jarak Antar Kota) ++---" << endl;
+    cout << "Silahkan masukan jumlah simpul: ";
+    cin >> graph.no_kota;
+    cin.ignore(); // Mengabaikan karakter newline yang tersisa
+
+    for (int i = 0; i < graph.no_kota; i++)
+    {
+        cout << "Simpul " << i + 1 << ": ";
+        getline(cin, graph.rangga_2311102200[i]);
+    }
+
+    cout << "Silahkan masukan bobot antar simpul" << endl;
+    for (int i = 0; i < graph.no_kota; i++)
+    {
+        for (int j = 0; j < graph.no_kota; j++)
+        {
+            cout << graph.rangga_2311102200[i] << " ---> " << graph.rangga_2311102200[j] << " = ";
+            cin >> graph.adjacencyMatrix[i][j];
+        }
+    }
+
+    cout << endl;
+    printMatrix(graph);
+
+    return 0;
+}
+
+```
+
+#### Hasil Output
+![Screenshot (214)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/95c0b0d7-a320-4abd-bc82-5158018e879f)
+program diatas memungkinkan pengguna untuk mendefinisikan sebuah graph dengan memasukkan jumlah simpul, nama-nama simpul, dan bobot (jarak) antara setiap pasangan simpul. Kemudian, program akan mencetak representasi Adjacency Matrix dari graph tersebut dalam bentuk matriks.
+
+### 2) Modifikasi guided tree diatas dengan program menu menggunakan input data tree dari user dan berikan fungsi tambahan untuk menampilkan node child dan descendant dari node yang diinput kan!
 
 ```C++
 // Rangga Pradarrell Fathi
 // 2311102200
 #include <iostream>
-#include <string>
-#include <algorithm>
 using namespace std;
 
-int binarySearch(string kalimat, char huruf)
+// PROGRAM BINARY TREE
+// Deklarasi Pohon
+struct Pohon
 {
-    sort(kalimat.begin(), kalimat.end()); // Mengurutkan kalimat terlebih dahulu
+    char data;
+    Pohon *left, *right, *parent; // pointer
+};
 
-    int left = 0;
-    int right = kalimat.length() - 1;
+// pointer global
+Pohon *root;
 
-    while (left <= right)
-    {
-        int mid = left + (right - left) / 2;
-
-        if (kalimat[mid] == huruf)
-        {
-            return mid; // Jika huruf ditemukan, kembalikan indeksnya
-        }
-        else if (kalimat[mid] < huruf)
-        {
-            left = mid + 1;
-        }
-        else
-        {
-            right = mid - 1;
-        }
-    }
-
-    return -1; // Jika huruf tidak ditemukan, kembalikan -1
+// Inisialisasi
+void init()
+{
+    root = NULL;
 }
 
-int main()
+bool isEmpty()
 {
-    string kalimat;
-    char huruf;
+    return root == NULL;
+}
 
-    cout << "Masukkan kalimat: ";
-    getline(cin, kalimat);
+Pohon *newPohon(char data)
+{
+    Pohon *node = new Pohon();
+    node->data = data;
+    node->left = NULL;
+    node->right = NULL;
+    node->parent = NULL;
+    return node;
+}
 
-    cout << "Masukkan huruf yang ingin dicari: ";
-    cin >> huruf;
-
-    int indeks = binarySearch(kalimat, huruf);
-
-    if (indeks == -1)
+void buatNode(char data)
+{
+    if (isEmpty())
     {
-        cout << "Huruf " << huruf << " tidak ditemukan dalam kalimat." << endl;
+        root = newPohon(data);
+        cout << "\nAlhamdulillah, Node " << data << " berhasil dibuat menjadi root." << endl;
     }
     else
     {
-        cout << "Huruf " << huruf << " ditemukan pada indeks " << indeks << " dalam kalimat." << endl;
+        cout << "\nPohon sudah dibuat" << endl;
     }
-
-    return 0;
 }
-```
 
-#### Hasil Output
-![Screenshot (190)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/9f362840-65f3-4edd-bd08-fa982dd1db20)
+Pohon *insertLeft(char data, Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nPliss! Buat tree terlebih dahulu!" << endl;
+        return NULL;
+    }
+    else
+    {
+        if (node->left != NULL)
+        {
+            cout << "\nUyy Node " << node->data << " sudah ada child kiri!" << endl;
+            return NULL;
+        }
+        else
+        {
+            Pohon *baru = newPohon(data);
+            baru->parent = node;
+            node->left = baru;
+            cout << "\nMantapp!! Node " << data << " berhasil ditambahkan ke child kiri " << node->data << endl;
+            return baru;
+        }
+    }
+}
 
-Dalam program ini, algoritma binary search digunakan karena kalimat diurutkan terlebih dahulu sebelum dilakukan pencarian. Ini membuat binary search menjadi pilihan yang efisien untuk mencari posisi sebuah karakter dalam kalimat.
+Pohon *insertRight(char data, Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nOyyy!! buat tree terlebih dahulu!" << endl;
+        return NULL;
+    }
+    else
+    {
+        if (node->right != NULL)
+        {
+            cout << "\nUyy Node " << node->data << " sudah ada child kanan!" << endl;
+            return NULL;
+        }
+        else
+        {
+            Pohon *baru = newPohon(data);
+            baru->parent = node;
+            node->right = baru;
+            cout << "\nAlhamdulillah!! Node " << data << " berhasil ditambahkan ke child kanan " << node->data << endl;
+            return baru;
+        }
+    }
+}
 
+void update(char data, Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nOyy!! buat tree terlebih dahulu!" << endl;
+    }
+    else
+    {
+        if (!node)
+            cout << "\nNode yang ingin diganti tidak ada!!" << endl;
+        else
+        {
+            char temp = node->data;
+            node->data = data;
+            cout << "\nAlhamdulillah!! Node " << temp << " berhasil diubah menjadi " << data << endl;
+        }
+    }
+}
 
-### 2) Buatlah sebuah program yang dapat menghitung banyaknya huruf vocal dalam sebuah kalimat!
+void retrieve(Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nOyy!! Buat tree terlebih dahulu!" << endl;
+    }
+    else
+    {
+        if (!node)
+            cout << "\nNode yang ditunjuk tidak ada!" << endl;
+        else
+        {
+            cout << "\nData node : " << node->data << endl;
+        }
+    }
+}
 
-```C++
-//Rangga Pradarrell Fathi
-#include <iostream>
-#include <string>
-using namespace std;
+void find(Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nOyy!! Buat tree terlebih dahulu!" << endl;
+    }
+    else
+    {
+        if (!node)
+            cout << "\nNode yang ditunjuk tidak ada!" << endl;
+        else
+        {
+            cout << "\nData Node : " << node->data << endl;
+            cout << "Root : " << root->data << endl;
+            if (!node->parent)
+                cout << "Parent : (tidak punya parent)" << endl;
+            else
+                cout << "Parent : " << node->parent->data << endl;
+            if (node->parent != NULL && node->parent->left != node && node->parent->right == node)
+                cout << "Sibling : " << node->parent->left->data << endl;
+            else if (node->parent != NULL && node->parent->right != node && node->parent->left == node)
+                cout << "Sibling : " << node->parent->right->data << endl;
+            else
+                cout << "Sibling : (tidak punya sibling)" << endl;
+            if (!node->left)
+                cout << "Child Kiri : (tidak punya Child kiri)" << endl;
+            else
+                cout << "Child Kiri : " << node->left->data << endl;
+            if (!node->right)
+                cout << "Child Kanan : (tidak punya Child kanan)" << endl;
+            else
+                cout << "Child Kanan : " << node->right->data << endl;
+        }
+    }
+}
+
+void showChild(Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nOyy!! Buat tree terlebih dahulu!" << endl;
+    }
+    else
+    {
+        if (!node)
+        {
+            cout << "\nNode yang ditunjuk tidak ada!" << endl;
+        }
+        else
+        {
+            cout << "\nNode " << node->data << " Child: " << endl;
+            if (node->left)
+                cout << "Child Kiri : " << node->left->data << endl;
+            else
+                cout << "Child Kiri : (tidak punya Child kiri)" << endl;
+            if (node->right)
+                cout << "Child Kanan : " << node->right->data << endl;
+            else
+                cout << "Child Kanan : (tidak punya Child kanan)" << endl;
+        }
+    }
+}
+
+// Penelusuran (Traversal)
+// preOrder
+void preOrder(Pohon *node)
+{
+    if (node != NULL)
+    {
+        cout << " " << node->data << ", ";
+        preOrder(node->left);
+        preOrder(node->right);
+    }
+}
+
+void showDescendants(Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nOyy!! Buat tree terlebih dahulu!" << endl;
+    }
+    else
+    {
+        if (!node)
+        {
+            cout << "\nNode yang ditunjuk tidak ada!" << endl;
+        }
+        else
+        {
+            cout << "\nDescendants of node " << node->data << " : ";
+            preOrder(node);
+            cout << endl;
+        }
+    }
+}
+
+// Penelusuran (Traversal)
+// inOrder
+void inOrder(Pohon *node)
+{
+    if (node != NULL)
+    {
+        inOrder(node->left);
+        cout << " " << node->data << ", ";
+        inOrder(node->right);
+    }
+}
+
+// postOrder
+void postOrder(Pohon *node)
+{
+    if (node != NULL)
+    {
+        postOrder(node->left);
+        postOrder(node->right);
+        cout << " " << node->data << ", ";
+    }
+}
+
+// Hapus Node Tree
+void deleteTree(Pohon *node)
+{
+    if (node != NULL)
+    {
+        if (node != root)
+        {
+            if (node->parent->left == node)
+                node->parent->left = NULL;
+            else if (node->parent->right == node)
+                node->parent->right = NULL;
+        }
+        deleteTree(node->left);
+        deleteTree(node->right);
+        if (node == root)
+        {
+            delete root;
+            root = NULL;
+        }
+        else
+        {
+            delete node;
+        }
+    }
+}
+
+// Hapus SubTree
+void deleteSub(Pohon *node)
+{
+    if (isEmpty())
+    {
+        cout << "\nOyy!! Buat tree terlebih dahulu!" << endl;
+    }
+    else
+    {
+        deleteTree(node->left);
+        deleteTree(node->right);
+        cout << "\nAlhamdulillah!! Node subtree " << node->data << " berhasil dihapus." << endl;
+    }
+}
+
+// Hapus Tree
+void clear()
+{
+    if (isEmpty())
+    {
+        cout << "\nOyy!! Buat tree terlebih dahulu!!" << endl;
+    }
+    else
+    {
+        deleteTree(root);
+        cout << "\nAlhamdulillah!! Pohon berhasil dihapus." << endl;
+    }
+}
+
+// Cek Size Tree
+int size(Pohon *node)
+{
+    if (!node)
+    {
+        return 0;
+    }
+    else
+    {
+        return 1 + size(node->left) + size(node->right);
+    }
+}
+
+// Cek Height Level Tree
+int height(Pohon *node)
+{
+    if (!node)
+    {
+        return 0;
+    }
+    else
+    {
+        int heightKiri = height(node->left);
+        int heightKanan = height(node->right);
+        if (heightKiri >= heightKanan)
+        {
+            return heightKiri + 1;
+        }
+        else
+        {
+            return heightKanan + 1;
+        }
+    }
+}
+
+// Karakteristik Tree
+void characteristic()
+{
+    int s = size(root);
+    int h = height(root);
+    cout << "\nSize Tree : " << s << endl;
+    cout << "Height Tree : " << h << endl;
+    if (h != 0)
+        cout << "Average Node of Tree : " << s / h << endl;
+    else
+        cout << "Average Node of Tree : 0" << endl;
+}
 
 int main()
 {
-    string kalimat;
-    cout << "Masukkan kalimat: ";
-    getline(cin, kalimat);
+    int choice;
+    char rangga_2311102200, parentData, direction;
+    Pohon *parentNode, *tempNode;
 
-    int jumlahVokal = 0;
-    char vokal[] = {'a', 'i', 'u', 'e', 'o', 'A', 'I', 'U', 'E', 'O'};
-    int ukuranVokal = sizeof(vokal) / sizeof(vokal[0]);
-
-    // Menggunakan Sequential Search
-    for (char huruf : kalimat)
+    do
     {
-        for (int i = 0; i < ukuranVokal; i++)
+        cout << "\n===---- Selamat Datang di Node Pohon ----===\n";
+        cout << "1. Buat Node Root\n";
+        cout << "2. Tambah Node Kiri\n";
+        cout << "3. Tambah Node Kanan\n";
+        cout << "4. Update Node\n";
+        cout << "5. Retrieve Node\n";
+        cout << "6. Find Node\n";
+        cout << "7. Show Child\n";
+        cout << "8. Show Descendants\n";
+        cout << "9. PreOrder Traversal\n";
+        cout << "10. InOrder Traversal\n";
+        cout << "11. PostOrder Traversal\n";
+        cout << "12. Show Characteristics\n";
+        cout << "13. Clear Tree\n";
+        cout << "14. Exit\n";
+        cout << "Pilih menu: ";
+        cin >> choice;
+
+        switch (choice)
         {
-            if (huruf == vokal[i])
+        case 1:
+            cout << "Masukkan data root: ";
+            cin >> rangga_2311102200;
+            buatNode(rangga_2311102200);
+            break;
+        case 2:
+            cout << "Masukkan data parent: ";
+            cin >> parentData;
+            cout << "Masukkan data node kiri: ";
+            cin >> rangga_2311102200;
+            parentNode = root;
+            while (parentNode && parentNode->data != parentData)
             {
-                jumlahVokal++;
-                break;
+                if (parentNode->left && parentNode->left->data == parentData)
+                    parentNode = parentNode->left;
+                else if (parentNode->right && parentNode->right->data == parentData)
+                    parentNode = parentNode->right;
+                else if (parentNode->left)
+                    parentNode = parentNode->left;
+                else if (parentNode->right)
+                    parentNode = parentNode->right;
+                else
+                    parentNode = NULL;
             }
+            if (parentNode)
+            {
+                insertLeft(rangga_2311102200, parentNode);
+            }
+            else
+            {
+                cout << "Parent tidak ditemukan!" << endl;
+            }
+            break;
+        case 3:
+            cout << "Masukkan data parent: ";
+            cin >> parentData;
+            cout << "Masukkan data node kanan: ";
+            cin >> rangga_2311102200;
+            parentNode = root;
+            while (parentNode && parentNode->data != parentData)
+            {
+                if (parentNode->left && parentNode->left->data == parentData)
+                    parentNode = parentNode->left;
+                else if (parentNode->right && parentNode->right->data == parentData)
+                    parentNode = parentNode->right;
+                else if (parentNode->left)
+                    parentNode = parentNode->left;
+                else if (parentNode->right)
+                    parentNode = parentNode->right;
+                else
+                    parentNode = NULL;
+            }
+            if (parentNode)
+            {
+                insertRight(rangga_2311102200, parentNode);
+            }
+            else
+            {
+                cout << "Parent tidak ditemukan!" << endl;
+            }
+            break;
+        case 4:
+            cout << "Masukkan data node yang ingin diupdate: ";
+            cin >> parentData;
+            cout << "Masukkan data baru: ";
+            cin >> rangga_2311102200;
+            tempNode = root;
+            while (tempNode && tempNode->data != parentData)
+            {
+                if (tempNode->left && tempNode->left->data == parentData)
+                    tempNode = tempNode->left;
+                else if (tempNode->right && tempNode->right->data == parentData)
+                    tempNode = tempNode->right;
+                else if (tempNode->left)
+                    tempNode = tempNode->left;
+                else if (tempNode->right)
+                    tempNode = tempNode->right;
+                else
+                    tempNode = NULL;
+            }
+            if (tempNode)
+            {
+                update(rangga_2311102200, tempNode);
+            }
+            else
+            {
+                cout << "Node tidak ditemukan!" << endl;
+            }
+            break;
+        case 5:
+            cout << "Masukkan data node yang ingin diretrieve: ";
+            cin >> rangga_2311102200;
+            tempNode = root;
+            while (tempNode && tempNode->data != rangga_2311102200)
+            {
+                if (tempNode->left && tempNode->left->data == rangga_2311102200)
+                    tempNode = tempNode->left;
+                else if (tempNode->right && tempNode->right->data == rangga_2311102200)
+                    tempNode = tempNode->right;
+                else if (tempNode->left)
+                    tempNode = tempNode->left;
+                else if (tempNode->right)
+                    tempNode = tempNode->right;
+                else
+                    tempNode = NULL;
+            }
+            if (tempNode)
+            {
+                retrieve(tempNode);
+            }
+            else
+            {
+                cout << "Node tidak ditemukan!" << endl;
+            }
+            break;
+        case 6:
+            cout << "Masukkan data node yang ingin dicari: ";
+            cin >> rangga_2311102200;
+            tempNode = root;
+            while (tempNode && tempNode->data != rangga_2311102200)
+            {
+                if (tempNode->left && tempNode->left->data == rangga_2311102200)
+                    tempNode = tempNode->left;
+                else if (tempNode->right && tempNode->right->data == rangga_2311102200)
+                    tempNode = tempNode->right;
+                else if (tempNode->left)
+                    tempNode = tempNode->left;
+                else if (tempNode->right)
+                    tempNode = tempNode->right;
+                else
+                    tempNode = NULL;
+            }
+            if (tempNode)
+            {
+                find(tempNode);
+            }
+            else
+            {
+                cout << "Node tidak ditemukan!" << endl;
+            }
+            break;
+        case 7:
+            cout << "Masukkan data node yang ingin ditampilkan child-nya: ";
+            cin >> rangga_2311102200;
+            tempNode = root;
+            while (tempNode && tempNode->data != rangga_2311102200)
+            {
+                if (tempNode->left && tempNode->left->data == rangga_2311102200)
+                    tempNode = tempNode->left;
+                else if (tempNode->right && tempNode->right->data == rangga_2311102200)
+                    tempNode = tempNode->right;
+                else if (tempNode->left)
+                    tempNode = tempNode->left;
+                else if (tempNode->right)
+                    tempNode = tempNode->right;
+                else
+                    tempNode = NULL;
+            }
+            if (tempNode)
+            {
+                showChild(tempNode);
+            }
+            else
+            {
+                cout << "Node tidak ditemukan!" << endl;
+            }
+            break;
+        case 8:
+            cout << "Masukkan data node yang ingin ditampilkan descendant-nya: ";
+            cin >> rangga_2311102200;
+            tempNode = root;
+            while (tempNode && tempNode->data != rangga_2311102200)
+            {
+                if (tempNode->left && tempNode->left->data == rangga_2311102200)
+                    tempNode = tempNode->left;
+                else if (tempNode->right && tempNode->right->data == rangga_2311102200)
+                    tempNode = tempNode->right;
+                else if (tempNode->left)
+                    tempNode = tempNode->left;
+                else if (tempNode->right)
+                    tempNode = tempNode->right;
+                else
+                    tempNode = NULL;
+            }
+            if (tempNode)
+            {
+                showDescendants(tempNode);
+            }
+            else
+            {
+                cout << "Node tidak ditemukan!" << endl;
+            }
+            break;
+        case 9:
+            cout << "\nPreOrder :" << endl;
+            preOrder(root);
+            cout << "\n"
+                 << endl;
+            break;
+        case 10:
+            cout << "InOrder :" << endl;
+            inOrder(root);
+            cout << "\n"
+                 << endl;
+            break;
+        case 11:
+            cout << "PostOrder :" << endl;
+            postOrder(root);
+            cout << "\n"
+                 << endl;
+            break;
+        case 12:
+            characteristic();
+            break;
+        case 13:
+            clear();
+            break;
+        case 14:
+            cout << "Bye byee!!" << endl;
+            break;
+        default:
+            cout << "Pilihan tidak valid!" << endl;
         }
-    }
-
-    cout << "Jumlah huruf vokal dalam kalimat: " << jumlahVokal << endl;
+    } while (choice != 14);
 
     return 0;
 }
@@ -575,45 +1139,22 @@ int main()
 
 
 #### Hasil Output
-![Screenshot (191)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/be064c13-f48f-4976-8ab7-8e9e82813198)
+![Screenshot (228)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/f514f8aa-9889-4b82-9d73-88e0844ba4cb)
+![Screenshot (227)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/9d03698a-60a2-4c99-a6a6-3e7e879ed1a5)
+![Screenshot (226)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/b2f63e31-05f2-4191-aa03-ff9c5fdedaac)
+![Screenshot (225)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/8c84e141-40b9-49c3-8d23-c0465644ba3f)
+![Screenshot (224)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/435b676f-a7cb-459e-a50d-7637402463d0)
+![Screenshot (223)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/14204c94-8ba3-4517-8be3-1e7a1458d20d)
+![Screenshot (222)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/73a5673d-336d-4c2f-95cf-385720863f6f)
+![Screenshot (221)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/37b80524-07e3-46b4-950f-ad84b9cce1a6)
+![Screenshot (220)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/3dd5216a-e36b-4943-932f-8e709f24546e)
+![Screenshot (219)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/d5edc5a5-9c53-41ff-b45c-439d1b88e919)
+![Screenshot (218)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/5c0d5118-7093-4fbc-9eef-3886a69ad026)
+![Screenshot (217)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/c913136f-0a8b-4dc3-8b22-c04964965252)
+![Screenshot (216)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/c3e37971-049d-4171-8c89-08cbd669dd9b)
+![Screenshot (215)](https://github.com/Rangga2181/Praktikum-Struktur-Data-Assignment/assets/162523255/52ffe6dc-2afd-41ad-aee9-7058cc1ccd60)
 
-Dalam program ini, algoritma sequential search digunakan karena array vokal relatif kecil dan tidak terurut. Sequential search dapat diimplementasikan dengan mudah dan cukup efisien untuk kasus seperti ini. Namun, jika jumlah huruf vokal yang dicari lebih banyak atau pada kasus yang lebih kompleks, algoritma binary search atau struktur data lain seperti hash table mungkin lebih efisien.
-
-
-
-### 3) Diketahui data = 9, 4, 1, 4, 7, 10, 5, 4, 12, 4. Hitunglah berapa banyak angka 4 dengan menggunakan algoritma Sequential Search!
-```C++
-//Rangga Pradarrell Fathi
-//2311102200
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    int data[] = {9, 4, 1, 4, 7, 10, 5, 4, 12, 4};
-    int n = sizeof(data) / sizeof(data[0]); // Ukuran array
-    int target = 4;                         // Nilai yang dicari
-    int jumlah = 0;                         // Inisialisasi jumlah kemunculan target
-
-    // Sequential Search
-    for (int i = 0; i < n; i++)
-    {
-        if (data[i] == target)
-        {
-            jumlah++;
-        }
-    }
-
-    cout << "Jumlah angka " << target << " yang muncul adalah " << jumlah << endl;
-
-    return 0;
-}
-```
-
-#### Hasil Output
-
-
-
+Program diatas menggunakan menu yang memungkinkan pengguna untuk melakukan berbagai operasi pada struktur data Binary Tree, seperti pembuatan node, penyisipan node baru, pengupdate-an node, pencarian node, traversal, penghapusan node atau subtree, dan menampilkan karakteristik tree. Program ini juga melakukan validasi input dan memberikan pesan error yang sesuai jika terjadi kesalahan atau kondisi tertentu tidak terpenuhi.
 
 
 ## Kesimpulan
@@ -626,6 +1167,6 @@ Terdapat beberapa operasi yang dapat dilakukan pada tree, seperti pembuatan (cre
 Graph memiliki beberapa jenis, seperti graph berarah (digraph), graph tak berarah (undigraph), dan graph berbobot. Graph dan tree merupakan struktur data fundamental yang memiliki kegunaan penting dalam berbagai aplikasi. Graph digunakan untuk merepresentasikan hubungan umum antar objek, sedangkan tree digunakan untuk merepresentasikan hierarki atau struktur berjenjang.
 
 ## Referensi
-[1] Sindar, A, STRUKTUR DATA DAN ALGORITMADENGAN C++. Cetakan Pertama. Serang:CV.AA.RIZKY, 2018
+[1] Sindar, A, STRUKTUR DATA DAN ALGORITMADENGAN C++. Cetakan Pertama. Serang:CV.AA.RIZKY, 2019
 
 [2] Bahit, M, ALGORITMA PEMROGRAMAN TERSTRUKTUR . Cetakan Pertama. Banjarmasin:Poliban Press,2024.
