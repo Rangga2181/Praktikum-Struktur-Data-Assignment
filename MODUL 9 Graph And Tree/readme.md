@@ -7,8 +7,26 @@
 
 
 ### Graph
-Searching atau pencarian data adalah salah satu operasi fundamental dalam pemrograman yang melibatkan pencarian elemen atau nilai tertentu di dalam struktur data seperti array, vektor, atau daftar tertaut (linked list). 
+Graph adalah struktur data non-linear yang terdiri dari kumpulan node (vertex/simpul) yang dihubungkan oleh edge (sisi/busur). Graph dapat direpresentasikan dengan beberapa cara:
 
+-Adjacency Matrix (Menggunakan matriks dua dimensi untuk menyimpan informasi keberadaan edge antara setiap pasangan node.)
+
+-Adjacency List (Menggunakan daftar berkait (linked list) untuk menyimpan daftar node tetangga dari setiap node.)
+
+Setelah merepresentasikan graph, kita dapat melakukan berbagai operasi dan algoritma pada graph, seperti:
+
+Traversal Graph
+
+-Breadth-First Search (BFS)
+-Depth-First Search (DFS)
+
+
+Algoritma pada Graph
+
+-Shortest Path (Dijkstra, Bellman-Ford, Floyd-Warshall)
+-Minimum Spanning Tree (Prim, Kruskal)
+-Topological Sort
+-Strongly Connected Components
 
 ###  Tree
 Sequential search atau pencarian linear adalah algoritma pencarian paling sederhana. Prinsip kerjanya adalah memeriksa setiap elemen dalam struktur data (seperti array atau linked list) satu per satu secara berurutan hingga elemen yang dicari ditemukan atau seluruh elemen sudah diperiksa.
