@@ -55,10 +55,10 @@
 ## <strong> Dasar Teori </strong>
 
 <strong><h2>Definisi</h2></strong>
-Pengurutan data (sorting) adalah proses penyusunan elemen-elemen data dalam urutan tertentu, seperti urutan menaik (ascending) atau menurun (descending). Proses pengurutan ini digunakan dalam banyak algoritma komputer, baik itu untuk pencarian, perbandingan, maupun pengolahan data yang lebih efisien. Dalam pemrograman bahasa Go, pengurutan data dapat dilakukan menggunakan berbagai algoritma yang masing-masing memiliki karakteristik yang berbeda dalam hal kompleksitas waktu dan ruang.
+[1] Pengurutan data (sorting) adalah proses penyusunan elemen-elemen data dalam urutan tertentu, seperti urutan menaik (ascending) atau menurun (descending). Proses pengurutan ini digunakan dalam banyak algoritma komputer, baik itu untuk pencarian, perbandingan, maupun pengolahan data yang lebih efisien. Dalam pemrograman bahasa Go, pengurutan data dapat dilakukan menggunakan berbagai algoritma yang masing-masing memiliki karakteristik yang berbeda dalam hal kompleksitas waktu dan ruang.
 
 ### <strong> Prinsip algoritma Selection Sort
-Selection Sort adalah salah satu algoritma pengurutan sederhana yang bekerja dengan cara memilih elemen terkecil (atau terbesar, tergantung urutan yang diinginkan) dalam suatu array dan menempatkannya di posisi yang benar, kemudian mengulangi proses ini untuk elemen-elemen yang tersisa.
+[2] Selection Sort adalah salah satu algoritma pengurutan sederhana yang bekerja dengan cara memilih elemen terkecil (atau terbesar, tergantung urutan yang diinginkan) dalam suatu array dan menempatkannya di posisi yang benar, kemudian mengulangi proses ini untuk elemen-elemen yang tersisa.
 
 #### Prinsip Kerja Selection Sort
 - Iterasi 1: Cari elemen terkecil dalam array dan tukar dengan elemen pertama.
@@ -72,7 +72,7 @@ Selection Sort adalah salah satu algoritma pengurutan sederhana yang bekerja den
 - Pindah ke elemen berikutnya dan ulangi proses ini hingga array terurut.
 
 ### <strong> Prinsip algoritma Insertion Sort
-Insertion Sort adalah algoritma pengurutan yang lebih efisien dibandingkan Selection Sort untuk array kecil atau array yang sudah sebagian terurut. Prinsip dasar dari Insertion Sort adalah membangun array yang terurut satu elemen pada satu waktu dengan cara memasukkan elemen baru ke posisi yang benar dalam urutan yang sudah terurut sebelumnya.
+[3] Insertion Sort adalah algoritma pengurutan yang lebih efisien dibandingkan Selection Sort untuk array kecil atau array yang sudah sebagian terurut. Prinsip dasar dari Insertion Sort adalah membangun array yang terurut satu elemen pada satu waktu dengan cara memasukkan elemen baru ke posisi yang benar dalam urutan yang sudah terurut sebelumnya.
 
 #### Prinsip Kerja Insertion Sort
 - Mulai dari elemen kedua (karena elemen pertama sudah dianggap terurut).
@@ -682,3 +682,7 @@ Program ini digunakan untuk mengelola koleksi buku di sebuah perpustakaan atau t
 - Setelah pengurutan selesai, program menampilkan 5 buku pertama dengan rating tertinggi.
 - Program juga memberikan opsi untuk mencari buku berdasarkan rating tertentu yang dimasukkan oleh pengguna, dan menampilkan buku yang sesuai.
 
+# <strong> Refrensi </strong>
+[1] Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. (2009). "Introduction to Algorithms" (3rd Edition). MIT Press.
+[2] Donald E. Knuth. (1998). "The Art of Computer Programming, Volume 3: Sorting and Searching" (2nd Edition). Addison-Wesley Professional.
+[3] Jurnal: "A Comparative Study of Sorting Algorithms" - International Journal of Computer Applications
